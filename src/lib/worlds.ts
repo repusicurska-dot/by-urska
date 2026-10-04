@@ -50,7 +50,7 @@ const ART_PATHS = ["/art", "/collection", "/artworks", "/cart", "/checkout", "/o
 
 export function placeFor(pathname: string): Place {
   if (pathname.startsWith("/poetry")) return "poetry";
-  if (pathname.startsWith("/spirituality") || pathname.startsWith("/zvezdni-koledar") || pathname.startsWith("/rezervacija"))
+  if (pathname.startsWith("/spirituality") || pathname.startsWith("/zvezdni-koledar") || pathname.startsWith("/rezervacija") || pathname.startsWith("/lumora"))
     return "spirituality";
   if (pathname.startsWith("/climb")) return "climb";
   if (pathname.startsWith("/finance")) return "finance";
