@@ -11,7 +11,7 @@ const BLOSSOMING_LOVE_NOTE =
   "I painted this one slowly, over many quiet evenings, because I didn't want to rush a love that has already waited lifetimes. Every layer of purple and gold felt less like paint and more like memory — as if my hand already knew this embrace before I did. I don't think love like this begins when two people meet. I think it just remembers itself.";
 
 const THE_PROPHECY_NOTE =
-  "This canvas came from a restless place in me — a night I felt very small and very afraid, and needed to paint my way back to courage. The dragon isn't the danger here; it's what stays beside you once you finally kneel and face what frightens you. I painted the lightning last, in a single breath, because that's how courage usually arrives — all at once, and only after you've already decided to stand.";
+  "This painting was made in a period of my life when I felt lost — unsure of who I was and where I was going — and I needed to paint my way back to courage. The dragon isn't the danger here; it's what stays beside you once you finally kneel and face what frightens you. I painted the lightning last, in a single breath, because that's how courage usually arrives — all at once, and only after you've already decided to stand.";
 
 const ETERNAL_LOVE_NOTE =
   "I kept returning to blue for this one — the color of something that doesn't ask to be noticed, only trusted. While I painted the rose, I kept thinking about the difference between loving someone and choosing them again, deliberately, after everything. This piece is my answer to that. It isn't about the crown or the kingdom. It's about the choosing.";
