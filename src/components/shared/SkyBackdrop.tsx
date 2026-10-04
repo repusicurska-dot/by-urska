@@ -3,8 +3,8 @@ import Image from "next/image";
 /**
  * The site's sky: soft clouds with the light breaking through, fixed behind every page.
  * Since 2026-10-03 it is Urška's new, lighter sky (sky-light-2560.webp, enlarged with lanczos3
- * from her 1672×941 image); the old 512×512 painting showed blurry once stretched to the screen.
- * It is already light, so the veils over it are thinner than they were.
+ * from her image); the old 512×512 painting showed blurry once stretched to the screen.
+ * The veils over it are kept thin so the sky comes through (Urška, 2026-10-04).
  */
 export default function SkyBackdrop() {
   return (
@@ -18,13 +18,13 @@ export default function SkyBackdrop() {
           sizes="100vw"
           className="object-cover"
           quality={92}
-          style={{ filter: "saturate(1.06)" }}
+          style={{ filter: "saturate(1.12)" }}
         />
       </div>
 
       {/* A woven canvas grain, so the sky reads as a painting on canvas. */}
       <div
-        className="absolute inset-0 opacity-[0.09] mix-blend-multiply"
+        className="absolute inset-0 opacity-[0.06] mix-blend-multiply"
         style={{
           backgroundImage:
             "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.15 0.95' numOctaves='2'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23c)'/%3E%3C/svg%3E\")",
@@ -38,12 +38,12 @@ export default function SkyBackdrop() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(75% 60% at 50% 18%, rgba(255,252,245,0.1) 0%, rgba(253,248,238,0.25) 45%, rgba(250,245,236,0.4) 100%)",
+            "radial-gradient(75% 60% at 50% 18%, rgba(255,252,245,0) 0%, rgba(253,248,238,0.12) 45%, rgba(250,245,236,0.22) 100%)",
         }}
       />
       <div
         className="absolute inset-0"
-        style={{ background: "linear-gradient(180deg, rgba(255,253,248,0.1) 0%, rgba(250,244,234,0.2) 55%, rgba(244,238,229,0.35) 100%)" }}
+        style={{ background: "linear-gradient(180deg, rgba(255,253,248,0) 0%, rgba(250,244,234,0.1) 55%, rgba(244,238,229,0.2) 100%)" }}
       />
     </div>
   );
