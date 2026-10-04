@@ -47,7 +47,7 @@ export const HUB: Record<Locale, HubCopy> = {
     worldsTitle: "One life, five ways into it",
     worlds: {
       art: { nav: "Art", line: "Original paintings of mood, memory and light — made in Slovenia, shipped worldwide.", cta: "The gallery" },
-      poetry: { nav: "Poetry", line: "A letter from the studio every Thursday — words, with a painting beside them.", cta: "Read a letter" },
+      poetry: { nav: "Poetry", line: "One free poem every week — words, with a painting beside them.", cta: "Read this week's poem" },
       spirituality: { nav: "Spirituality", line: "Tarot, the moon and quiet practices for coming home to yourself.", cta: "Draw a card" },
       climb: { nav: "Climb", line: "Life on the rock — the routes, the titles and what the wall taught me.", cta: "Climb with me" },
       finance: { nav: "Finance", line: "A degree in finance, and the calm of the wall applied to money and the markets.", cta: "How I learned" },
@@ -68,7 +68,7 @@ export const HUB: Record<Locale, HubCopy> = {
       soon: "Stories from the wall, training and outdoor days are on their way.",
     },
     finance: {
-      lead: "A degree in finance gave me the foundations. My Edge Official taught me the markets.",
+      lead: "A degree in finance gave me the foundations. My Edge Official helps me see the markets clearly.",
       intro: "I studied finance and hold a degree in it — that is where I learned how money, companies and markets work. After the wall I wanted to go further: to read the markets the way I once read a route, calmly, step by step, without guessing. On My Edge Official I took that into practice — the strategies, the theory behind them and the psychology of staying steady when the market isn't.",
       learnedEyebrow: "What I deepened on My Edge",
       topics: [
@@ -80,7 +80,7 @@ export const HUB: Record<Locale, HubCopy> = {
         ["Sentinel", "A trading journal that keeps me honest."],
       ],
       quote: "Discipline, patience and trusting the process — the same on the rock and in the markets.",
-      visit: "Visit My Edge Official",
+      visit: "Click here to learn more about trading",
       note: "My Edge Official is education only, not financial advice. Trading carries risk, including the loss of capital.",
     },
   },
@@ -92,7 +92,7 @@ export const HUB: Record<Locale, HubCopy> = {
     worldsTitle: "Eno življenje, pet poti vanj",
     worlds: {
       art: { nav: "Umetnost", line: "Originalne slike razpoloženja, spomina in svetlobe — ustvarjene v Sloveniji, poslane po svetu.", cta: "V galerijo" },
-      poetry: { nav: "Poezija", line: "Vsak četrtek pismo iz ateljeja — besede, ob njih pa slika.", cta: "Preberi pismo" },
+      poetry: { nav: "Poezija", line: "Vsak teden ena pesem zastonj — besede, ob njih pa slika.", cta: "Preberi pesem tedna" },
       spirituality: { nav: "Duhovnost", line: "Tarot, luna in tihe prakse za vrnitev k sebi.", cta: "Izvleci karto" },
       climb: { nav: "Plezanje", line: "Življenje na skali — smeri, naslovi in vse, kar me je naučila stena.", cta: "Pleziva skupaj" },
       finance: { nav: "Finance", line: "Diploma iz financ in mir stene, prenesen na denar in trge.", cta: "Kako sem se učila" },
@@ -113,7 +113,7 @@ export const HUB: Record<Locale, HubCopy> = {
       soon: "Zgodbe s stene, treningi in dnevi v naravi so na poti.",
     },
     finance: {
-      lead: "Diploma iz financ mi je dala temelje, trgov pa sem se naučila na My Edge Official.",
+      lead: "Diploma iz financ mi je dala temelje, My Edge Official pa mi pomaga jasno videti trge.",
       intro: "Študirala sem finance in iz njih diplomirala — tam sem se naučila, kako delujejo denar, podjetja in trgi. Po steni sem želela iti dlje: brati trge tako, kot sem nekoč brala smer — mirno, korak za korakom, brez ugibanja. Na My Edge Official sem to prenesla v prakso: strategije, teorijo za njimi in psihologijo, kako ostati miren, ko trg ni.",
       learnedEyebrow: "Kaj sem poglobila na My Edge",
       topics: [
@@ -125,7 +125,7 @@ export const HUB: Record<Locale, HubCopy> = {
         ["Sentinel", "Trgovalni dnevnik, ki me drži iskreno."],
       ],
       quote: "Disciplina, potrpežljivost in zaupanje v proces — enako na skali in na trgih.",
-      visit: "Obišči My Edge Official",
+      visit: "Klikni tukaj in izvej več o trgovanju",
       note: "My Edge Official je izobraževanje, ne finančni nasvet. Trgovanje prinaša tveganje, tudi izgubo vloženega denarja.",
     },
   },
@@ -137,7 +137,7 @@ export const HUB: Record<Locale, HubCopy> = {
     worldsTitle: "Jedan život, pet putova u njega",
     worlds: {
       art: { nav: "Umjetnost", line: "Originalne slike raspoloženja, sjećanja i svjetla — nastale u Sloveniji, šalju se u cijeli svijet.", cta: "U galeriju" },
-      poetry: { nav: "Poezija", line: "Svakog četvrtka pismo iz ateljea — riječi, a uz njih slika.", cta: "Pročitaj pismo" },
+      poetry: { nav: "Poezija", line: "Svaki tjedan jedna besplatna pjesma — riječi, a uz njih slika.", cta: "Pročitaj pjesmu tjedna" },
       spirituality: { nav: "Duhovnost", line: "Tarot, mjesec i tihe prakse za povratak sebi.", cta: "Izvuci kartu" },
       climb: { nav: "Penjanje", line: "Život na stijeni — smjerovi, naslovi i sve čemu me stijena naučila.", cta: "Penji sa mnom" },
       finance: { nav: "Financije", line: "Diploma iz financija i mir stijene, preneseni na novac i tržišta.", cta: "Kako sam učila" },
@@ -158,7 +158,7 @@ export const HUB: Record<Locale, HubCopy> = {
       soon: "Priče sa stijene, treninzi i dani u prirodi su na putu.",
     },
     finance: {
-      lead: "Diploma iz financija dala mi je temelje, a tržišta sam naučila na My Edge Official.",
+      lead: "Diploma iz financija dala mi je temelje, a My Edge Official mi pomaže jasno vidjeti tržišta.",
       intro: "Studirala sam financije i diplomirala — ondje sam naučila kako funkcioniraju novac, poduzeća i tržišta. Nakon stijene htjela sam ići dalje: čitati tržišta onako kako sam nekoć čitala smjer — mirno, korak po korak, bez nagađanja. Na My Edge Official to sam pretočila u praksu: strategije, teoriju iza njih i psihologiju kako ostati miran kad tržište nije.",
       learnedEyebrow: "Što sam produbila na My Edge",
       topics: [
@@ -170,7 +170,7 @@ export const HUB: Record<Locale, HubCopy> = {
         ["Sentinel", "Trgovački dnevnik koji me drži iskrenom."],
       ],
       quote: "Disciplina, strpljenje i povjerenje u proces — isto na stijeni i na tržištima.",
-      visit: "Posjeti My Edge Official",
+      visit: "Klikni ovdje i saznaj više o trgovanju",
       note: "My Edge Official je edukacija, ne financijski savjet. Trgovanje nosi rizik, uključujući gubitak kapitala.",
     },
   },
@@ -182,7 +182,7 @@ export const HUB: Record<Locale, HubCopy> = {
     worldsTitle: "Ein Leben, fünf Wege hinein",
     worlds: {
       art: { nav: "Kunst", line: "Originalgemälde voller Stimmung, Erinnerung und Licht — in Slowenien gemalt, weltweit versandt.", cta: "Zur Galerie" },
-      poetry: { nav: "Poesie", line: "Jeden Donnerstag ein Brief aus dem Atelier — Worte, und ein Bild daneben.", cta: "Einen Brief lesen" },
+      poetry: { nav: "Poesie", line: "Jede Woche ein Gedicht, kostenlos — Worte, und ein Bild daneben.", cta: "Gedicht der Woche lesen" },
       spirituality: { nav: "Spiritualität", line: "Tarot, der Mond und stille Übungen, um zu dir zurückzukommen.", cta: "Eine Karte ziehen" },
       climb: { nav: "Klettern", line: "Das Leben am Fels — die Routen, die Titel und was mich die Wand gelehrt hat.", cta: "Klettere mit mir" },
       finance: { nav: "Finanzen", line: "Ein Abschluss in Finanzen — und die Ruhe der Wand, übertragen auf Geld und Märkte.", cta: "Wie ich gelernt habe" },
@@ -203,7 +203,7 @@ export const HUB: Record<Locale, HubCopy> = {
       soon: "Geschichten von der Wand, Training und Tage draußen sind unterwegs.",
     },
     finance: {
-      lead: "Mein Finanzstudium gab mir das Fundament. My Edge Official lehrte mich die Märkte.",
+      lead: "Mein Finanzstudium gab mir das Fundament. My Edge Official hilft mir, die Märkte klar zu sehen.",
       intro: "Ich habe Finanzen studiert und darin meinen Abschluss gemacht — dort habe ich gelernt, wie Geld, Unternehmen und Märkte funktionieren. Nach der Wand wollte ich weitergehen: die Märkte so lesen, wie ich einst eine Route las — ruhig, Schritt für Schritt, ohne zu raten. Bei My Edge Official habe ich das in die Praxis gebracht: die Strategien, die Theorie dahinter und die Psychologie, ruhig zu bleiben, wenn der Markt es nicht ist.",
       learnedEyebrow: "Was ich bei My Edge vertieft habe",
       topics: [
@@ -215,7 +215,7 @@ export const HUB: Record<Locale, HubCopy> = {
         ["Sentinel", "Ein Trading-Journal, das mich ehrlich hält."],
       ],
       quote: "Disziplin, Geduld und Vertrauen in den Prozess — am Fels wie an den Märkten.",
-      visit: "Zu My Edge Official",
+      visit: "Hier klicken und mehr über Trading erfahren",
       note: "My Edge Official dient nur der Bildung und ist keine Finanzberatung. Trading birgt Risiken bis hin zum Kapitalverlust.",
     },
   },
@@ -227,7 +227,7 @@ export const HUB: Record<Locale, HubCopy> = {
     worldsTitle: "Una vita, cinque strade per entrarci",
     worlds: {
       art: { nav: "Arte", line: "Dipinti originali di atmosfera, memoria e luce — creati in Slovenia, spediti in tutto il mondo.", cta: "La galleria" },
-      poetry: { nav: "Poesia", line: "Ogni giovedì una lettera dall'atelier — parole, con un dipinto accanto.", cta: "Leggi una lettera" },
+      poetry: { nav: "Poesia", line: "Ogni settimana una poesia gratis — parole, con un dipinto accanto.", cta: "Leggi la poesia della settimana" },
       spirituality: { nav: "Spiritualità", line: "Tarocchi, la luna e pratiche silenziose per tornare a te stessa.", cta: "Pesca una carta" },
       climb: { nav: "Arrampicata", line: "La vita sulla roccia — le vie, i titoli e ciò che la parete mi ha insegnato.", cta: "Arrampica con me" },
       finance: { nav: "Finanza", line: "Una laurea in finanza, e la calma della parete applicata al denaro e ai mercati.", cta: "Come ho imparato" },
@@ -248,7 +248,7 @@ export const HUB: Record<Locale, HubCopy> = {
       soon: "Storie dalla parete, allenamenti e giornate all'aperto sono in arrivo.",
     },
     finance: {
-      lead: "La laurea in finanza mi ha dato le basi. My Edge Official mi ha insegnato i mercati.",
+      lead: "La laurea in finanza mi ha dato le basi. My Edge Official mi aiuta a vedere i mercati con chiarezza.",
       intro: "Ho studiato finanza e mi sono laureata — lì ho imparato come funzionano il denaro, le aziende e i mercati. Dopo la parete volevo andare oltre: leggere i mercati come un tempo leggevo una via — con calma, passo dopo passo, senza tirare a indovinare. Su My Edge Official l'ho portato nella pratica: le strategie, la teoria che c'è dietro e la psicologia per restare calma quando il mercato non lo è.",
       learnedEyebrow: "Cosa ho approfondito su My Edge",
       topics: [
@@ -260,7 +260,7 @@ export const HUB: Record<Locale, HubCopy> = {
         ["Sentinel", "Un diario di trading che mi mantiene onesta."],
       ],
       quote: "Disciplina, pazienza e fiducia nel processo — uguali sulla roccia e sui mercati.",
-      visit: "Visita My Edge Official",
+      visit: "Clicca qui per saperne di più sul trading",
       note: "My Edge Official è solo formazione, non consulenza finanziaria. Il trading comporta rischi, inclusa la perdita del capitale.",
     },
   },
