@@ -287,56 +287,65 @@ export default function SpiritualityContent() {
     // without it the fixed aurora painted over every non-positioned section and washed
     // the text out.
     <div className="spirit-light relative isolate" lang={lang}>
-      <section className="relative min-h-[60vh] flex items-center justify-center px-6 py-24 text-center">
-        <Container className="max-w-2xl">
-          <motion.div key={lang} initial="hidden" animate="visible" variants={fadeInUp}>
-            <span className="block text-xs tracking-[0.3em] uppercase text-smoke">
-              {copy.eyebrow}
-            </span>
-            <h1 className="font-heading italic text-3xl md:text-5xl text-bone mt-6 leading-snug">
-              &ldquo;{copy.title}&rdquo;
-            </h1>
-            <p className="mt-6 text-bone leading-relaxed max-w-xl mx-auto">{copy.subtitle}</p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-              <a href="#intention" className="btn-primary">
-                {copy.ctaPath}
-              </a>
-              <a href="#live-reading" className="btn-secondary border-accent-warm/50 text-bone hover:border-accent-warm">
-                {copy.ctaLive}
-              </a>
-            </div>
-          </motion.div>
+      <section className="relative min-h-[60vh] flex items-center justify-center px-6 py-24 text-center lg:text-left">
+        <Container className="max-w-2xl lg:max-w-6xl">
+          <div className="lg:grid lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16">
+            <motion.div key={lang} initial="hidden" animate="visible" variants={fadeInUp}>
+              <span className="block text-xs tracking-[0.3em] uppercase text-smoke">
+                {copy.eyebrow}
+              </span>
+              <h1 className="font-heading italic text-3xl md:text-5xl lg:text-6xl text-bone mt-6 leading-snug">
+                &ldquo;{copy.title}&rdquo;
+              </h1>
+              <p className="mt-6 text-bone leading-relaxed max-w-xl mx-auto lg:mx-0 lg:text-lg">{copy.subtitle}</p>
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                <a href="#intention" className="btn-primary">
+                  {copy.ctaPath}
+                </a>
+                <a href="#live-reading" className="btn-secondary border-accent-warm/50 text-bone hover:border-accent-warm">
+                  {copy.ctaLive}
+                </a>
+              </div>
+            </motion.div>
+            <HeroCards />
+          </div>
         </Container>
       </section>
 
       <IntentionCompass lang={lang} />
 
-      <MoonToday lang={lang} />
+      {/* On a wide screen the page reads in pairs, side by side, instead of one long narrow
+          column (Urška, 2026-10-04: "kot da bi po telefonu scrollal"). On a phone each section
+          still follows the last. */}
+      <DesktopPair>
+        <MoonToday lang={lang} />
+        <BreathingPause lang={lang} />
+      </DesktopPair>
 
-      <div id="tarot" className="scroll-mt-24">
-        <TarotReading lang={lang} />
-      </div>
+      <DesktopPair>
+        <div id="tarot" className="scroll-mt-24">
+          <TarotReading lang={lang} />
+        </div>
+        <div id="instant-reading" className="scroll-mt-24">
+          <InstantReading lang={lang} />
+        </div>
+      </DesktopPair>
 
-      <BreathingPause lang={lang} />
-
-      <GratitudePractice lang={lang} />
-
-      <div id="instant-reading" className="scroll-mt-24">
-        <InstantReading lang={lang} />
-      </div>
+      <DesktopPair>
+        <GratitudePractice lang={lang} />
+        <StarCalendarTeaser lang={lang} />
+      </DesktopPair>
 
       <div id="live-reading" className="scroll-mt-24">
         <LiveReadingBooking lang={lang} />
       </div>
 
-      <StarCalendarTeaser lang={lang} />
-
       <section id="reflections" className="border-t border-bone/10 pt-24 pb-24 md:pt-32 md:pb-32">
-        <Container className="max-w-2xl">
+        <Container className="max-w-2xl lg:max-w-6xl">
           <span className="mb-14 block text-center text-xs tracking-[0.3em] uppercase text-smoke">
             {copy.reflectionsEyebrow}
           </span>
-          <div className="space-y-16">
+          <div className="space-y-16 lg:grid lg:grid-cols-2 lg:gap-x-16 lg:gap-y-16 lg:space-y-0">
             {copy.sections.map((section: Section, i: number) => (
               <motion.div
                 key={`${lang}-${i}`}
@@ -399,6 +408,41 @@ export default function SpiritualityContent() {
           </motion.div>
         </Container>
       </section>
+    </div>
+  );
+}
+
+/** Two sections side by side from `lg` up, with a hairline between them; stacked below it. */
+function DesktopPair({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="lg:grid lg:grid-cols-2 lg:items-stretch lg:divide-x lg:divide-bone/10 [&>*]:min-w-0 lg:[&_.max-w-2xl]:px-10 lg:[&_.max-w-3xl]:px-10">
+      {children}
+    </div>
+  );
+}
+
+/** Three of the painted cards fanned out beside the hero, on a wide screen only. */
+function HeroCards() {
+  const cards = [
+    { key: "moon", rotate: -12, x: "-38%", y: "6%" },
+    { key: "sun", rotate: 12, x: "38%", y: "6%" },
+    { key: "star", rotate: 0, x: "0%", y: "-4%" },
+  ];
+  return (
+    <div aria-hidden="true" className="relative hidden h-[30rem] lg:block">
+      <div className="absolute inset-0 rounded-full bg-[radial-gradient(closest-side,rgba(255,246,220,0.9),rgba(255,246,220,0))]" />
+      {cards.map((c, i) => (
+        <motion.div
+          key={c.key}
+          className="absolute left-1/2 top-1/2 h-[22rem] w-[13.5rem] overflow-hidden rounded-2xl border border-gold-400/50 shadow-[0_30px_60px_-30px_rgba(43,36,49,0.6)]"
+          style={{ x: "-50%", y: "-50%" }}
+          initial={{ opacity: 0, rotate: 0, translateX: "0%", translateY: "10%" }}
+          animate={{ opacity: 1, rotate: c.rotate, translateX: c.x, translateY: c.y }}
+          transition={{ duration: 1.2, delay: 0.3 + i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <Image src={`/images/tarot/${c.key}.webp`} alt="" fill sizes="216px" className="object-cover" />
+        </motion.div>
+      ))}
     </div>
   );
 }

@@ -70,8 +70,9 @@ export default function ClimbContent() {
       </section>
 
       {/* her story, chapter by chapter */}
+      {/* Two chapters to a row on a wide screen, so the story doesn't read like a phone scroll. */}
       <section className="pb-16 md:pb-24">
-        <Container className="max-w-2xl">
+        <Container className="max-w-2xl lg:grid lg:max-w-6xl lg:grid-cols-2 lg:gap-x-20">
           {story.chapters.map((chapter, i) => (
             <div key={chapter.title} className="py-10 text-center md:py-14">
               <motion.p {...rise(0)} className="font-heading text-sm tracking-[0.3em] text-gold-600/80">
