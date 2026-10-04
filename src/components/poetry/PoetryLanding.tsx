@@ -109,6 +109,8 @@ export default function PoetryLanding({
         </Container>
       </section>
 
+      {/* On a wide screen the poem and Urška's lines sit side by side. */}
+      <div className="mx-auto lg:grid lg:max-w-7xl lg:grid-cols-[1.25fr_0.75fr] lg:items-start">
       {letter && (
         <section className="px-6 py-12">
           <Container className="max-w-2xl">
@@ -163,7 +165,7 @@ export default function PoetryLanding({
       )}
 
       {quotes.length > 0 && (
-        <section className="border-t border-bone/10 px-6 py-20">
+        <section className="border-t border-bone/10 px-6 py-20 lg:border-t-0 lg:border-l lg:py-12">
           <Container className="max-w-2xl text-center">
             <h2 className="font-heading text-3xl text-bone">{p.quotesTitle}</h2>
             <div className="mt-8 space-y-8">
@@ -182,6 +184,7 @@ export default function PoetryLanding({
           </Container>
         </section>
       )}
+      </div>
 
       <section className="border-t border-bone/10 px-6 py-20">
         <Container className="max-w-xl">

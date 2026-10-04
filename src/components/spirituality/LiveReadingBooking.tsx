@@ -87,7 +87,7 @@ export default function LiveReadingBooking({ lang }: { lang: Lang }) {
 
   return (
     <section className="border-t border-bone/10 py-24 md:py-32">
-      <Container className="max-w-2xl text-center">
+      <Container className="max-w-2xl text-center lg:max-w-5xl">
         <span className="block text-xs tracking-[0.3em] uppercase text-smoke">{labels.heading}</span>
         <p className="mt-6 text-bone leading-relaxed max-w-xl mx-auto">{labels.intro}</p>
 
@@ -103,7 +103,7 @@ export default function LiveReadingBooking({ lang }: { lang: Lang }) {
           </div>
         ) : (
           <form
-            className="mt-12 w-full max-w-lg mx-auto text-left"
+            className="mt-12 w-full max-w-lg mx-auto text-left lg:max-w-none"
             onSubmit={async (e) => {
               e.preventDefault();
               setStatus("submitting");
@@ -153,6 +153,9 @@ export default function LiveReadingBooking({ lang }: { lang: Lang }) {
               />
             </div>
 
+            {/* On a wide screen: what and how on the left, when and who on the right. */}
+            <div className="lg:grid lg:grid-cols-2 lg:gap-14">
+            <div>
             <div>
               <span className="block text-xs tracking-widest uppercase text-bone mb-3">
                 {labels.packageLabel}
@@ -258,7 +261,10 @@ export default function LiveReadingBooking({ lang }: { lang: Lang }) {
               </div>
             </div>
 
-            <div className="mt-8">
+            </div>
+
+            <div>
+            <div className="mt-8 lg:mt-0">
               <span className="block text-xs tracking-widest uppercase text-bone mb-3">{labels.slotLabel}</span>
               <div className="flex gap-3 overflow-x-auto pb-2">
                 {Array.from(slotsByDate.entries()).map(([date, daySlots]) => (
@@ -354,6 +360,8 @@ export default function LiveReadingBooking({ lang }: { lang: Lang }) {
               {status === "submitting" ? labels.submitting : labels.submit}
             </button>
             <p className="mt-4 text-xs text-bone italic">{labels.disclaimer}</p>
+            </div>
+            </div>
           </form>
         )}
       </Container>
