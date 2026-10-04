@@ -5,7 +5,7 @@
  */
 export const business = {
   legalName: "Urška Repušič s.p.",
-  tradingName: "Art by Urška",
+  tradingName: "by Urška",
   legalForm: "samostojna podjetnica / sole proprietor",
   registeredAddress: "Lončarska ulica 14, 2327 Rače",
   country: "Slovenia, European Union",

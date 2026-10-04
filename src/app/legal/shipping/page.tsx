@@ -4,7 +4,7 @@ import ProtectedEmail from "@/components/shared/ProtectedEmail";
 import { ZONE_DESCRIPTIONS, ZONE_LABELS, ZONE_ORDER } from "@/lib/shipping";
 
 export const metadata: Metadata = {
-  title: "Shipping & Delivery — Art by Urška",
+  title: "Shipping & Delivery — by Urška",
   alternates: { canonical: "/legal/shipping" },
 };
 

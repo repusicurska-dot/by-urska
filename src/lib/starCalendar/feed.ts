@@ -45,7 +45,7 @@ export function buildFeed(days: DayReading[], lang: Lang, feedId: string): strin
   const lines = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//Art by Urska//Star Business Calendar//EN",
+    "PRODID:-//by Urska//Star Business Calendar//EN",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     `X-WR-CALNAME:${escapeText(`✨ ${PRODUCT_NAME[lang]}`)}`,

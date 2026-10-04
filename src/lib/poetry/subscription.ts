@@ -52,8 +52,8 @@ export async function createPoetryCheckout(member: Member): Promise<string> {
           product_data: {
             name: sl ? "Pisma iz ateljeja — Poezija Urške" : "Letters from the studio — Poetry by Urška",
             description: sl
-              ? "Tedensko pismo in pesem, slika ob vsakem pismu in arhiv vseh pisem — Art by Urška"
-              : "A weekly letter and poem, a painting beside each one and the full archive — Art by Urška",
+              ? "Tedensko pismo in pesem, slika ob vsakem pismu in arhiv vseh pisem — by Urška"
+              : "A weekly letter and poem, a painting beside each one and the full archive — by Urška",
           },
         },
       },

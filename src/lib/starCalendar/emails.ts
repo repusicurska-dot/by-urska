@@ -16,7 +16,7 @@ function memberUrl() {
 
 function footer(member: Member): string {
   const t = EMAIL_STRINGS[member.lang];
-  return `\n—\n${PRODUCT_NAME[member.lang]} · Art by Urška\n${t.footerManage} ${memberUrl()}\n${t.footerDisclaimer}`;
+  return `\n—\n${PRODUCT_NAME[member.lang]} · by Urška\n${t.footerManage} ${memberUrl()}\n${t.footerDisclaimer}`;
 }
 
 export function loginLink(email: string): string {

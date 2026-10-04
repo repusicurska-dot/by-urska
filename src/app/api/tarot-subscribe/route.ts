@@ -170,7 +170,7 @@ export async function POST(request: NextRequest) {
       optOut ? SUBSCRIBE_LABELS[lang].optOut(optOut) : SUBSCRIBE_LABELS[lang].optOutReply,
       "",
       SUBSCRIBE_LABELS[lang].signOff,
-      "Art by Urška",
+      "by Urška",
     ].join("\n"),
   });
 

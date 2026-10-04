@@ -5,7 +5,7 @@ import Container from "@/components/shared/Container";
 // Unsubscribe page for the weekly tarot card, linked from every weekly email. The actual
 // unsubscribe is a button (POST), so mail link scanners opening the URL change nothing.
 export const metadata: Metadata = {
-  title: "Odjava / Unsubscribe — Art by Urška",
+  title: "Odjava / Unsubscribe — by Urška",
   robots: { index: false, follow: false },
 };
 

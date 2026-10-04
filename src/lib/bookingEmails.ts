@@ -28,7 +28,7 @@ function ics(booking: Booking, audience: "owner" | "visitor") {
           : "Tarot reading with Urška",
       description: owner
         ? `${booking.name} <${booking.email}>\n${p.title.sl}, ${p.price}\n\n${booking.message}`
-        : `${p.title[booking.lang]} (${p.duration[booking.lang]}) — Art by Urška`,
+        : `${p.title[booking.lang]} (${p.duration[booking.lang]}) — by Urška`,
       date: booking.date,
       time: booking.time,
       durationMinutes: p.minutes,
@@ -103,7 +103,7 @@ export function sendVisitorReceived(booking: Booking) {
           "Termin je zadržan zate, rezerviran pa bo, ko ga Urška potrdi. Če želiš kaj dodati, preprosto odgovori na ta email.",
           "",
           "Lep pozdrav,",
-          "Art by Urška",
+          "by Urška",
         ]
       : [
           `Hi ${booking.name},`,
@@ -116,7 +116,7 @@ export function sendVisitorReceived(booking: Booking) {
           "The time is held for you and becomes a booking once Urška confirms it. If you'd like to add anything, just reply to this email.",
           "",
           "Warm wishes,",
-          "Art by Urška",
+          "by Urška",
         ]
     ).join("\n"),
   });
@@ -144,7 +144,7 @@ export function sendVisitorConfirmed(booking: Booking) {
           ...(business.phone ? [`Urškin telefon (samo za potrjene termine): ${business.phone}`] : []),
           "",
           "Se vidimo,",
-          "Art by Urška",
+          "by Urška",
         ]
       : [
           `Hi ${booking.name},`,
@@ -159,7 +159,7 @@ export function sendVisitorConfirmed(booking: Booking) {
           ...(business.phone ? [`Urška's phone (for confirmed readings only): ${business.phone}`] : []),
           "",
           "See you soon,",
-          "Art by Urška",
+          "by Urška",
         ]
     ).join("\n"),
     attachments: [ics(booking, "visitor")],
@@ -183,7 +183,7 @@ export function sendVisitorDeclined(booking: Booking) {
           "ali odgovori na ta email in skupaj najdeta čas, ki ustreza obema.",
           "",
           "Lep pozdrav,",
-          "Art by Urška",
+          "by Urška",
         ]
       : [
           `Hi ${booking.name},`,
@@ -193,7 +193,7 @@ export function sendVisitorDeclined(booking: Booking) {
           "or reply to this email and you'll find a time that works for both of you.",
           "",
           "Warm wishes,",
-          "Art by Urška",
+          "by Urška",
         ]
     ).join("\n"),
   });
@@ -220,7 +220,7 @@ export function sendVisitorReminder(booking: Booking) {
           "Če povezave za video klic še nimaš ali termin ne ustreza več, odgovori na ta email.",
           "",
           "Do jutri,",
-          "Art by Urška",
+          "by Urška",
         ]
       : [
           `Hi ${booking.name},`,
@@ -234,7 +234,7 @@ export function sendVisitorReminder(booking: Booking) {
           "If you don't have the video call link yet, or the time no longer works, just reply to this email.",
           "",
           "Until tomorrow,",
-          "Art by Urška",
+          "by Urška",
         ]
     ).join("\n"),
   });

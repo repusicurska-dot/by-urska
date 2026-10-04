@@ -5,7 +5,7 @@ import StarCalendarLanding from "@/components/starCalendar/StarCalendarLanding";
 import { isAvailable } from "@/lib/starCalendar/validate";
 
 export const metadata: Metadata = {
-  title: "Zvezdni poslovni koledar — Art by Urška",
+  title: "Zvezdni poslovni koledar — by Urška",
   description:
     "Osebni astrološki koledar za posel in življenje: dnevi za pogodbe, začetke, počitek, ljubezen, denar in zdravje — prilagojen tvoji rojstni karti. 7 dni brezplačno, nato 5,99 € na mesec.",
   alternates: { canonical: "/zvezdni-koledar" },

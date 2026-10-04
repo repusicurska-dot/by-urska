@@ -12,11 +12,11 @@ import { PRICE_EUR_CENTS, TRIAL_DAYS, saveMember, type Member, type MemberStatus
 
 /** The product as it appears on the Stripe payment page. */
 const PRODUCT_DESCRIPTION: Record<Lang, string> = {
-  sl: "Osebni mesečni koledar in horoskop — Art by Urška",
-  en: "Personal monthly calendar and horoscope — Art by Urška",
-  hr: "Osobni mjesečni kalendar i horoskop — Art by Urška",
-  de: "Persönlicher Monatskalender und Horoskop — Art by Urška",
-  it: "Calendario e oroscopo personale mensile — Art by Urška",
+  sl: "Osebni mesečni koledar in horoskop — by Urška",
+  en: "Personal monthly calendar and horoscope — by Urška",
+  hr: "Osobni mjesečni kalendar i horoskop — by Urška",
+  de: "Persönlicher Monatskalender und Horoskop — by Urška",
+  it: "Calendario e oroscopo personale mensile — by Urška",
 };
 
 export async function createSubscriptionCheckout(member: Member): Promise<string> {

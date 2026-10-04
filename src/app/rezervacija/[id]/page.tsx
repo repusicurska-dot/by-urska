@@ -8,7 +8,7 @@ import { verify } from "@/lib/signing";
 // Urška's private page for one booking request, reached from the link in her notification
 // email. Signed link, not indexed, Slovenian only.
 export const metadata: Metadata = {
-  title: "Rezervacija — Art by Urška",
+  title: "Rezervacija — by Urška",
   robots: { index: false, follow: false },
 };
 

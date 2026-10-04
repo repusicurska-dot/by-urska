@@ -73,7 +73,7 @@ export default function LiveReadingBooking({ lang }: { lang: Lang }) {
     const start = new Date(y, m - 1, d, h, min);
     const durationMinutes = selectedPackage.minutes;
     const ics = buildIcsEvent({
-      title: `${selectedPackage.title[lang]} — Art by Urška`,
+      title: `${selectedPackage.title[lang]} — by Urška`,
       description:
         readingLang === "sl"
           ? "Predlagan termin za živo tarot branje. Urška bo termin potrdila po emailu."

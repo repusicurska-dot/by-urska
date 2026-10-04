@@ -11,7 +11,7 @@ import { useLanguage } from "@/i18n/LanguageProvider";
 
 const COPY = {
   sl: {
-    eyebrow: "Art by Urška · nova naročnina",
+    eyebrow: "by Urška · nova naročnina",
     title: "Zvezdni poslovni koledar",
     subtitle:
       "Poveži svoje poslovne in življenjske odločitve z ritmom lune in planetov. Vsak dan veš, ali je čas za podpis, za nov začetek, za počitek — ali da ne začenjaš ničesar.",
@@ -58,7 +58,7 @@ const COPY = {
     disclaimer: "Duhovna in razvedrilna vsebina — ne nadomešča finančnega, pravnega ali zdravstvenega nasveta.",
   },
   en: {
-    eyebrow: "Art by Urška · new subscription",
+    eyebrow: "by Urška · new subscription",
     title: "Star Business Calendar",
     subtitle:
       "Align your business and life decisions with the rhythm of the Moon and planets. Every day you know whether it's time to sign, to begin, to rest — or to start nothing at all.",
@@ -105,7 +105,7 @@ const COPY = {
     disclaimer: "Spiritual and entertainment content — not a substitute for financial, legal or medical advice.",
   },
   hr: {
-    eyebrow: "Art by Urška · nova pretplata",
+    eyebrow: "by Urška · nova pretplata",
     title: "Zvjezdani poslovni kalendar",
     subtitle:
       "Poveži svoje poslovne i životne odluke s ritmom Mjeseca i planeta. Svakog dana znaš je li vrijeme za potpis, za novi početak, za odmor — ili da ne započinješ ništa.",
@@ -152,7 +152,7 @@ const COPY = {
     disclaimer: "Duhovni i zabavni sadržaj — ne zamjenjuje financijski, pravni ni zdravstveni savjet.",
   },
   de: {
-    eyebrow: "Art by Urška · neues Abo",
+    eyebrow: "by Urška · neues Abo",
     title: "Sternen-Geschäftskalender",
     subtitle:
       "Bring deine geschäftlichen und persönlichen Entscheidungen in den Rhythmus von Mond und Planeten. Jeden Tag weißt du, ob die Zeit zum Unterschreiben ist, für einen Neuanfang, für Ruhe — oder dafür, gar nichts zu beginnen.",
@@ -199,7 +199,7 @@ const COPY = {
     disclaimer: "Spiritueller und unterhaltender Inhalt — kein Ersatz für finanzielle, rechtliche oder medizinische Beratung.",
   },
   it: {
-    eyebrow: "Art by Urška · nuovo abbonamento",
+    eyebrow: "by Urška · nuovo abbonamento",
     title: "Calendario stellare d'affari",
     subtitle:
       "Allinea le tue decisioni di lavoro e di vita al ritmo della Luna e dei pianeti. Ogni giorno sai se è il momento di firmare, di cominciare, di riposare — o di non iniziare nulla.",

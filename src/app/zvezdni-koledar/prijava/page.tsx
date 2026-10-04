@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import StarCalendarLogin from "@/components/starCalendar/StarCalendarLogin";
 
 export const metadata: Metadata = {
-  title: "Prijava — Art by Urška",
+  title: "Prijava — by Urška",
   robots: { index: false },
 };
 

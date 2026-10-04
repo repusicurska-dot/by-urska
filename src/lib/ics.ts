@@ -24,7 +24,7 @@ export function buildIcsEvent(params: {
   const lines = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//Art by Urska//Live Tarot Reading//EN",
+    "PRODID:-//by Urska//Live Tarot Reading//EN",
     "CALSCALE:GREGORIAN",
     "BEGIN:VEVENT",
     `UID:${params.uid}`,
@@ -64,7 +64,7 @@ export function buildIcsEventInZone(params: {
   const lines = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//Art by Urska//Live Tarot Reading//EN",
+    "PRODID:-//by Urska//Live Tarot Reading//EN",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     "BEGIN:VEVENT",

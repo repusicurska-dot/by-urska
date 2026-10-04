@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
       emailed = await sendEmail({
         to: email,
         subject: `Tarot — ${topic.title[readingLang]}`,
-        text: `${readingAsText(reading, topic.title[readingLang])}\n\n${link}\n\n— Art by Urška`,
+        text: `${readingAsText(reading, topic.title[readingLang])}\n\n${link}\n\n— by Urška`,
       });
     }
     return NextResponse.json({ reading, emailed });

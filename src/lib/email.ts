@@ -5,7 +5,7 @@
  * Needs three environment variables in Vercel (and .env.local for local testing):
  *   RESEND_API_KEY  — from resend.com → API Keys
  *   EMAIL_FROM      — a sender on the domain verified in Resend,
- *                     e.g. "Art by Urška <obvestila@byurska.com>"
+ *                     e.g. "by Urška <obvestila@byurska.com>"
  *   OWNER_EMAIL     — Urška's own inbox, where new messages and bookings land
  *
  * Until all three are set, the forms keep their old behaviour (validate, accept, deliver

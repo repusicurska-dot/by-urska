@@ -25,7 +25,7 @@ export default function Logo({
   wordmark = false,
   iconClassName = "h-8 w-8",
   wordmarkClassName = "",
-  label = "Art by Urška",
+  label = "by Urška",
 }: LogoProps) {
   return (
     <span className={`inline-flex items-center gap-3 ${className}`}>
