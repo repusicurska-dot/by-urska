@@ -62,13 +62,15 @@ export default function FinanceContent() {
         </defs>
       </svg>
 
-      <section className="pb-20 pt-24 text-center md:pb-28 md:pt-32">
-        <Container className="max-w-3xl">
+      <section className="pb-20 pt-24 text-center md:pb-28 md:pt-32 lg:text-left">
+        {/* On a wide screen the logo stands beside the words instead of above them. */}
+        <Container className="max-w-3xl lg:grid lg:max-w-6xl lg:grid-cols-[auto_1fr] lg:items-center lg:gap-20">
           <div className="mx-auto w-fit">
-            <WorldLogo world="finance" className="h-44 w-44 md:h-52 md:w-52" delay={0.2} sizes="208px" />
+            <WorldLogo world="finance" className="h-44 w-44 md:h-52 md:w-52 lg:h-80 lg:w-80" delay={0.2} sizes="320px" />
           </div>
+          <div>
           <motion.h1
-            className="mt-10 font-heading text-4xl leading-[1.05] text-bone md:text-6xl"
+            className="mt-10 font-heading text-4xl leading-[1.05] text-bone md:text-6xl lg:mt-0"
             initial={reduceMotion ? false : { opacity: 0, y: 24, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 1.3, delay: 0.5, ease: EASE }}
@@ -76,7 +78,7 @@ export default function FinanceContent() {
             {f.lead}
           </motion.h1>
           <motion.p
-            className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-bone/75"
+            className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-bone/75 lg:mx-0"
             initial={reduceMotion ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.8, ease: EASE }}
@@ -93,6 +95,7 @@ export default function FinanceContent() {
               <ArrowUpRight size={16} />
             </a>
           </motion.div>
+          </div>
         </Container>
       </section>
 
