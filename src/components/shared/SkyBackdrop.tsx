@@ -2,7 +2,7 @@ import Image from "next/image";
 
 /**
  * The site's sky: soft clouds with the light breaking through, fixed behind every page.
- * Since 2026-10-03 it is Urška's new, lighter sky (sky-light-2560.webp, enlarged with lanczos3
+ * Since 2026-10-04 it is Urška's golden sky (sky-golden-2560.webp, enlarged with lanczos3
  * from her image); the old 512×512 painting showed blurry once stretched to the screen.
  * The veils over it are kept thin so the sky comes through (Urška, 2026-10-04).
  */
@@ -11,7 +11,7 @@ export default function SkyBackdrop() {
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
       <div className="ambient-motion sky-drift absolute inset-[-6%]">
         <Image
-          src="/images/sky-light-2560.webp"
+          src="/images/sky-golden-2560.webp"
           alt=""
           fill
           priority
