@@ -9,6 +9,7 @@ import { OPEN_COOKIE_PREFERENCES_EVENT } from "./cookies/CookieBanner";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { HUB } from "@/content/hub";
+import { LUMORA_COPY } from "@/content/lumora";
 import { WORLDS } from "@/lib/worlds";
 
 const legalLinks = [
@@ -63,6 +64,11 @@ export default function Footer() {
                   )}
                 </li>
               ))}
+              <li>
+                <Link href="/lumora" className="hover:text-bone transition-colors">
+                  {LUMORA_COPY[locale].footerLink}
+                </Link>
+              </li>
               <li>
                 <Link href="/zvezdni-koledar" className="hover:text-bone transition-colors">
                   {t.footer.starCalendar}

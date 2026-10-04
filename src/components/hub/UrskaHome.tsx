@@ -10,6 +10,7 @@ import WorldEmblem from "@/components/shared/WorldEmblem";
 import WorldLogo from "@/components/shared/WorldLogo";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { HUB } from "@/content/hub";
+import { LumoraTeaser } from "@/components/lumora/LumoraBits";
 import { WORLDS, type World } from "@/lib/worlds";
 
 /**
@@ -55,6 +56,9 @@ export default function UrskaHome() {
           </div>
         </Container>
       </section>
+
+      {/* Urška's iPhone app, right after the worlds. */}
+      <LumoraTeaser />
 
       {/* -------------------------------- Her story ------------------------------- */}
       <section className="relative py-24 md:py-36">

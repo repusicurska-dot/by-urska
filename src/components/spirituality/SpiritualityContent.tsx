@@ -13,6 +13,7 @@ import MoonToday from "./MoonToday";
 import BreathingPause from "./BreathingPause";
 import GratitudePractice from "./GratitudePractice";
 import StarCalendarTeaser from "@/components/starCalendar/StarCalendarTeaser";
+import { LumoraTeaser } from "@/components/lumora/LumoraBits";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import type { Lang } from "./lang";
 
@@ -313,6 +314,8 @@ export default function SpiritualityContent() {
       </section>
 
       <IntentionCompass lang={lang} />
+
+      <LumoraTeaser />
 
       {/* On a wide screen the page reads in pairs, side by side, instead of one long narrow
           column (Urška, 2026-10-04: "kot da bi po telefonu scrollal"). On a phone each section

@@ -22,6 +22,7 @@ const STATIC_ROUTES = [
   "/legal/shipping",
   "/legal/returns",
   "/legal/notice",
+  "/lumora",
   "/lumora/support",
   "/lumora/privacy",
 ];
