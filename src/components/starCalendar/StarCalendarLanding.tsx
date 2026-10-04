@@ -310,7 +310,9 @@ export default function StarCalendarLanding({
 
   return (
     <div className="spirit-light relative isolate" lang={lang}>
-      <section className="px-6 pt-20 pb-16 text-center md:pt-28">
+      {/* On a wide screen the title and the calendar preview sit side by side. */}
+      <div className="mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:items-center lg:pt-12">
+      <section className="px-6 pt-20 pb-16 text-center md:pt-28 lg:pt-0">
         <Container className="max-w-3xl">
           <p className="text-xs uppercase tracking-[0.3em] text-smoke">{t.eyebrow}</p>
           <h1 className="mt-5 font-heading text-4xl text-bone md:text-6xl">✨ {t.title}</h1>
@@ -357,6 +359,7 @@ export default function StarCalendarLanding({
           </div>
         </Container>
       </section>
+      </div>
 
       <section className="border-t border-bone/10 px-6 py-20">
         <Container className="max-w-5xl">
@@ -373,7 +376,9 @@ export default function StarCalendarLanding({
         </Container>
       </section>
 
-      <section id="narocnina" className="scroll-mt-24 border-t border-bone/10 px-6 py-20">
+      {/* The subscription and the questions about it, side by side on a wide screen. */}
+      <div className="mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:items-start lg:border-t lg:border-bone/10">
+      <section id="narocnina" className="scroll-mt-24 border-t border-bone/10 px-6 py-20 lg:border-t-0">
         <Container className="max-w-xl">
           <div className="rounded-3xl border border-accent-warm/40 bg-paper/90 p-7 shadow-[0_30px_70px_-40px_rgba(75,58,94,0.5)] md:p-10">
             <p className="text-center font-heading text-4xl text-bone">{t.priceTitle}</p>
@@ -463,7 +468,7 @@ export default function StarCalendarLanding({
         </Container>
       </section>
 
-      <section className="border-t border-bone/10 px-6 py-20">
+      <section className="border-t border-bone/10 px-6 py-20 lg:border-t-0">
         <Container className="max-w-2xl">
           <h2 className="text-center font-heading text-3xl text-bone">{t.faqTitle}</h2>
           <div className="mt-8 space-y-3">
@@ -477,6 +482,7 @@ export default function StarCalendarLanding({
           <p className="mt-10 text-center text-xs italic text-smoke">{t.disclaimer}</p>
         </Container>
       </section>
+      </div>
     </div>
   );
 }

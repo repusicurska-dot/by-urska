@@ -9,15 +9,16 @@ export default function LanguageSwitcher({ compact = false }: { compact?: boolea
 
   if (compact) {
     return (
-      <label className="flex items-center gap-1 text-xs uppercase tracking-widest text-bone/85">
+      <label className="flex items-center gap-1 text-xs font-medium uppercase tracking-widest text-bone">
         <span className="sr-only">{t.footer.language}</span>
         <select
           value={locale}
           onChange={(e) => setLocale(e.target.value as (typeof LOCALES)[number])}
-          className="cursor-pointer bg-transparent uppercase tracking-widest text-bone/85 focus:outline-none"
+          className="cursor-pointer bg-transparent font-medium uppercase tracking-widest text-bone [color-scheme:light] focus:outline-none"
         >
           {LOCALES.map((l) => (
-            <option key={l} value={l} className="text-ink">
+            // ink is the page ground (cream), which made the names invisible in the white list.
+            <option key={l} value={l} className="bg-paper text-bone">
               {LOCALE_LABEL[l]}
             </option>
           ))}
