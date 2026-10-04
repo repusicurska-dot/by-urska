@@ -1,19 +1,17 @@
 import Image from "next/image";
 
 /**
- * The site's sky: Urška's painted clouds with the light breaking through, fixed behind every
- * page. The source is only 512×512 and carries JPEG blocks, which showed as pixels once it was
- * stretched to the screen (Teo, 2026-09-21). sky-soft-2560.webp is made from it with the
- * blocks taken out first (median 5), then enlarged and softened (lanczos3, blur 6) — so it
- * reads as a soft painted sky, with a fine canvas grain on top for texture. A larger original
- * would let it be sharper.
+ * The site's sky: soft clouds with the light breaking through, fixed behind every page.
+ * Since 2026-10-03 it is Urška's new, lighter sky (sky-light-2560.webp, enlarged with lanczos3
+ * from her 1672×941 image); the old 512×512 painting showed blurry once stretched to the screen.
+ * It is already light, so the veils over it are thinner than they were.
  */
 export default function SkyBackdrop() {
   return (
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
       <div className="ambient-motion sky-drift absolute inset-[-6%]">
         <Image
-          src="/images/sky-soft-2560.webp"
+          src="/images/sky-light-2560.webp"
           alt=""
           fill
           priority
@@ -24,7 +22,7 @@ export default function SkyBackdrop() {
         />
       </div>
 
-      {/* A woven canvas grain, so the enlarged painting reads as a canvas rather than a photo. */}
+      {/* A woven canvas grain, so the sky reads as a painting on canvas. */}
       <div
         className="absolute inset-0 opacity-[0.09] mix-blend-multiply"
         style={{
@@ -40,12 +38,12 @@ export default function SkyBackdrop() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(75% 60% at 50% 18%, rgba(255,252,245,0.3) 0%, rgba(253,248,238,0.45) 45%, rgba(250,245,236,0.6) 100%)",
+            "radial-gradient(75% 60% at 50% 18%, rgba(255,252,245,0.1) 0%, rgba(253,248,238,0.25) 45%, rgba(250,245,236,0.4) 100%)",
         }}
       />
       <div
         className="absolute inset-0"
-        style={{ background: "linear-gradient(180deg, rgba(255,253,248,0.2) 0%, rgba(250,244,234,0.34) 55%, rgba(244,238,229,0.5) 100%)" }}
+        style={{ background: "linear-gradient(180deg, rgba(255,253,248,0.1) 0%, rgba(250,244,234,0.2) 55%, rgba(244,238,229,0.35) 100%)" }}
       />
     </div>
   );
