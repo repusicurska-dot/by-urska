@@ -3,7 +3,7 @@ import LegalPageShell from "@/components/legal/LegalPageShell";
 import ProtectedEmail from "@/components/shared/ProtectedEmail";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy — Art by Urška",
+  title: "Cookie Policy — by Urška",
   alternates: { canonical: "/legal/cookies" },
 };
 

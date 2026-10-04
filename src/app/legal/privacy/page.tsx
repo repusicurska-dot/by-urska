@@ -4,7 +4,7 @@ import { business } from "@/content/business";
 import ProtectedEmail from "@/components/shared/ProtectedEmail";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Art by Urška",
+  title: "Privacy Policy — by Urška",
   alternates: { canonical: "/legal/privacy" },
 };
 

@@ -35,7 +35,7 @@ const gothic = UnifrakturMaguntia({
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
-    default: "Art by Urška",
+    default: "by Urška",
     template: "%s",
   },
   description:
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   // Opens full-screen with its own icon when added to an iPhone home screen.
   appleWebApp: { capable: true, title: "Spirituality", statusBarStyle: "black-translucent" },
   openGraph: {
-    title: "Art by Urška",
+    title: "by Urška",
     description: "Original paintings by Urška — a storytelling gallery of mood, memory, and light.",
     type: "website",
   },

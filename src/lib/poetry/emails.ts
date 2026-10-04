@@ -12,8 +12,8 @@ function archiveUrl() {
 
 function footer(member: Member): string {
   return member.lang === "sl"
-    ? `\n—\nPisma iz ateljeja · Art by Urška\nNaročnino urediš ali odpoveš na ${archiveUrl()}`
-    : `\n—\nLetters from the studio · Art by Urška\nManage or cancel your subscription at ${archiveUrl()}`;
+    ? `\n—\nPisma iz ateljeja · by Urška\nNaročnino urediš ali odpoveš na ${archiveUrl()}`
+    : `\n—\nLetters from the studio · by Urška\nManage or cancel your subscription at ${archiveUrl()}`;
 }
 
 export function sendPoetryWelcome(member: Member) {

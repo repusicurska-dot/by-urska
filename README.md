@@ -1,4 +1,4 @@
-# Art by Urška
+# by Urška
 
 International, storytelling-driven art gallery and store for Urška's original paintings.
 Next.js (App Router) + TypeScript + Tailwind CSS v4 + Framer Motion.

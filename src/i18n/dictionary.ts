@@ -261,7 +261,7 @@ const en: Dictionary = {
     close: "Close",
     skipToContent: "Skip to content",
     tagline: "Original paintings, made in Slovenia — shipped worldwide",
-    home: "Art by Urška — Home",
+    home: "by Urška — Home",
   },
   footer: {
     tagline: "Original paintings, made in Slovenia, shared with the world.",
@@ -553,7 +553,7 @@ const sl: Dictionary = {
     close: "Zapri",
     skipToContent: "Skoči na vsebino",
     tagline: "Originalne slike, ustvarjene v Sloveniji — poslane po vsem svetu",
-    home: "Art by Urška — domov",
+    home: "by Urška — domov",
   },
   footer: {
     tagline: "Originalne slike, ustvarjene v Sloveniji, deljene s svetom.",
@@ -845,7 +845,7 @@ const hr: Dictionary = {
     close: "Zatvori",
     skipToContent: "Preskoči na sadržaj",
     tagline: "Originalne slike, nastale u Sloveniji — dostava u cijeli svijet",
-    home: "Art by Urška — početna",
+    home: "by Urška — početna",
   },
   footer: {
     tagline: "Originalne slike, nastale u Sloveniji, podijeljene sa svijetom.",
@@ -1137,7 +1137,7 @@ const de: Dictionary = {
     close: "Schließen",
     skipToContent: "Zum Inhalt springen",
     tagline: "Originalgemälde aus Slowenien — weltweiter Versand",
-    home: "Art by Urška — Startseite",
+    home: "by Urška — Startseite",
   },
   footer: {
     tagline: "Originalgemälde aus Slowenien, mit der Welt geteilt.",
@@ -1429,7 +1429,7 @@ const it: Dictionary = {
     close: "Chiudi",
     skipToContent: "Vai al contenuto",
     tagline: "Dipinti originali, creati in Slovenia — spedizione in tutto il mondo",
-    home: "Art by Urška — home",
+    home: "by Urška — home",
   },
   footer: {
     tagline: "Dipinti originali, creati in Slovenia, condivisi con il mondo.",
