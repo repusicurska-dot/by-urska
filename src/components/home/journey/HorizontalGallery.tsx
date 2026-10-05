@@ -8,8 +8,8 @@ import { Artwork } from "@/content/types";
 import CustomCursor from "./CustomCursor";
 import { useLanguage } from "@/i18n/LanguageProvider";
 
-// Sized by the screen's height too, so a 4:5 card always fits inside the pinned viewport.
-const CARD_WIDTHS = ["min(30vw, 54vh)", "min(26vw, 48vh)", "min(32vw, 56vh)", "min(27vw, 50vh)", "min(29vw, 52vh)"];
+// Sized by the screen's height too, so a 4:5 card stays well inside the pinned viewport (about half its height).
+const CARD_WIDTHS = ["min(22vw, 38vh)", "min(19vw, 34vh)", "min(24vw, 40vh)", "min(20vw, 35vh)", "min(21vw, 37vh)"];
 
 function GalleryCard({
   artwork,
