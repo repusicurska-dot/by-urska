@@ -8,17 +8,56 @@ import WorldLogo from "@/components/shared/WorldLogo";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { HUB } from "@/content/hub";
 import { CLIMB_STORY } from "@/content/climbStory";
-import { CLIMB_GALLERY_TITLE, CLIMB_PHOTOS } from "@/content/climbPhotos";
+import { CHAPTER_PHOTOS, type ClimbPhoto } from "@/content/climbPhotos";
 import Image from "next/image";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
+
+/**
+ * A chapter's photos as one small composition: two stand side by side, the second a little
+ * lower; with three, the first spans the width and the other two sit beneath it.
+ */
+function ChapterPhotos({ photos }: { photos: ClimbPhoto[] }) {
+  const sizes = "(min-width: 1024px) 28vw, 50vw";
+  if (photos.length === 1) {
+    const [only] = photos;
+    return (
+      <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+        <Image src={only.src} alt={only.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+      </div>
+    );
+  }
+  const [first, ...rest] = photos;
+  if (photos.length === 2) {
+    return (
+      <div className="grid grid-cols-2 gap-4">
+        {photos.map((shot, i) => (
+          <div key={shot.src} className={`relative aspect-[3/4] overflow-hidden rounded-2xl ${i === 1 ? "mt-12" : ""}`}>
+            <Image src={shot.src} alt={shot.alt} fill sizes={sizes} className="object-cover" />
+          </div>
+        ))}
+      </div>
+    );
+  }
+  return (
+    <div className="grid grid-cols-2 gap-4">
+      <div className="relative col-span-2 aspect-[16/10] overflow-hidden rounded-2xl">
+        <Image src={first.src} alt={first.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+      </div>
+      {rest.slice(0, 2).map((shot) => (
+        <div key={shot.src} className="relative aspect-square overflow-hidden rounded-2xl">
+          <Image src={shot.src} alt={shot.alt} fill sizes={sizes} className="object-cover" />
+        </div>
+      ))}
+    </div>
+  );
+}
 
 /** Climb by Urška — her story on the wall, in her own words, chapter by chapter. */
 export default function ClimbContent() {
   const { locale } = useLanguage();
   const c = HUB[locale];
   const story = CLIMB_STORY[locale];
-  const gallery = CLIMB_GALLERY_TITLE[locale];
   const reduceMotion = useReducedMotion();
   const rise = (delay: number) => ({
     initial: reduceMotion ? false : { opacity: 0, y: 30 },
@@ -72,64 +111,50 @@ export default function ClimbContent() {
         </Container>
       </section>
 
-      {/* her story, chapter by chapter */}
-      {/* Two chapters to a row on a wide screen, so the story doesn't read like a phone scroll. */}
+      {/* Her story, chapter by chapter, each beside the photos that belong to it — on a wide
+          screen the text and the photos swap sides from one chapter to the next. */}
       <section className="pb-16 md:pb-24">
-        <Container className="max-w-2xl lg:grid lg:max-w-6xl lg:grid-cols-2 lg:gap-x-20">
-          {story.chapters.map((chapter, i) => (
-            <div key={chapter.title} className="py-10 text-center md:py-14">
-              <motion.p {...rise(0)} className="font-heading text-sm tracking-[0.3em] text-gold-600/80">
-                {String(i + 1).padStart(2, "0")}
-              </motion.p>
-              <motion.h2 {...rise(0.05)} className="mt-3 font-heading text-3xl uppercase tracking-[0.12em] text-bone md:text-4xl">
-                {chapter.title}
-              </motion.h2>
-              <motion.span {...rise(0.1)} aria-hidden="true" className="mx-auto mt-6 block h-px w-12 bg-gold-400/60" />
-              <motion.div {...rise(0.15)} className="mt-6 space-y-4">
-                {chapter.paragraphs.map((p) => (
-                  <p key={p} className="text-lg leading-relaxed text-bone/80">
-                    {p}
-                  </p>
-                ))}
-              </motion.div>
-              {chapter.quote && (
-                <motion.blockquote {...rise(0.2)} className="mx-auto mt-12 max-w-xl">
-                  <span aria-hidden="true" className="block font-heading text-7xl leading-none text-gold-400/60">
-                    “
-                  </span>
-                  <p className="-mt-5 font-heading text-2xl italic leading-snug text-bone md:text-3xl">{chapter.quote}</p>
-                </motion.blockquote>
-              )}
-            </div>
-          ))}
-        </Container>
-      </section>
-
-      {/* her photos, from the first wall as a child to the crags */}
-      <section className="pb-20 md:pb-28">
-        <Container className="max-w-6xl">
-          <div className="text-center">
-            <motion.p {...rise(0)} className="text-xs uppercase tracking-[0.4em] text-gold-600">
-              {gallery.eyebrow}
-            </motion.p>
-            <motion.h2 {...rise(0.05)} className="mt-4 font-heading text-3xl uppercase tracking-[0.12em] text-bone md:text-4xl">
-              {gallery.title}
-            </motion.h2>
-          </div>
-          <div className="mt-12 gap-5 [column-fill:_balance] sm:columns-2 lg:columns-3">
-            {CLIMB_PHOTOS.map((shot) => (
-              <div key={shot.src} className="mb-5 break-inside-avoid overflow-hidden rounded-2xl">
-                <Image
-                  src={shot.src}
-                  alt={shot.alt}
-                  width={shot.width}
-                  height={shot.height}
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="h-auto w-full"
-                />
+        <Container className="max-w-2xl lg:max-w-6xl">
+          {story.chapters.map((chapter, i) => {
+            const photos = CHAPTER_PHOTOS[i] ?? [];
+            const flip = i % 2 === 1;
+            return (
+              <div
+                key={chapter.title}
+                className="py-12 md:py-16 lg:grid lg:grid-cols-2 lg:items-center lg:gap-x-16"
+              >
+                <div className={`text-center ${flip ? "lg:order-2" : ""}`}>
+                  <motion.p {...rise(0)} className="font-heading text-sm tracking-[0.3em] text-gold-600/80">
+                    {String(i + 1).padStart(2, "0")}
+                  </motion.p>
+                  <motion.h2 {...rise(0.05)} className="mt-3 font-heading text-3xl uppercase tracking-[0.12em] text-bone md:text-4xl">
+                    {chapter.title}
+                  </motion.h2>
+                  <motion.span {...rise(0.1)} aria-hidden="true" className="mx-auto mt-6 block h-px w-12 bg-gold-400/60" />
+                  <motion.div {...rise(0.15)} className="mt-6 space-y-4">
+                    {chapter.paragraphs.map((p) => (
+                      <p key={p} className="text-lg leading-relaxed text-bone/80">
+                        {p}
+                      </p>
+                    ))}
+                  </motion.div>
+                  {chapter.quote && (
+                    <motion.blockquote {...rise(0.2)} className="mx-auto mt-12 max-w-xl">
+                      <span aria-hidden="true" className="block font-heading text-7xl leading-none text-gold-400/60">
+                        “
+                      </span>
+                      <p className="-mt-5 font-heading text-2xl italic leading-snug text-bone md:text-3xl">{chapter.quote}</p>
+                    </motion.blockquote>
+                  )}
+                </div>
+                {photos.length > 0 && (
+                  <motion.div {...rise(0.2)} className={`mt-10 lg:mt-0 ${flip ? "lg:order-1" : ""}`}>
+                    <ChapterPhotos photos={photos} />
+                  </motion.div>
+                )}
               </div>
-            ))}
-          </div>
+            );
+          })}
         </Container>
       </section>
 
