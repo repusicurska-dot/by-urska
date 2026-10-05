@@ -8,14 +8,12 @@ Zadnjič posodobljeno: 2026-10-05
 
 ---
 
-## 0. Iz zapiska „Art to do!“ (2026-10-05) — narejeno, prosim potrdi
+## 0. Iz zapiska „Art to do!“ (2026-10-05) — narejeno
 
 - [x] **Tri nove slike** (Black and White Collection): *Voice of the Night* (volk, 70 × 130 cm,
       2.400 €), *Wild Spirit* (konj, 2.200 €), *Becoming* (bela figura, 1.500 €). Imena, cene in
       besedila „Meaning“/„For the collector“ sem določil jaz (ti si rekla „ti določi vse“).
-      Pesmi ob njih so tvoje (iz 100 pesmi). **Potrdi ali popravi:**
-      - [ ] mere konja (**100 × 70 cm**) in bele figure (**50 × 70 cm**) — ocenjene s fotografij
-      - [ ] imena in cene vseh treh
+      Pesmi ob njih so tvoje (iz 100 pesmi). Mere, imena in cene je Urška potrdila 2026-10-05.
 - [x] Vrstni red: modra → roza → dve mali → črne (volk prvi) → bela figura. Tudi fotografije
       „What they look like on a wall“ so zdaj razvrščene po slikah v istem vrstnem redu.
 - [x] „Artist's note“ pri The Prophecy (in pri vseh črno-belih) je tvoje besedilo o Black and

@@ -216,8 +216,7 @@ const ACRYLIC_CARE =
  * pending her review. Every piece is dated 2026 at her request.
  *
  * The three newest (wolf, horse, white figure) were named and priced on her behalf
- * (2026-10-05, "ti določi vse"); only the wolf's size is hers (70 × 130 cm) — the horse and
- * the white figure are measured from photos and need her confirmation (see STANJE.md).
+ * (2026-10-05, "ti določi vse"); she confirmed the names, prices and sizes the same day.
  */
 export const artworks: Artwork[] = [
   {
