@@ -6,16 +6,16 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import type { Locale } from "@/i18n/locales";
-import type { LetterView } from "@/lib/poetry/view";
+import type { FreePoemView } from "@/lib/poetry/freePoem";
 
 /**
  * Poetry by Urška.
  *
  * No subscription any more (Urška, 2026-10-03): like the weekly scratch card, one poem a week,
- * free for everyone, and a new one every Monday. The full Poetry by Urška is coming soon.
+ * free for everyone, and a new one every Monday. Since 2026-10-05 the poem of the week is one of
+ * her own hundred (content/freePoems.ts). The full Poetry by Urška is coming soon.
  *
- * The page speaks all five site languages; the poems themselves are written in Slovenian and
- * English, so the reader picks one of those.
+ * The page speaks all five site languages; her poems are written in English.
  */
 
 const WEEKLY: Record<Locale, { subtitle: string; eyebrow: string; next: string; days: string; soonTitle: string; soonText: string }> = {
@@ -68,28 +68,22 @@ function daysUntilNextMonday(): number {
 }
 
 export default function PoetryLanding({
-  sample,
+  poem,
   quotes,
 }: {
-  /** This week's poem, in both languages it exists in. */
-  sample: { sl: LetterView; en: LetterView } | null;
+  /** This week's poem. */
+  poem: FreePoemView | null;
   quotes: string[];
 }) {
   const { locale, t } = useLanguage();
   const p = t.poetry;
   const w = WEEKLY[locale];
-  // The language provider only knows the visitor's language after hydration, so the poem
-  // follows the site language until the reader picks one of the two it is written in.
-  const [chosenLang, setLetterLang] = useState<"sl" | "en" | null>(null);
-  const letterLang: "sl" | "en" = chosenLang ?? (locale === "sl" ? "sl" : "en");
   // On the visitor's own clock, after hydration.
   const [daysLeft, setDaysLeft] = useState<number | null>(null);
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setDaysLeft(daysUntilNextMonday());
   }, []);
-
-  const letter = sample?.[letterLang] ?? null;
 
   return (
     <div className="spirit-light relative isolate">
@@ -111,48 +105,36 @@ export default function PoetryLanding({
 
       {/* On a wide screen the poem and Urška's lines sit side by side. */}
       <div className="mx-auto lg:grid lg:max-w-7xl lg:grid-cols-[1.25fr_0.75fr] lg:items-start">
-      {letter && (
+      {poem && (
         <section className="px-6 py-12">
           <Container className="max-w-2xl">
             <p className="text-center text-xs uppercase tracking-[0.3em] text-smoke">{w.eyebrow}</p>
-            <div className="mt-5 flex justify-center gap-2" role="group" aria-label="Poem language">
-              {(["sl", "en"] as const).map((l) => (
-                <button
-                  key={l}
-                  type="button"
-                  onClick={() => setLetterLang(l)}
-                  aria-pressed={letterLang === l}
-                  className={`rounded-full border px-3 py-1 text-xs uppercase tracking-widest ${
-                    letterLang === l ? "border-bone/60 text-bone" : "border-bone/15 text-smoke"
-                  }`}
-                >
-                  {l === "sl" ? "Slovensko" : "English"}
-                </button>
-              ))}
-            </div>
 
-            <article className="reading-panel mt-6 rounded-3xl px-6 py-8 md:px-10 md:py-10" lang={letterLang}>
-              <h2 className="text-center font-heading text-3xl text-bone">{letter.title}</h2>
-              {letter.artwork && (
-                <Link href={`/collection/${letter.artwork.slug}`} className="mt-6 block">
+            <article className="reading-panel mt-6 rounded-3xl px-6 py-8 md:px-10 md:py-10" lang="en">
+              <p className="text-center text-xs uppercase tracking-[0.3em] text-smoke">{poem.number} / 100</p>
+              <h2 className="mt-3 text-center font-heading text-3xl text-bone">{poem.title}</h2>
+              {poem.artwork && (
+                <Link href={`/artworks/${poem.artwork.slug}`} className="mt-6 block">
                   <Image
-                    src={letter.artwork.image}
-                    alt={letter.artwork.title}
+                    src={poem.artwork.image}
+                    alt={poem.artwork.title}
                     width={900}
                     height={600}
                     className="mx-auto h-auto max-h-[26rem] w-auto rounded-2xl object-contain"
                     sizes="(max-width: 768px) 100vw, 640px"
                   />
                   <span className="mt-2 block text-center text-xs uppercase tracking-widest text-smoke">
-                    {letter.artwork.title}
+                    {poem.artwork.title}
                   </span>
                 </Link>
               )}
-              {letter.body.split("\n\n").map((paragraph, i) => (
-                <p key={i} className="mt-5 text-lg leading-relaxed text-bone">
-                  {paragraph}
-                </p>
-              ))}
+              <div className="mt-6 text-center">
+                {poem.body.split("\n\n").map((stanza, i) => (
+                  <p key={i} className="mt-5 whitespace-pre-line font-heading text-xl italic leading-relaxed text-bone">
+                    {stanza}
+                  </p>
+                ))}
+              </div>
               <p className="mt-8 text-center font-heading italic text-bone">— Urška</p>
             </article>
             {daysLeft !== null && (

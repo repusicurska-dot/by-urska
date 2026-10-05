@@ -1,7 +1,8 @@
 "use client";
 
 const STORAGE_KEY = "artbyurska.cookie-consent.v1";
-const CONSENT_VERSION = 1;
+// v2 (2026-10-05): analytics went live — everyone is asked again.
+const CONSENT_VERSION = 2;
 
 export type CookieCategory = "necessary" | "analytics" | "marketing" | "preferences";
 
@@ -23,7 +24,7 @@ export const COOKIE_CATEGORY_INFO: Record<
   analytics: {
     label: "Analytics",
     description:
-      "Would help us understand how the site is used. Not currently in use on this site.",
+      "Counts how long each painting's page is viewed, so Urška knows which works people spend time with. Nothing that identifies you is stored.",
     required: false,
   },
   marketing: {

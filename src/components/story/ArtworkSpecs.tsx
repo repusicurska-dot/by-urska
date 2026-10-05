@@ -3,6 +3,7 @@
 import { Artwork } from "@/content/types";
 import Container from "@/components/shared/Container";
 import { useLanguage } from "@/i18n/LanguageProvider";
+import { SHOP_TERMS } from "@/lib/shopTerms";
 
 function Row({ label, value, yes, no }: { label: string; value?: string | number | boolean; yes: string; no: string }) {
   if (value === undefined || value === "") return null;
@@ -16,8 +17,9 @@ function Row({ label, value, yes, no }: { label: string; value?: string | number
 }
 
 export default function ArtworkSpecs({ artwork }: { artwork: Artwork }) {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const s = t.artwork.specs;
+  const terms = SHOP_TERMS[locale];
   const yes = s.yes;
   const no = s.no;
   return (
@@ -40,11 +42,21 @@ export default function ArtworkSpecs({ artwork }: { artwork: Artwork }) {
                 : `${s.edition}${artwork.editionNumber ? ` — ${artwork.editionNumber}` : ""}`
             }
           />
-          <Row yes={yes} no={no} label={s.certificate} value={artwork.certificateOfAuthenticity} />
+          <Row
+            yes={yes}
+            no={no}
+            label={s.certificate}
+            value={artwork.certificateOfAuthenticity ? terms.certificateIncluded : false}
+          />
           <Row yes={yes} no={no} label={s.framed} value={artwork.framed} />
           <Row yes={yes} no={no} label="SKU" value={artwork.sku} />
           <Row yes={yes} no={no} label={s.dispatch} value={artwork.dispatchTime} />
-          <Row yes={yes} no={no} label={s.shipsTo} value={artwork.shipsTo.map((z) => t.zones[z].label).join(", ")} />
+          <Row
+            yes={yes}
+            no={no}
+            label={s.shipsTo}
+            value={`${artwork.shipsTo.map((z) => t.zones[z].label).join(", ")} · ${terms.outsideEu}`}
+          />
           <Row yes={yes} no={no} label={s.vat} value={artwork.vatNote} />
           <Row yes={yes} no={no} label={s.care} value={artwork.careInfo} />
         </dl>

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getArtworkBySlug } from "@/lib/content";
 import { createCheckoutSession } from "@/lib/payments";
 import { ShippingZone } from "@/content/types";
+import { discountedPrice, findDiscount } from "@/lib/discounts";
 
 const VALID_ZONES: ShippingZone[] = ["SI", "EU", "EUROPE_NON_EU", "INTERNATIONAL"];
 
@@ -10,6 +11,7 @@ interface CheckoutPayload {
   shippingZone?: unknown;
   contact?: { name?: unknown; email?: unknown };
   agreedToTerms?: unknown;
+  discountCode?: unknown;
 }
 
 export async function POST(request: NextRequest) {
@@ -42,6 +44,11 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  const discount = typeof body.discountCode === "string" ? findDiscount(body.discountCode) : null;
+  if (typeof body.discountCode === "string" && body.discountCode.trim() !== "" && !discount) {
+    return NextResponse.json({ error: "This discount code isn't valid." }, { status: 400 });
+  }
+
   // Server-side source of truth — the client-submitted price is never trusted.
   const items = [];
   for (const slug of slugs) {
@@ -56,8 +63,10 @@ export async function POST(request: NextRequest) {
       );
     }
     if (!artwork.shipsTo.includes(body.shippingZone as ShippingZone)) {
+      // Outside the EU a painting is bought by request (Urška, 2026-10-05) — the checkout page
+      // sends those buyers to the contact form before they ever get here.
       return NextResponse.json(
-        { error: `"${artwork.title}" cannot currently be shipped to the selected destination.` },
+        { error: `"${artwork.title}" is bought by request outside the EU — please send Urška a request.` },
         { status: 409 }
       );
     }
@@ -65,7 +74,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const session = await createCheckoutSession(items, { name: contactName, email: contactEmail });
+    const session = await createCheckoutSession(items, { name: contactName, email: contactEmail }, discount);
     return NextResponse.json({ url: session?.url });
   } catch {
     // Payments are intentionally not wired up yet (see src/lib/payments.ts).
@@ -74,7 +83,7 @@ export async function POST(request: NextRequest) {
         checkoutLive: false,
         message:
           "Online checkout isn't live yet. We've recorded your order details — please use the inquiry form and we'll follow up personally to arrange payment.",
-        subtotal: items.reduce((sum, i) => sum + i.price, 0),
+        subtotal: items.reduce((sum, i) => sum + discountedPrice(i.price, discount), 0),
         currency: "EUR",
       },
       { status: 200 }

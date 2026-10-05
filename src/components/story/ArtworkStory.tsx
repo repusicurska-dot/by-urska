@@ -5,10 +5,12 @@ import StorySection from "./StorySection";
 import DetailImages from "./DetailImages";
 import ArtworkSpecs from "./ArtworkSpecs";
 import PriceReveal from "./PriceReveal";
+import ArtworkViewTracker from "./ArtworkViewTracker";
 
 export default function ArtworkStory({ artwork }: { artwork: Artwork }) {
   return (
     <article>
+      <ArtworkViewTracker slug={artwork.slug} />
       <StoryHero artwork={artwork} />
       {artwork.storyBeats.map((beat, index) => (
         <StorySection
@@ -27,9 +29,21 @@ export default function ArtworkStory({ artwork }: { artwork: Artwork }) {
             <span className="block text-xs tracking-widest uppercase text-gold-400 mb-4">
               Artist&rsquo;s note
             </span>
-            <p className="font-heading italic text-xl md:text-2xl text-ivory/90 leading-relaxed">
-              {artwork.artistNote}
-            </p>
+            <div className="space-y-5 font-heading italic text-xl md:text-2xl text-ivory/90 leading-relaxed">
+              {artwork.artistNote.split("\n\n").map((paragraph, i) => (
+                <p key={i}>
+                  {paragraph.split("\n").map((line, j) => {
+                    const bold = line.startsWith("**") && line.endsWith("**");
+                    const text = bold ? line.slice(2, -2) : line;
+                    return (
+                      <span key={j} className="block">
+                        {bold ? <strong className="font-semibold not-italic text-ivory">{text}</strong> : text}
+                      </span>
+                    );
+                  })}
+                </p>
+              ))}
+            </div>
             <Link
               href="/spirituality"
               className="inline-block mt-8 text-xs tracking-widest uppercase text-ivory/60 hover:text-gold-400 transition-colors border-b border-ivory/20 pb-1"

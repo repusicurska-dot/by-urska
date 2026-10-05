@@ -7,6 +7,8 @@ import EnquireCTA from "./EnquireCTA";
 import ProvisionalPriceNote from "./ProvisionalPriceNote";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { formatPrice } from "@/lib/format";
+import { SHOP_TERMS } from "@/lib/shopTerms";
+import EarlyBirdNote from "@/components/shared/EarlyBirdNote";
 
 export default function PriceReveal({ artwork }: { artwork: Artwork }) {
   const [revealed, setRevealed] = useState(false);
@@ -46,6 +48,10 @@ export default function PriceReveal({ artwork }: { artwork: Artwork }) {
           <p className="mt-3 text-xs tracking-widest uppercase text-bone/50">
             {t.collection[artwork.availability]} · {t.artwork.specs.vat}: {artwork.vatNote}
           </p>
+          {artwork.certificateOfAuthenticity && (
+            <p className="mt-3 text-sm text-bone/70">{SHOP_TERMS[locale].certificateIncluded}</p>
+          )}
+          <EarlyBirdNote className="mt-4" />
           <div className="mt-8">
             <EnquireCTA artwork={artwork} />
           </div>

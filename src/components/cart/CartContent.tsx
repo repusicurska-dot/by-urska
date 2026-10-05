@@ -9,6 +9,7 @@ import { useCart } from "@/lib/cart/CartContext";
 import { getArtworkBySlug } from "@/lib/content";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { formatPrice } from "@/lib/format";
+import EarlyBirdNote from "@/components/shared/EarlyBirdNote";
 
 export default function CartContent() {
   const cart = useCart();
@@ -82,6 +83,7 @@ export default function CartContent() {
             <p className="mt-2 text-xs text-bone/40 text-right">
               {t.cart.shippingNote}
             </p>
+            <EarlyBirdNote className="mt-4 text-right" />
 
             <Link
               href="/checkout"

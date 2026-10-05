@@ -4,9 +4,35 @@ Edini veljaven seznam odprtih stvari za byurska.com. Urejeno po tem, kaj kaj blo
 Zgodovina že opravljenega dela je v `OWNER_ACTION_REQUIRED.md` — tam ne iščem odprtih
 nalog, tu so.
 
-Zadnjič posodobljeno: 2026-09-21
+Zadnjič posodobljeno: 2026-10-05
 
 ---
+
+## 0. Iz zapiska „Art to do!“ (2026-10-05) — narejeno, prosim potrdi
+
+- [x] **Tri nove slike** (Black and White Collection): *Voice of the Night* (volk, 70 × 130 cm,
+      2.400 €), *Wild Spirit* (konj, 2.200 €), *Becoming* (bela figura, 1.500 €). Imena, cene in
+      besedila „Meaning“/„For the collector“ sem določil jaz (ti si rekla „ti določi vse“).
+      Pesmi ob njih so tvoje (iz 100 pesmi). **Potrdi ali popravi:**
+      - [ ] mere konja (**100 × 70 cm**) in bele figure (**50 × 70 cm**) — ocenjene s fotografij
+      - [ ] imena in cene vseh treh
+- [x] Vrstni red: modra → roza → dve mali → črne (volk prvi) → bela figura. Tudi fotografije
+      „What they look like on a wall“ so zdaj razvrščene po slikah v istem vrstnem redu.
+- [x] „Artist's note“ pri The Prophecy (in pri vseh črno-belih) je tvoje besedilo o Black and
+      White Collection.
+- [x] Vse letnice so 2026, pri vseh merah so še inči.
+- [x] Certifikat: pri vsaki sliki piše, da je priložen podpisan certifikat o pristnosti.
+- [x] Dostava: v Sloveniji in EU se kupi direktno; za vse ostale države stran ponudi
+      „Pošlji povpraševanje“ (kontaktni obrazec).
+- [x] Popusti (koda se vpiše ob plačilu, cena se zniža že na strani in v Stripu):
+      **EARLYBIRD30** — 30 %, napisan na strani, velja do 31. 12. 2026;
+      **URSKA10** — 10 %, ni objavljen, daješ ga sama komur želiš. Nove kode: `src/lib/discounts.ts`.
+- [x] Piškotki: z dovoljenjem za analitiko se meri, koliko časa je stran posamezne slike odprta.
+      Vsi obiskovalci bodo ponovno vprašani za soglasje. Rezultati: ko si prijavljena (kot za
+      opozorilo OSS), odpri **/api/art-views**.
+- [x] Climb: 26 tvojih plezalnih fotografij (iz mape PLEZANJE).
+- [x] Poetry: tvojih 100 pesmi — vsak ponedeljek nova, zastonj za vse (od tega tedna dalje).
+- [ ] **„APLIKACIJE — popravi velikost prikaza črk“** — ni jasno, katera aplikacija. Povej.
 
 ## 1. Nujno — trgovina sprejema prava plačila
 
