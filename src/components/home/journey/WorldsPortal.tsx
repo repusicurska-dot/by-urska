@@ -41,7 +41,7 @@ export default function WorldsPortal() {
   }
 
   return (
-    <section ref={ref} className="relative h-[140vh] md:h-[175vh]">
+    <section ref={ref} className="relative h-[120vh] md:h-[135vh]">
       <div className="sticky top-0 flex h-screen w-full items-center justify-center overflow-hidden">
         <motion.div
           aria-hidden="true"

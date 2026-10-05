@@ -30,7 +30,7 @@ export default function ArtworkStory({ artwork }: { artwork: Artwork }) {
   if (reduceMotion) return null;
 
   return (
-    <section ref={ref} className="relative h-[130vh] md:h-[175vh]">
+    <section ref={ref} className="relative h-[115vh] md:h-[135vh]">
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         <motion.div
           aria-hidden="true"

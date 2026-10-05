@@ -50,7 +50,7 @@ export default function ArtworkReveal({ artwork }: { artwork: Artwork }) {
   }
 
   return (
-    <section ref={ref} className="relative h-[150vh] md:h-[230vh]">
+    <section ref={ref} className="relative h-[130vh] md:h-[165vh]">
       <div className="sticky top-0 flex h-screen w-full items-center justify-center overflow-hidden">
         <motion.div
           aria-hidden="true"

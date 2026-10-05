@@ -38,7 +38,7 @@ export default function PoetryExperience({ artwork }: { artwork: Artwork }) {
   }
 
   return (
-    <section ref={ref} className="relative h-[170vh] md:h-[240vh]">
+    <section ref={ref} className="relative h-[140vh] md:h-[170vh]">
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         {artwork.heroImage && (
           <motion.div className="absolute inset-0" style={{ opacity: imageOpacity, scale: imageScale }}>

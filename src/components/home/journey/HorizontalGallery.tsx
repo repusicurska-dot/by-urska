@@ -8,7 +8,8 @@ import { Artwork } from "@/content/types";
 import CustomCursor from "./CustomCursor";
 import { useLanguage } from "@/i18n/LanguageProvider";
 
-const CARD_WIDTHS = ["42vw", "34vw", "46vw", "36vw", "40vw"];
+// Sized by the screen's height too, so a 4:5 card always fits inside the pinned viewport.
+const CARD_WIDTHS = ["min(30vw, 54vh)", "min(26vw, 48vh)", "min(32vw, 56vh)", "min(27vw, 50vh)", "min(29vw, 52vh)"];
 
 function GalleryCard({
   artwork,
@@ -126,7 +127,13 @@ export default function HorizontalGallery({ artworks }: { artworks: Artwork[] })
   return (
     <section className="">
       {/* Desktop: scroll-linked horizontal track inside a pinned viewport. */}
-      <div ref={wrapperRef} className="relative hidden md:block" style={{ height: `${100 * count}vh` }}>
+      {/* One pixel of scrolling moves the track one pixel, so the pinned stretch is only as long as
+          the row of paintings is wider than the screen — not a full screen per painting. */}
+      <div
+        ref={wrapperRef}
+        className="relative hidden md:block"
+        style={{ height: maxScroll ? `calc(100vh + ${maxScroll}px)` : `${60 * count}vh` }}
+      >
         <div className="sticky top-0 flex h-screen w-full flex-col justify-center overflow-hidden">
           <motion.div
             aria-hidden="true"

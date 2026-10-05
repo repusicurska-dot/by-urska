@@ -29,7 +29,7 @@ export default function SilenceIntro() {
   }
 
   return (
-    <section ref={ref} className="relative h-[118vh] md:h-[128vh]">
+    <section ref={ref} className="relative h-[105vh] md:h-[110vh]">
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         <div className="relative flex h-full flex-col items-center justify-center px-6 text-center">
           {/* Mount-triggered fade-in, independent of scroll, so the line is never invisible at rest. */}
