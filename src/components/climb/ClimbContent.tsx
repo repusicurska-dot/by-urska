@@ -8,6 +8,8 @@ import WorldLogo from "@/components/shared/WorldLogo";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { HUB } from "@/content/hub";
 import { CLIMB_STORY } from "@/content/climbStory";
+import { CLIMB_GALLERY_TITLE, CLIMB_PHOTOS } from "@/content/climbPhotos";
+import Image from "next/image";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -16,6 +18,7 @@ export default function ClimbContent() {
   const { locale } = useLanguage();
   const c = HUB[locale];
   const story = CLIMB_STORY[locale];
+  const gallery = CLIMB_GALLERY_TITLE[locale];
   const reduceMotion = useReducedMotion();
   const rise = (delay: number) => ({
     initial: reduceMotion ? false : { opacity: 0, y: 30 },
@@ -99,6 +102,34 @@ export default function ClimbContent() {
               )}
             </div>
           ))}
+        </Container>
+      </section>
+
+      {/* her photos, from the first wall as a child to the crags */}
+      <section className="pb-20 md:pb-28">
+        <Container className="max-w-6xl">
+          <div className="text-center">
+            <motion.p {...rise(0)} className="text-xs uppercase tracking-[0.4em] text-gold-600">
+              {gallery.eyebrow}
+            </motion.p>
+            <motion.h2 {...rise(0.05)} className="mt-4 font-heading text-3xl uppercase tracking-[0.12em] text-bone md:text-4xl">
+              {gallery.title}
+            </motion.h2>
+          </div>
+          <div className="mt-12 gap-5 [column-fill:_balance] sm:columns-2 lg:columns-3">
+            {CLIMB_PHOTOS.map((shot) => (
+              <div key={shot.src} className="mb-5 break-inside-avoid overflow-hidden rounded-2xl">
+                <Image
+                  src={shot.src}
+                  alt={shot.alt}
+                  width={shot.width}
+                  height={shot.height}
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="h-auto w-full"
+                />
+              </div>
+            ))}
+          </div>
         </Container>
       </section>
 

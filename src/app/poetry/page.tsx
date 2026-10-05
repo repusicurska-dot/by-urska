@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { URSKA_QUOTES } from "@/content/poetry";
-import { currentLetterForDisplay } from "@/lib/poetry/schedule";
-import { letterView } from "@/lib/poetry/view";
+import { freePoemForDisplay } from "@/lib/poetry/freePoem";
 import PoetryLanding from "@/components/poetry/PoetryLanding";
 
 export const metadata: Metadata = {
-  title: "Poetry by Urška — Letters from the studio",
+  title: "Poetry by Urška — A poem a week",
   description:
-    "One poem a week, free for everyone, with one of Urška's paintings beside it. Poetry by Urška — coming soon.",
+    "One of Urška's own poems every week, free for everyone, with one of her paintings beside it.",
   alternates: { canonical: "/poetry" },
 };
 
@@ -15,11 +14,5 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default function PoetryPage() {
-  const letter = currentLetterForDisplay();
-  return (
-    <PoetryLanding
-      sample={letter ? { sl: letterView(letter, "sl"), en: letterView(letter, "en") } : null}
-      quotes={URSKA_QUOTES}
-    />
-  );
+  return <PoetryLanding poem={freePoemForDisplay()} quotes={URSKA_QUOTES} />;
 }

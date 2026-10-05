@@ -1,6 +1,7 @@
 import Stripe from "stripe";
 import { Artwork } from "@/content/types";
 import { getSiteUrl } from "@/lib/siteUrl";
+import { DiscountCode, discountedPrice } from "@/lib/discounts";
 
 // TODO(phase-2): crypto payments (e.g. Coinbase Commerce) — Stripe Checkout only for now.
 // Set STRIPE_SECRET_KEY (and NEXT_PUBLIC_SITE_URL) to go live; until then this throws and
@@ -21,7 +22,8 @@ export function getStripeClient(): Stripe {
 
 export async function createCheckoutSession(
   items: Artwork[],
-  contact: { name: string; email: string }
+  contact: { name: string; email: string },
+  discount: DiscountCode | null = null
 ): Promise<{ url: string } | null> {
   const stripe = getStripeClient();
   const siteUrl = getSiteUrl();
@@ -35,9 +37,10 @@ export async function createCheckoutSession(
       quantity: 1,
       price_data: {
         currency: item.currency.toLowerCase(),
-        unit_amount: Math.round(item.price * 100),
+        // A discount code lowers the price itself, so Stripe charges exactly what the site showed.
+        unit_amount: Math.round(discountedPrice(item.price, discount) * 100),
         product_data: {
-          name: item.title,
+          name: discount ? `${item.title} (${discount.code} −${Math.round(discount.percent * 100)} %)` : item.title,
           images: item.heroImage ? [`${siteUrl}${item.heroImage}`] : undefined,
         },
       },
@@ -47,6 +50,7 @@ export async function createCheckoutSession(
     metadata: {
       slugs: items.map((i) => i.slug).join(","),
       contactName: contact.name,
+      ...(discount ? { discountCode: discount.code } : {}),
     },
   });
 

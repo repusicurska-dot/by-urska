@@ -23,7 +23,10 @@ export default function CookiesPage() {
             cart and your cookie choice itself). Always on.
           </li>
           <li>
-            <strong>Analytics</strong> — would help us understand site usage. Not currently in use.
+            <strong>Analytics</strong> — measures how long a painting&rsquo;s page is open and visible, so
+            Urška can see which works people spend time with. Only the painting and the number of
+            seconds are sent to our own server; nothing that identifies you is stored, and no third
+            party is involved. Runs only if you accept this category.
           </li>
           <li>
             <strong>Marketing</strong> — would be used to personalize offers. Not currently in use.
@@ -36,10 +39,11 @@ export default function CookiesPage() {
       <section>
         <h2>2. Current status</h2>
         <p>
-          This site does not currently run any analytics or marketing scripts — only the
-          necessary cookies described above. Any analytics or marketing technology added in the
-          future will only activate for visitors who have consented to that category, and this
-          page will be updated to name it.
+          Besides the necessary cookies described above, the only optional measurement on this
+          site is the analytics described in section 1: time spent on each painting&rsquo;s page,
+          counted on our own server and only for visitors who have accepted analytics. No
+          marketing scripts run. Any further technology will only activate for visitors who have
+          consented to that category, and this page will be updated to name it.
         </p>
       </section>
       <section>

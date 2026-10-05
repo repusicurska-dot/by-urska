@@ -8,6 +8,7 @@ import PlaceholderArt from "@/components/shared/PlaceholderArt";
 import ArtworkLightbox from "@/components/shared/ArtworkLightbox";
 import { Artwork } from "@/content/types";
 import { useLanguage } from "@/i18n/LanguageProvider";
+import EarlyBirdNote from "@/components/shared/EarlyBirdNote";
 
 const AVAILABILITY_DOT: Record<Artwork["availability"], string> = {
   available: "#7fae8b",
@@ -37,6 +38,7 @@ export default function CollectionContent({ artworks }: { artworks: Artwork[] })
             <span aria-hidden="true">·</span>
             <span>{t.collection.shippedWorldwide}</span>
           </p>
+          <EarlyBirdNote className="mt-4" />
           <span aria-hidden="true" className="mt-10 block h-px w-24 bg-gradient-to-r from-accent-warm/70 to-transparent" />
         </div>
 

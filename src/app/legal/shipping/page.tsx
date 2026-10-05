@@ -27,6 +27,12 @@ export default function ShippingPage() {
             </li>
           ))}
         </ul>
+        <p>
+          Within Slovenia and the EU, paintings can be bought directly on the site. For Europe
+          outside the EU and the rest of the world, please send a request through the contact
+          form: shipping, customs and the final price are then agreed with you personally before
+          any payment.
+        </p>
       </section>
       <section>
         <h2>3. Shipping cost</h2>

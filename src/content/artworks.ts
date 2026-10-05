@@ -10,8 +10,17 @@ import { Artwork } from "./types";
 const BLOSSOMING_LOVE_NOTE =
   "I painted this one slowly, over many quiet evenings, because I didn't want to rush a love that has already waited lifetimes. Every layer of purple and gold felt less like paint and more like memory — as if my hand already knew this embrace before I did. I don't think love like this begins when two people meet. I think it just remembers itself.";
 
-const THE_PROPHECY_NOTE =
-  "This painting was made in a period of my life when I felt lost — unsure of who I was and where I was going — and I needed to paint my way back to courage. The dragon isn't the danger here; it's what stays beside you once you finally kneel and face what frightens you. I painted the lightning last, in a single breath, because that's how courage usually arrives — all at once, and only after you've already decided to stand.";
+/**
+ * Urška's own words for the Black and White Collection (her "Art to do!" note, 2026-10-05) —
+ * the artist's note on every black-and-white piece. Paragraphs are split by a blank line; a
+ * line wrapped in ** is set in bold.
+ */
+const BLACK_AND_WHITE_NOTE = `The Black and White Collection explores transformation — embracing the darkness, finding strength within it, and alchemizing it into light.
+
+Because sometimes, the deepest darkness is where our greatest light begins.
+
+In the end, light always finds a way through.
+**In the end, light in this world will win.**`;
 
 const ETERNAL_LOVE_NOTE =
   "I kept returning to blue for this one — the color of something that doesn't ask to be noticed, only trusted. While I painted the rose, I kept thinking about the difference between loving someone and choosing them again, deliberately, after everything. This piece is my answer to that. It isn't about the crown or the kingdom. It's about the choosing.";
@@ -132,7 +141,59 @@ And if we meet again when this life is through,
 maybe I'll remember
 why I always found my way to you.`;
 
-const ALL_ZONES: Artwork["shipsTo"] = ["SI", "EU", "EUROPE_NON_EU", "INTERNATIONAL"];
+// The three new black-and-white pieces (2026-10-05) carry poems from Urška's own collection of a
+// hundred (src/content/freePoems.ts), chosen to stand beside each painting. Their "Meaning" and
+// "For the collector" beats are drafts in her voice, like the ones above.
+const VOICE_OF_THE_NIGHT_POEM = `The soul speaks quietly.
+
+Through intuition.
+
+Through tears.
+
+Through the strange peace
+you feel around certain people.
+
+Learn to listen.`;
+const VOICE_OF_THE_NIGHT_MEANING =
+  "A wolf doesn't howl to be heard by everyone. It calls to the ones who belong to it. To me this painting is about trusting the voice inside you — even in the dark, especially in the dark — and finding that the night answers back.";
+const VOICE_OF_THE_NIGHT_COLLECTOR =
+  "For someone who has learned to trust their own instinct, and wants a quiet, powerful reminder of it on the wall.";
+
+const WILD_SPIRIT_POEM = `Be like the river.
+
+Don't fight
+every stone.
+
+Move around it.
+
+Keep moving.
+
+There are places
+you can only reach
+by flowing.`;
+const WILD_SPIRIT_MEANING =
+  "This horse isn't running away from anything. Its mane turns into wind and light because it has stopped fighting what holds it back. It's the freedom that comes after the struggle — not the absence of darkness, but moving through it.";
+const WILD_SPIRIT_COLLECTOR =
+  "For anyone at the start of a new chapter, who needs a daily reminder that strength and softness can move together.";
+
+const BECOMING_POEM = `Life keeps taking away
+the versions of ourselves
+we thought we'd be forever.
+
+And somehow,
+beneath every loss,
+another self
+is quietly being born.`;
+const BECOMING_MEANING =
+  "Almost white on white, this piece is about the parts of us that are still forming. The body is only suggested, the way a new self is only suggested before we fully step into it.";
+const BECOMING_COLLECTOR =
+  "For a calm, light room, and for someone who knows that becoming is never finished.";
+
+/**
+ * Every original ships within the EU from the site. Outside the EU a buyer sends a request
+ * instead (Urška, 2026-10-05) — customs and shipping are agreed personally.
+ */
+const ALL_ZONES: Artwork["shipsTo"] = ["SI", "EU"];
 
 /** Urška packs and posts every painting herself within a week of the order (2026-09-21). */
 const DISPATCH_TIME = "Within 7 days of your order";
@@ -145,19 +206,23 @@ const ACRYLIC_CARE =
   "Hang away from direct sunlight, radiators and damp walls; keep in a room at a steady 18–24 °C. Dust gently with a soft, dry brush or cloth — never water, sprays or cleaning products. Handle by the stretcher bars, not the painted surface, and store upright rather than stacked.";
 
 /**
- * Exactly 5 flagship artworks, all using Urška's real titles and poems
+ * Shown in `order` (Urška, 2026-10-05): the blue piece first, then the pink one, then the two
+ * small canvases, and the Black and White Collection last — the wolf first among them.
+ *
+ * The first five use Urška's real titles and poems
  * (sourced from her Word docs — see note above the poem constants). Their
  * "Meaning" / "For the collector" beats and artist's notes are AI-drafted at
  * her request (see note above) — real content, but not her verbatim words,
- * pending her review. Specs (medium/dimensions/year/price/etc.) are still
- * bracketed placeholders — do not invent that content. Prices are
- * demo/provisional values used to exercise the cart → checkout flow; see
- * `priceConfirmed`.
+ * pending her review. Every piece is dated 2026 at her request.
+ *
+ * The three newest (wolf, horse, white figure) were named and priced on her behalf
+ * (2026-10-05, "ti določi vse"); only the wolf's size is hers (70 × 130 cm) — the horse and
+ * the white figure are measured from photos and need her confirmation (see STANJE.md).
  */
 export const artworks: Artwork[] = [
   {
     slug: "artwork-01",
-    order: 1,
+    order: 3,
     layout: "fullscreen-reveal",
     title: "Blossoming Love",
     quote: "In a thousand different lifetimes, I would choose you.",
@@ -189,9 +254,9 @@ export const artworks: Artwork[] = [
       },
     ],
     accentColor: "#4A4A4A",
-    year: 2023,
+    year: 2026,
     medium: "Acrylic on canvas",
-    dimensions: "35 × 45 cm",
+    dimensions: "35 × 45 cm (13.8 × 17.7 in)",
     editionType: "original",
     certificateOfAuthenticity: true,
     framed: false,
@@ -207,7 +272,7 @@ export const artworks: Artwork[] = [
   },
   {
     slug: "artwork-02",
-    order: 2,
+    order: 6,
     layout: "split",
     title: "The Prophecy",
     quote: "When darkness consumes the land, the final knight shall rise.",
@@ -217,14 +282,14 @@ export const artworks: Artwork[] = [
       { heading: "Meaning", text: THE_PROPHECY_MEANING },
       { heading: "For the collector", text: THE_PROPHECY_COLLECTOR },
     ],
-    artistNote: THE_PROPHECY_NOTE,
+    artistNote: BLACK_AND_WHITE_NOTE,
     heroImage: "/images/the-prophecy.jpg",
     heroImageAlt:
       "Photograph of an original painting by Urška depicting a large pale dragon coiled protectively above a kneeling knight, connected by a bolt of lightning running from a glowing orb to the knight's sword.",
     accentColor: "#1A1A1A",
-    year: 2024,
+    year: 2026,
     medium: "Acrylic on canvas",
-    dimensions: "80 × 100 cm",
+    dimensions: "80 × 100 cm (31.5 × 39.4 in)",
     editionType: "original",
     certificateOfAuthenticity: true,
     framed: false,
@@ -240,7 +305,7 @@ export const artworks: Artwork[] = [
   },
   {
     slug: "artwork-03",
-    order: 3,
+    order: 4,
     layout: "quote-first",
     title: "Eternal Love",
     quote: "No flower has ever bloomed as beautifully as your soul.",
@@ -272,9 +337,9 @@ export const artworks: Artwork[] = [
       },
     ],
     accentColor: "#5C5C5C",
-    year: 2023,
+    year: 2026,
     medium: "Acrylic on canvas",
-    dimensions: "40 × 50 cm",
+    dimensions: "40 × 50 cm (15.7 × 19.7 in)",
     editionType: "original",
     certificateOfAuthenticity: true,
     framed: false,
@@ -290,7 +355,7 @@ export const artworks: Artwork[] = [
   },
   {
     slug: "artwork-04",
-    order: 4,
+    order: 2,
     layout: "cinematic-macro",
     title: "Birds of Light",
     quote: "They turn the darkness into light.",
@@ -305,9 +370,9 @@ export const artworks: Artwork[] = [
     heroImageAlt:
       "Photograph of an original painting by Urška depicting four white doves in flight across a soft pink and rose-gold sky, with light rays and small sparkling stars.",
     accentColor: "#8A8A8A",
-    year: 2025,
+    year: 2026,
     medium: "Acrylic on canvas",
-    dimensions: "80 × 100 cm",
+    dimensions: "80 × 100 cm (31.5 × 39.4 in)",
     editionType: "original",
     certificateOfAuthenticity: true,
     framed: false,
@@ -323,7 +388,7 @@ export const artworks: Artwork[] = [
   },
   {
     slug: "artwork-05",
-    order: 5,
+    order: 1,
     layout: "minimal",
     title: "Somehow My Heart Still Remembers You",
     quote: "Somehow, my heart still remembers you.",
@@ -337,10 +402,17 @@ export const artworks: Artwork[] = [
     heroImage: "/images/somehow-my-heart.jpg",
     heroImageAlt:
       "Photograph of an original painting by Urška depicting two faces in profile, rendered in teal and blue tones, close together as if about to kiss.",
+    detailImages: [
+      {
+        src: "/images/artist-hanging-heart.jpg",
+        alt: "Urška hanging 'Somehow My Heart Still Remembers You' above the sofa",
+        label: "In the artist's hands",
+      },
+    ],
     accentColor: "#6E6E6E",
-    year: 2024,
+    year: 2026,
     medium: "Acrylic on canvas",
-    dimensions: "80 × 100 cm",
+    dimensions: "80 × 100 cm (31.5 × 39.4 in)",
     editionType: "original",
     certificateOfAuthenticity: true,
     framed: false,
@@ -350,6 +422,127 @@ export const artworks: Artwork[] = [
     vatNote,
     availability: "available",
     sku: "AU-ART-05",
+    dispatchTime: DISPATCH_TIME,
+    shipsTo: ALL_ZONES,
+    careInfo: ACRYLIC_CARE,
+  },
+  {
+    slug: "artwork-06",
+    order: 5,
+    layout: "split",
+    title: "Voice of the Night",
+    quote: "The soul speaks quietly.",
+    shortIntro: "A wolf lifts its head to the dark, its howl rising like smoke into the night.",
+    storyBeats: [
+      { heading: "Her words", text: VOICE_OF_THE_NIGHT_POEM },
+      {
+        heading: "Meaning",
+        text: VOICE_OF_THE_NIGHT_MEANING,
+        image: "/images/in-home-wolf-1.jpg",
+        imageAlt: "'Voice of the Night' above a white sofa",
+      },
+      { heading: "For the collector", text: VOICE_OF_THE_NIGHT_COLLECTOR },
+    ],
+    artistNote: BLACK_AND_WHITE_NOTE,
+    heroImage: "/images/voice-of-the-night.jpg",
+    heroImageAlt:
+      "Photograph of an original black-and-white painting by Urška of a wolf howling upward, its breath rising into the dark like white smoke.",
+    accentColor: "#1A1A1A",
+    year: 2026,
+    medium: "Acrylic on canvas",
+    dimensions: "70 × 130 cm (27.6 × 51.2 in)",
+    editionType: "original",
+    certificateOfAuthenticity: true,
+    framed: false,
+    price: 2400,
+    currency: "EUR",
+    priceConfirmed: true,
+    vatNote,
+    availability: "available",
+    sku: "AU-ART-06",
+    dispatchTime: DISPATCH_TIME,
+    shipsTo: ALL_ZONES,
+    careInfo: ACRYLIC_CARE,
+  },
+  {
+    slug: "artwork-07",
+    order: 7,
+    layout: "cinematic-macro",
+    title: "Wild Spirit",
+    quote: "There are places you can only reach by flowing.",
+    shortIntro: "A white horse leaps through the dark, its mane dissolving into wind and light.",
+    storyBeats: [
+      { heading: "Her words", text: WILD_SPIRIT_POEM },
+      {
+        heading: "Meaning",
+        text: WILD_SPIRIT_MEANING,
+        image: "/images/in-home-horse-1.jpg",
+        imageAlt: "'Wild Spirit' on the living-room wall",
+      },
+      { heading: "For the collector", text: WILD_SPIRIT_COLLECTOR },
+    ],
+    artistNote: BLACK_AND_WHITE_NOTE,
+    heroImage: "/images/wild-spirit.jpg",
+    heroImageAlt:
+      "Photograph of an original black-and-white painting by Urška of a white horse leaping across a dark canvas, its mane and tail curling into flowing lines of light.",
+    accentColor: "#1A1A1A",
+    year: 2026,
+    medium: "Acrylic on canvas",
+    dimensions: "100 × 70 cm (39.4 × 27.6 in)",
+    editionType: "original",
+    certificateOfAuthenticity: true,
+    framed: false,
+    price: 2200,
+    currency: "EUR",
+    priceConfirmed: true,
+    vatNote,
+    availability: "available",
+    sku: "AU-ART-07",
+    dispatchTime: DISPATCH_TIME,
+    shipsTo: ALL_ZONES,
+    careInfo: ACRYLIC_CARE,
+  },
+  {
+    slug: "artwork-08",
+    order: 8,
+    layout: "minimal",
+    title: "Becoming",
+    quote: "Another self is quietly being born.",
+    shortIntro: "A woman's form, barely there in soft grey on white — a self still taking shape.",
+    storyBeats: [
+      { heading: "Her words", text: BECOMING_POEM },
+      {
+        heading: "Meaning",
+        text: BECOMING_MEANING,
+        image: "/images/in-home-becoming-1.jpg",
+        imageAlt: "'Becoming' on a white wall above the sofa",
+      },
+      { heading: "For the collector", text: BECOMING_COLLECTOR },
+    ],
+    artistNote: BLACK_AND_WHITE_NOTE,
+    heroImage: "/images/becoming.jpg",
+    heroImageAlt:
+      "Urška hanging her original painting 'Becoming' — a woman's figure drawn in soft grey strokes on a white canvas.",
+    detailImages: [
+      {
+        src: "/images/in-home-becoming-2.jpg",
+        alt: "'Becoming' in the living room, below a beaded ceiling light",
+        label: "On the wall",
+      },
+    ],
+    accentColor: "#8A8A8A",
+    year: 2026,
+    medium: "Acrylic on canvas",
+    dimensions: "50 × 70 cm (19.7 × 27.6 in)",
+    editionType: "original",
+    certificateOfAuthenticity: true,
+    framed: false,
+    price: 1500,
+    currency: "EUR",
+    priceConfirmed: true,
+    vatNote,
+    availability: "available",
+    sku: "AU-ART-08",
     dispatchTime: DISPATCH_TIME,
     shipsTo: ALL_ZONES,
     careInfo: ACRYLIC_CARE,

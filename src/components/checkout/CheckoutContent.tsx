@@ -10,6 +10,9 @@ import { ZONE_ORDER } from "@/lib/shipping";
 import { ShippingZone } from "@/content/types";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { formatPrice } from "@/lib/format";
+import { discountedPrice, findDiscount } from "@/lib/discounts";
+import { SHOP_TERMS, fill } from "@/lib/shopTerms";
+import EarlyBirdNote from "@/components/shared/EarlyBirdNote";
 
 type SubmitState =
   | { status: "idle" }
@@ -26,8 +29,22 @@ export default function CheckoutContent() {
     .filter((a): a is NonNullable<typeof a> => Boolean(a));
   const subtotal = items.reduce((sum, item) => sum + item.price, 0);
   const anyUnconfirmed = items.some((item) => !item.priceConfirmed);
+  const terms = SHOP_TERMS[locale];
 
   const [zone, setZone] = useState<ShippingZone>("SI");
+  // Every painting is bought directly within the EU; anywhere else goes through a request.
+  const buyable = items.every((item) => item.shipsTo.includes(zone));
+  const [codeInput, setCodeInput] = useState("");
+  const [discountCode, setDiscountCode] = useState<string | null>(null);
+  const [codeError, setCodeError] = useState(false);
+  const discount = discountCode ? findDiscount(discountCode) : null;
+  const total = items.reduce((sum, item) => sum + discountedPrice(item.price, discount), 0);
+
+  function applyCode() {
+    const found = findDiscount(codeInput);
+    setDiscountCode(found?.code ?? null);
+    setCodeError(!found && codeInput.trim() !== "");
+  }
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [agreed, setAgreed] = useState(false);
@@ -45,6 +62,7 @@ export default function CheckoutContent() {
           shippingZone: zone,
           contact: { name, email },
           agreedToTerms: agreed,
+          discountCode: discount?.code,
         }),
       });
       const data = await res.json();
@@ -173,6 +191,12 @@ export default function CheckoutContent() {
                 <span>{formatPrice(item.price, locale)}</span>
               </div>
             ))}
+            {discount && (
+              <div className="flex justify-between text-sm text-gold-600">
+                <span>{fill(terms.discountLine, { code: discount.code })}</span>
+                <span>−{formatPrice(subtotal - total, locale)}</span>
+              </div>
+            )}
             <div className="flex justify-between text-sm text-bone/60 pt-2">
               <span>{c.vat}</span>
               <span>{c.vatValue}</span>
@@ -183,11 +207,53 @@ export default function CheckoutContent() {
             </div>
             <div className="flex justify-between font-heading text-xl text-bone pt-3">
               <span>{c.estimatedTotal}</span>
-              <span>{formatPrice(subtotal, locale)}</span>
+              <span>{formatPrice(total, locale)}</span>
             </div>
             {anyUnconfirmed && <ProvisionalPriceNote />}
           </div>
 
+          <div>
+            <label htmlFor="discount" className="block text-xs tracking-widest uppercase text-bone/60 mb-2">
+              {terms.discountLabel}
+            </label>
+            <div className="flex gap-3">
+              <input
+                id="discount"
+                type="text"
+                autoComplete="off"
+                value={codeInput}
+                onChange={(e) => setCodeInput(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    applyCode();
+                  }
+                }}
+                className="min-w-0 flex-1 border border-bone/20 rounded-sm px-4 py-3 bg-transparent uppercase focus:outline-none focus:border-bone"
+              />
+              <button type="button" onClick={applyCode} className="btn-secondary border-bone/30 text-bone hover:border-bone">
+                {terms.discountApply}
+              </button>
+            </div>
+            {codeError && <p className="mt-2 text-sm text-terracotta">{terms.discountInvalid}</p>}
+            {discount && (
+              <p className="mt-2 text-sm text-gold-600">
+                {fill(terms.discountApplied, { code: discount.code, percent: Math.round(discount.percent * 100) })}
+              </p>
+            )}
+            {!discount && <EarlyBirdNote className="mt-3" />}
+          </div>
+
+          {!buyable ? (
+            <div className="rounded-sm border border-bone/20 px-5 py-6 text-center">
+              <p className="font-heading text-xl text-bone">{terms.outsideEuTitle}</p>
+              <p className="mt-3 text-sm leading-relaxed text-bone/70">{terms.outsideEuText}</p>
+              <Link href={`/contact?piece=${items[0].slug}`} className="btn-primary inline-block mt-6">
+                {terms.sendRequest}
+              </Link>
+            </div>
+          ) : (
+          <>
           <label className="flex items-start gap-3 text-sm text-bone/70">
             <input
               type="checkbox"
@@ -217,6 +283,8 @@ export default function CheckoutContent() {
           >
             {state.status === "submitting" ? c.placing : c.place}
           </button>
+          </>
+          )}
         </form>
       </Container>
     </section>
