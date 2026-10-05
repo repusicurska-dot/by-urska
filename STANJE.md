@@ -30,7 +30,6 @@ Zadnjič posodobljeno: 2026-10-05
       opozorilo OSS), odpri **/api/art-views**.
 - [x] Climb: 26 tvojih plezalnih fotografij (iz mape PLEZANJE).
 - [x] Poetry: tvojih 100 pesmi — vsak ponedeljek nova, zastonj za vse (od tega tedna dalje).
-- [ ] **„APLIKACIJE — popravi velikost prikaza črk“** — ni jasno, katera aplikacija. Povej.
 
 ## 1. Nujno — trgovina sprejema prava plačila
 
