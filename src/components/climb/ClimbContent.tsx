@@ -8,48 +8,79 @@ import WorldLogo from "@/components/shared/WorldLogo";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { HUB } from "@/content/hub";
 import { CLIMB_STORY } from "@/content/climbStory";
-import { CHAPTER_PHOTOS, type ClimbPhoto } from "@/content/climbPhotos";
+import { CHAPTER_PHOTOS, MEDAL_PHOTOS, type ClimbPhoto } from "@/content/climbPhotos";
 import Image from "next/image";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
+/** A photo at its own shape — never cropped, on a phone or on a wide screen. */
+function Shot({ shot, sizes }: { shot: ClimbPhoto; sizes: string }) {
+  return (
+    <div className="relative overflow-hidden rounded-2xl bg-bone/5" style={{ aspectRatio: `${shot.width} / ${shot.height}` }}>
+      <Image src={shot.src} alt={shot.alt} fill sizes={sizes} className="object-contain" />
+    </div>
+  );
+}
+
 /**
  * A chapter's photos as one small composition: two stand side by side, the second a little
- * lower; with three, the first spans the width and the other two sit beneath it.
+ * lower; with three, the first spans the width and the other two sit beneath it. Every photo
+ * keeps its own shape, so nothing is cut off.
  */
 function ChapterPhotos({ photos }: { photos: ClimbPhoto[] }) {
   const sizes = "(min-width: 1024px) 28vw, 50vw";
-  if (photos.length === 1) {
-    const [only] = photos;
-    return (
-      <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
-        <Image src={only.src} alt={only.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
-      </div>
-    );
-  }
+  const wide = "(min-width: 1024px) 50vw, 100vw";
+  if (photos.length === 1) return <Shot shot={photos[0]} sizes={wide} />;
   const [first, ...rest] = photos;
   if (photos.length === 2) {
     return (
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 items-start gap-4">
         {photos.map((shot, i) => (
-          <div key={shot.src} className={`relative aspect-[3/4] overflow-hidden rounded-2xl ${i === 1 ? "mt-12" : ""}`}>
-            <Image src={shot.src} alt={shot.alt} fill sizes={sizes} className="object-cover" />
+          <div key={shot.src} className={i === 1 ? "mt-12" : ""}>
+            <Shot shot={shot} sizes={sizes} />
           </div>
         ))}
       </div>
     );
   }
   return (
-    <div className="grid grid-cols-2 gap-4">
-      <div className="relative col-span-2 aspect-[16/10] overflow-hidden rounded-2xl">
-        <Image src={first.src} alt={first.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+    <div className="grid grid-cols-2 items-start gap-4">
+      <div className="col-span-2">
+        <Shot shot={first} sizes={wide} />
       </div>
       {rest.slice(0, 2).map((shot) => (
-        <div key={shot.src} className="relative aspect-square overflow-hidden rounded-2xl">
-          <Image src={shot.src} alt={shot.alt} fill sizes={sizes} className="object-cover" />
-        </div>
+        <Shot key={shot.src} shot={shot} sizes={sizes} />
       ))}
     </div>
+  );
+}
+
+/** Her medals and podiums: a gallery of whole photos, right after the opening. */
+function Medals({ title, intro, rise }: { title: string; intro: string; rise: (d: number) => object }) {
+  return (
+    <section className="pb-16 md:pb-24">
+      <Container className="max-w-6xl">
+        <div className="text-center">
+          <motion.p {...rise(0)} aria-hidden="true" className="text-4xl">
+            🥇
+          </motion.p>
+          <motion.h2 {...rise(0.05)} className="mt-3 font-heading text-3xl uppercase tracking-[0.12em] text-bone md:text-5xl">
+            {title}
+          </motion.h2>
+          <motion.span {...rise(0.1)} aria-hidden="true" className="mx-auto mt-6 block h-px w-12 bg-gold-400/60" />
+          <motion.p {...rise(0.15)} className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-bone/80">
+            {intro}
+          </motion.p>
+        </div>
+        <motion.div {...rise(0.2)} className="mt-12 columns-2 gap-4 md:columns-3 [&>*]:mb-4">
+          {MEDAL_PHOTOS.map((shot) => (
+            <div key={shot.src} className="break-inside-avoid">
+              <Shot shot={shot} sizes="(min-width: 768px) 33vw, 50vw" />
+            </div>
+          ))}
+        </motion.div>
+      </Container>
+    </section>
   );
 }
 
@@ -110,6 +141,8 @@ export default function ClimbContent() {
           </motion.div>
         </Container>
       </section>
+
+      <Medals title={story.medals.title} intro={story.medals.intro} rise={rise} />
 
       {/* Her story, chapter by chapter, each beside the photos that belong to it — on a wide
           screen the text and the photos swap sides from one chapter to the next. */}

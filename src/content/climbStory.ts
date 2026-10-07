@@ -14,6 +14,8 @@ export interface ClimbChapter {
 export interface ClimbStory {
   chapters: ClimbChapter[];
   closing: string;
+  /** The medals and podiums gallery near the top of the page. */
+  medals: { title: string; intro: string };
 }
 
 export const CLIMB_STORY: Record<Locale, ClimbStory> = {
@@ -121,6 +123,10 @@ export const CLIMB_STORY: Record<Locale, ClimbStory> = {
       },
     ],
     closing: "I simply love to climb.",
+    medals: {
+      title: "Medals & podiums",
+      intro: "Years of training, measured in moments on the podium.",
+    },
   },
   sl: {
     chapters: [
@@ -226,6 +232,10 @@ export const CLIMB_STORY: Record<Locale, ClimbStory> = {
       },
     ],
     closing: "Preprosto rada plezam.",
+    medals: {
+      title: "Medalje in stopničke",
+      intro: "Leta treninga, izmerjena v trenutkih na stopničkah.",
+    },
   },
   hr: {
     chapters: [
@@ -331,6 +341,10 @@ export const CLIMB_STORY: Record<Locale, ClimbStory> = {
       },
     ],
     closing: "Jednostavno volim penjati.",
+    medals: {
+      title: "Medalje i postolja",
+      intro: "Godine treninga, izmjerene u trenucima na postolju.",
+    },
   },
   de: {
     chapters: [
@@ -436,6 +450,10 @@ export const CLIMB_STORY: Record<Locale, ClimbStory> = {
       },
     ],
     closing: "Ich klettere einfach gern.",
+    medals: {
+      title: "Medaillen & Podestplätze",
+      intro: "Jahre des Trainings, gemessen in Momenten auf dem Podest.",
+    },
   },
   it: {
     chapters: [
@@ -541,5 +559,9 @@ export const CLIMB_STORY: Record<Locale, ClimbStory> = {
       },
     ],
     closing: "Semplicemente, amo arrampicare.",
+    medals: {
+      title: "Medaglie e podi",
+      intro: "Anni di allenamento, misurati in momenti sul podio.",
+    },
   },
 };

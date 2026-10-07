@@ -29,6 +29,7 @@ export const CHAPTER_PHOTOS: ClimbPhoto[][] = [
   [
     photo(5, 1122, 1113, "Urška stepping high on a blue and yellow wall"),
     photo(6, 591, 660, "Urška hanging from big blue holds"),
+    photo(40, 1179, 1467, "Urška smiling upside down on a colourful bouldering wall"),
   ],
   // The first competitions
   [
@@ -55,6 +56,7 @@ export const CHAPTER_PHOTOS: ClimbPhoto[][] = [
   [
     photo(7, 1090, 1364, "Urška pulling through an overhang in competition"),
     photo(12, 1170, 1141, "Portrait of Urška chalking her hands"),
+    photo(38, 1176, 622, "Urška with the climbing team in front of the gym"),
   ],
   // My inner world
   [
@@ -78,6 +80,7 @@ export const CHAPTER_PHOTOS: ClimbPhoto[][] = [
   [
     photo(17, 1290, 1600, "Urška hanging on a rope against the sun"),
     photo(20, 1200, 1600, "Urška in a helmet, rappelling on a sunny rock face"),
+    photo(39, 1179, 1464, "Urška on a summit above a sea of clouds"),
   ],
   // Still climbing
   [
@@ -85,4 +88,23 @@ export const CHAPTER_PHOTOS: ClimbPhoto[][] = [
     photo(19, 1200, 1600, "Urška sorting a pink rope in an autumn forest"),
     photo(13, 1272, 1600, "Urška holding her medals"),
   ],
+];
+
+/**
+ * Her medals and podiums, shown together near the top of the page (Urška, 2026-10-06: "more
+ * focus on the photos with medals, so her success shows").
+ */
+export const MEDAL_PHOTOS: ClimbPhoto[] = [
+  photo(30, 1179, 1467, "Urška smiling with three gold medals"),
+  photo(32, 1080, 1080, "Urška on the top step of the podium"),
+  photo(31, 1179, 783, "Urška being awarded a medal"),
+  photo(14, 1600, 1112, "Urška on the podium at the European Championships"),
+  photo(33, 890, 913, "Urška on the podium between the second and third place climbers"),
+  photo(11, 1051, 1034, "Urška smiling with a gold medal around her neck"),
+  photo(35, 897, 718, "Urška with her medal and diploma on the podium"),
+  photo(34, 561, 720, "Urška with her medal on a national podium"),
+  photo(36, 640, 800, "Urška raising her trophy on the podium"),
+  photo(28, 1051, 819, "Urška with her coach and a teammate, holding their medals"),
+  photo(37, 1200, 1600, "Urška with her medal and diploma among the winners"),
+  photo(13, 1272, 1600, "Urška holding her medals"),
 ];
