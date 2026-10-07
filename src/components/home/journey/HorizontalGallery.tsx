@@ -55,7 +55,7 @@ function GalleryCard({
         <div
           ref={cardRef}
           onMouseMove={onMouseMove}
-          className="relative aspect-[4/5] w-full overflow-hidden bg-raised transition-transform duration-300 ease-out"
+          className="relative aspect-[4/5] w-full overflow-hidden transition-transform duration-300 ease-out"
           style={{
             transform: "rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))",
             transformStyle: "preserve-3d",
@@ -180,7 +180,7 @@ function GalleryMobile({ artworks }: { artworks: Artwork[] }) {
           href={`/artworks/${artwork.slug}`}
           className="w-[82%] shrink-0 snap-start"
         >
-          <div className="relative aspect-[4/5] w-full overflow-hidden bg-raised">
+          <div className="relative aspect-[4/5] w-full overflow-hidden">
             {artwork.heroImage && (
               <Image
                 src={artwork.heroImage}

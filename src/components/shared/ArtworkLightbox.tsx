@@ -132,7 +132,7 @@ export default function ArtworkLightbox({
             {artwork.title}
           </motion.h2>
           <motion.div
-            className="relative w-full max-w-lg mx-auto md:max-w-none aspect-[4/5] md:h-[80vh] shadow-[0_40px_120px_-30px_rgba(74,58,88,0.5)] bg-raised"
+            className="relative w-full max-w-lg mx-auto md:max-w-none aspect-[4/5] md:h-[80vh]"
             initial={{
               opacity: 0,
               scale: reduceMotion ? 1 : 0.85,
@@ -152,7 +152,7 @@ export default function ArtworkLightbox({
                 alt={artwork.heroImageAlt ?? artwork.title}
                 fill
                 sizes="(min-width: 768px) 45vw, 90vw"
-                className="object-contain rounded-sm"
+                className="object-contain rounded-sm drop-shadow-[0_30px_60px_rgba(74,58,88,0.45)]"
                 priority
               />
             ) : (
