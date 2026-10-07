@@ -11,21 +11,23 @@ export default function StoryHero({ artwork }: { artwork: Artwork }) {
   const { t } = useLanguage();
   return (
     <section className="grid md:grid-cols-2 md:h-screen">
-      <div className="relative h-[55vh] md:h-screen order-1 bg-midnight">
+      {/* the painting at its own shape: no coloured bars beside or above it, on a phone or a wide screen */}
+      <div className="relative order-1 flex items-center justify-center md:h-screen">
         {artwork.heroImage ? (
           <Image
             src={artwork.heroImage}
             alt={artwork.heroImageAlt ?? artwork.title}
-            fill
+            width={1600}
+            height={2000}
             sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-contain"
+            className="h-auto w-full md:h-full md:w-auto md:max-w-full md:object-contain"
             priority
           />
         ) : (
           <PlaceholderArt
             label={artwork.title}
             accentColor={artwork.accentColor}
-            className="h-full w-full"
+            className="h-[55vh] w-full md:h-full"
           />
         )}
       </div>
