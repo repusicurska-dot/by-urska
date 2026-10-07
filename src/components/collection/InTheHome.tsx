@@ -23,25 +23,21 @@ const GROUPS: Group[] = [
     slugs: ["artwork-05"],
     shots: [
       { src: "/images/on-wall-heart.jpg", width: 1004, height: 1302, alt: "\"Somehow My Heart Still Remembers You\" on a plain white wall" },
-      { src: "/images/on-wall-heart-2.jpg", width: 1063, height: 1456, alt: "\"Somehow My Heart Still Remembers You\" in full, on a white wall" },
       { src: "/images/artist-hanging-heart.jpg", width: 1021, height: 1507, alt: "Urška hanging the turquoise canvas above the sofa" },
       { src: "/images/in-home-heart-6.jpg", width: 1080, height: 1620, alt: "The turquoise canvas above a sofa with plum and copper cushions" },
       { src: "/images/in-home-heart-1.jpg", width: 1072, height: 1607, alt: "The turquoise canvas above a pale sofa" },
       { src: "/images/in-home-heart-3.jpg", width: 1080, height: 1620, alt: "The full living room, with plants and a low round table" },
       { src: "/images/in-home-heart-2.jpg", width: 1080, height: 1620, alt: "The living room seen past a white orchid" },
-      { src: "/images/in-home-heart-7.jpg", width: 854, height: 1377, alt: "The turquoise canvas above the sofa, seen from closer" },
     ],
   },
   {
     slugs: ["artwork-04"],
     shots: [
       { src: "/images/on-wall-birds.jpg", width: 1023, height: 1560, alt: "\"Birds of Light\" hanging beside a feathered dreamcatcher" },
-      { src: "/images/on-wall-birds-2.jpg", width: 1067, height: 1461, alt: "\"Birds of Light\" in full, on a white wall" },
       { src: "/images/in-home-birds-3.jpg", width: 1080, height: 1620, alt: "\"Birds of Light\" above the sofa, between trailing ivy and a dreamcatcher" },
       { src: "/images/in-home-birds-1.jpg", width: 1080, height: 1620, alt: "\"Birds of Light\" above a sofa dressed in rose and plum" },
       { src: "/images/in-home-birds-4.jpg", width: 1026, height: 1567, alt: "\"Birds of Light\" seen from the corner of the sofa" },
       { src: "/images/in-home-birds-2.jpg", width: 1080, height: 1620, alt: "\"Birds of Light\" seen from across the room" },
-      { src: "/images/in-home-birds-5.jpg", width: 1080, height: 1620, alt: "\"Birds of Light\" above the sofa, with rose and copper cushions" },
     ],
   },
   {
@@ -63,11 +59,9 @@ const GROUPS: Group[] = [
     slugs: ["artwork-02"],
     shots: [
       { src: "/images/on-wall-prophecy.jpg", width: 987, height: 1614, alt: "\"The Prophecy\" alone on a white wall" },
-      { src: "/images/on-wall-prophecy-2.jpg", width: 816, height: 963, alt: "\"The Prophecy\" in full, on a white wall" },
       { src: "/images/in-home-prophecy-2.jpg", width: 1080, height: 1620, alt: "\"The Prophecy\" above the sofa, next to a hanging plant" },
       { src: "/images/in-home-prophecy-1.jpg", width: 883, height: 1202, alt: "\"The Prophecy\" below a beaded ceiling light" },
       { src: "/images/in-home-room-1.jpg", width: 1620, height: 1080, alt: "\"The Prophecy\" in the living room, seen past a white orchid" },
-      { src: "/images/in-home-prophecy-3.jpg", width: 1080, height: 1620, alt: "\"The Prophecy\" above the sofa, beside a trailing plant" },
     ],
   },
   {
@@ -84,7 +78,6 @@ const GROUPS: Group[] = [
       { src: "/images/in-home-becoming-1.jpg", width: 1048, height: 1573, alt: "\"Becoming\" above the sofa" },
       { src: "/images/in-home-becoming-2.jpg", width: 1080, height: 1620, alt: "\"Becoming\" below a beaded ceiling light and a dreamcatcher" },
       { src: "/images/in-home-becoming-3.jpg", width: 1080, height: 1620, alt: "\"Becoming\" seen past an orchid" },
-      { src: "/images/in-home-becoming-4.jpg", width: 889, height: 1506, alt: "\"Becoming\" above the sofa, seen from the side" },
     ],
   },
 ];
