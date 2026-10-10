@@ -12,8 +12,7 @@ Zadnjič posodobljeno: 2026-10-10
 
 - [x] Črne slike so zadnje: modra → roza → dve mali → bela figura (Becoming) → volk →
       The Prophecy → konj. Enako v galeriji in pri „What they look like on a wall“.
-- [x] Vseh 16 fotografij iz Dropbox mape „4. 10. 2026 art glej to verzijo“ je na /collection,
-      vsaka pri svoji sliki (vrnjenih 7, ki sem jih 2026-10-07 umaknil, + 3 nove).
+- [x] Fotografije na /collection: vsak pogled samo enkrat — skoraj enake fotografije so odstranjene
 - [x] Citat „Some things are easier to paint than to say“ je odstranjen z domače strani.
 - [x] Star Business Calendar: 1 €/mesec (namesto 5,99 €). Velja za nove naročnike; kdor je
       že naročen, v Stripu ostane na stari ceni, dokler je ne spremeniš ročno.
