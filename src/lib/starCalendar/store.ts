@@ -14,7 +14,7 @@ import type { PoetrySubscription } from "@/lib/poetry/subscription";
  * refreshed from Stripe on checkout, on visits to the member page and before emails go out.
  */
 
-export const PRICE_EUR_CENTS = 599;
+export const PRICE_EUR_CENTS = 100;
 
 /**
  * Free, permanent access without Stripe — the owner (Urška, founder) and Teo. Sign-up with

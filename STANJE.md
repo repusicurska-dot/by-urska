@@ -4,9 +4,20 @@ Edini veljaven seznam odprtih stvari za byurska.com. Urejeno po tem, kaj kaj blo
 Zgodovina že opravljenega dela je v `OWNER_ACTION_REQUIRED.md` — tam ne iščem odprtih
 nalog, tu so.
 
-Zadnjič posodobljeno: 2026-10-05
+Zadnjič posodobljeno: 2026-10-10
 
 ---
+
+## 0a. Iz zapiska „Art to do!“ (2026-10-10) — narejeno
+
+- [x] Črne slike so zadnje: modra → roza → dve mali → bela figura (Becoming) → volk →
+      The Prophecy → konj. Enako v galeriji in pri „What they look like on a wall“.
+- [x] Vseh 16 fotografij iz Dropbox mape „4. 10. 2026 art glej to verzijo“ je na /collection,
+      vsaka pri svoji sliki (vrnjenih 7, ki sem jih 2026-10-07 umaknil, + 3 nove).
+- [x] Citat „Some things are easier to paint than to say“ je odstranjen z domače strani.
+- [x] Star Business Calendar: 1 €/mesec (namesto 5,99 €). Velja za nove naročnike; kdor je
+      že naročen, v Stripu ostane na stari ceni, dokler je ne spremeniš ročno.
+- [x] Branja v živo: termini ob 15, 16, 17, 18, 19 in 20h (tor–sob).
 
 ## 0. Iz zapiska „Art to do!“ (2026-10-05) — narejeno
 

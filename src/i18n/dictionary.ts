@@ -52,7 +52,6 @@ export interface Dictionary {
     exploreWorks: string;
     discoverPoetry: string;
     commission: string;
-    paintThanSay: string;
     viewArtwork: string;
     enter: string;
     enterStory: string;
@@ -289,7 +288,6 @@ const en: Dictionary = {
     exploreWorks: "Explore original works",
     discoverPoetry: "Discover poetry",
     commission: "Commission a painting",
-    paintThanSay: "Some things are easier to paint than to say.",
     viewArtwork: "View artwork",
     enter: "Enter →",
     enterStory: "Enter the story →",
@@ -581,7 +579,6 @@ const sl: Dictionary = {
     exploreWorks: "Razišči originalna dela",
     discoverPoetry: "Odkrij poezijo",
     commission: "Naroči sliko po želji",
-    paintThanSay: "Nekatere stvari je lažje naslikati kot povedati.",
     viewArtwork: "Poglej sliko",
     enter: "Vstopi →",
     enterStory: "Vstopi v zgodbo →",
@@ -873,7 +870,6 @@ const hr: Dictionary = {
     exploreWorks: "Istraži originalna djela",
     discoverPoetry: "Otkrij poeziju",
     commission: "Naruči sliku po želji",
-    paintThanSay: "Neke je stvari lakše naslikati nego reći.",
     viewArtwork: "Pogledaj sliku",
     enter: "Uđi →",
     enterStory: "Uđi u priču →",
@@ -1165,7 +1161,6 @@ const de: Dictionary = {
     exploreWorks: "Originalwerke entdecken",
     discoverPoetry: "Poesie entdecken",
     commission: "Ein Bild in Auftrag geben",
-    paintThanSay: "Manches lässt sich leichter malen als sagen.",
     viewArtwork: "Bild ansehen",
     enter: "Eintreten →",
     enterStory: "In die Geschichte →",
@@ -1457,7 +1452,6 @@ const it: Dictionary = {
     exploreWorks: "Esplora le opere originali",
     discoverPoetry: "Scopri la poesia",
     commission: "Commissiona un dipinto",
-    paintThanSay: "Certe cose è più facile dipingerle che dirle.",
     viewArtwork: "Guarda il dipinto",
     enter: "Entra →",
     enterStory: "Entra nella storia →",

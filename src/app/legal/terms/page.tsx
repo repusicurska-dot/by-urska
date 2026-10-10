@@ -168,7 +168,7 @@ export default function TermsPage() {
             financial, legal, medical or other professional advice.
           </li>
           <li>
-            <strong>Price and renewal:</strong> €5.99 per month. The subscription renews automatically every month
+            <strong>Price and renewal:</strong> €1 per month. The subscription renews automatically every month
             until you cancel. No VAT is charged (seller not registered for VAT).
           </li>
           <li>

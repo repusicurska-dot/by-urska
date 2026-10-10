@@ -206,8 +206,8 @@ const ACRYLIC_CARE =
   "Hang away from direct sunlight, radiators and damp walls; keep in a room at a steady 18–24 °C. Dust gently with a soft, dry brush or cloth — never water, sprays or cleaning products. Handle by the stretcher bars, not the painted surface, and store upright rather than stacked.";
 
 /**
- * Shown in `order` (Urška, 2026-10-05): the blue piece first, then the pink one, then the two
- * small canvases, and the Black and White Collection last — the wolf first among them.
+ * Shown in `order` (Urška, 2026-10-10): the blue piece first, then the pink one, then the two
+ * small canvases, then the white figure, and the black paintings last — the wolf first among them.
  *
  * The first five use Urška's real titles and poems
  * (sourced from her Word docs — see note above the poem constants). Their
@@ -271,7 +271,7 @@ export const artworks: Artwork[] = [
   },
   {
     slug: "artwork-02",
-    order: 6,
+    order: 7,
     layout: "split",
     title: "The Prophecy",
     quote: "When darkness consumes the land, the final knight shall rise.",
@@ -427,7 +427,7 @@ export const artworks: Artwork[] = [
   },
   {
     slug: "artwork-06",
-    order: 5,
+    order: 6,
     layout: "split",
     title: "Voice of the Night",
     quote: "The soul speaks quietly.",
@@ -465,7 +465,7 @@ export const artworks: Artwork[] = [
   },
   {
     slug: "artwork-07",
-    order: 7,
+    order: 8,
     layout: "cinematic-macro",
     title: "Wild Spirit",
     quote: "There are places you can only reach by flowing.",
@@ -503,7 +503,7 @@ export const artworks: Artwork[] = [
   },
   {
     slug: "artwork-08",
-    order: 8,
+    order: 5,
     layout: "minimal",
     title: "Becoming",
     quote: "Another self is quietly being born.",

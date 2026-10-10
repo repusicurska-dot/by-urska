@@ -1,7 +1,6 @@
 import { Artwork } from "@/content/types";
 import SilenceIntro from "./SilenceIntro";
 import ArtworkReveal from "./ArtworkReveal";
-import ArtworkStory from "./ArtworkStory";
 import HorizontalGallery from "./HorizontalGallery";
 import WorldsPortal from "./WorldsPortal";
 import PoetryExperience from "./PoetryExperience";
@@ -25,7 +24,6 @@ export default function HomeJourney({ artworks }: { artworks: Artwork[] }) {
 
       <div id="painting" />
       <ArtworkReveal artwork={signature} />
-      <ArtworkStory artwork={signature} />
 
       <div id="collection" />
       <HorizontalGallery artworks={withImages} />

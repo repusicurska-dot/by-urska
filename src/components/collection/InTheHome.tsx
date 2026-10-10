@@ -10,9 +10,9 @@ import { getArtworkBySlug } from "@/lib/content";
  * Urška's own photographs of the originals on real walls — the one thing a catalogue
  * shot can't show a buyer: scale, and how a piece actually lives in a room.
  *
- * Grouped by painting, in the same order as the collection (Urška, 2026-10-05): the blue
- * piece, the pink one, the two small canvases together, then the Black and White Collection
- * with the wolf first. Each group is a masonry row so every frame keeps the proportions it
+ * Grouped by painting, in the same order as the collection (Urška, 2026-10-10): the blue
+ * piece, the pink one, the two small canvases together, the white figure, then the black
+ * paintings last, the wolf first. Every photo from her Dropbox set is shown. Each group is a masonry row so every frame keeps the proportions it
  * was shot in. The two wide "whole collection" shots bookend it.
  */
 type Shot = { src: string; width: number; height: number; alt: string };
@@ -23,8 +23,11 @@ const GROUPS: Group[] = [
     slugs: ["artwork-05"],
     shots: [
       { src: "/images/on-wall-heart.jpg", width: 1004, height: 1302, alt: "\"Somehow My Heart Still Remembers You\" on a plain white wall" },
+      { src: "/images/on-wall-heart-2.jpg", width: 1063, height: 1456, alt: "\"Somehow My Heart Still Remembers You\" in full, on a white wall" },
       { src: "/images/artist-hanging-heart.jpg", width: 1021, height: 1507, alt: "Urška hanging the turquoise canvas above the sofa" },
       { src: "/images/in-home-heart-6.jpg", width: 1080, height: 1620, alt: "The turquoise canvas above a sofa with plum and copper cushions" },
+      { src: "/images/in-home-heart-8.jpg", width: 1080, height: 1620, alt: "The turquoise canvas above the sofa, between ivy and a dreamcatcher" },
+      { src: "/images/in-home-heart-7.jpg", width: 854, height: 1377, alt: "The turquoise canvas above the sofa, seen from closer" },
       { src: "/images/in-home-heart-1.jpg", width: 1072, height: 1607, alt: "The turquoise canvas above a pale sofa" },
       { src: "/images/in-home-heart-3.jpg", width: 1080, height: 1620, alt: "The full living room, with plants and a low round table" },
       { src: "/images/in-home-heart-2.jpg", width: 1080, height: 1620, alt: "The living room seen past a white orchid" },
@@ -34,7 +37,9 @@ const GROUPS: Group[] = [
     slugs: ["artwork-04"],
     shots: [
       { src: "/images/on-wall-birds.jpg", width: 1023, height: 1560, alt: "\"Birds of Light\" hanging beside a feathered dreamcatcher" },
+      { src: "/images/on-wall-birds-2.jpg", width: 1067, height: 1461, alt: "\"Birds of Light\" in full, on a white wall" },
       { src: "/images/in-home-birds-3.jpg", width: 1080, height: 1620, alt: "\"Birds of Light\" above the sofa, between trailing ivy and a dreamcatcher" },
+      { src: "/images/in-home-birds-5.jpg", width: 1080, height: 1620, alt: "\"Birds of Light\" above the sofa, with rose and copper cushions" },
       { src: "/images/in-home-birds-1.jpg", width: 1080, height: 1620, alt: "\"Birds of Light\" above a sofa dressed in rose and plum" },
       { src: "/images/in-home-birds-4.jpg", width: 1026, height: 1567, alt: "\"Birds of Light\" seen from the corner of the sofa" },
       { src: "/images/in-home-birds-2.jpg", width: 1080, height: 1620, alt: "\"Birds of Light\" seen from across the room" },
@@ -49,8 +54,19 @@ const GROUPS: Group[] = [
     ],
   },
   {
+    slugs: ["artwork-08"],
+    shots: [
+      { src: "/images/artist-hanging-becoming.jpg", width: 1080, height: 1620, alt: "Urška hanging \"Becoming\" on a white wall" },
+      { src: "/images/in-home-becoming-1.jpg", width: 1048, height: 1573, alt: "\"Becoming\" above the sofa" },
+      { src: "/images/in-home-becoming-4.jpg", width: 889, height: 1506, alt: "\"Becoming\" above the sofa, seen from the side" },
+      { src: "/images/in-home-becoming-2.jpg", width: 1080, height: 1620, alt: "\"Becoming\" below a beaded ceiling light and a dreamcatcher" },
+      { src: "/images/in-home-becoming-3.jpg", width: 1080, height: 1620, alt: "\"Becoming\" seen past an orchid" },
+    ],
+  },
+  {
     slugs: ["artwork-06"],
     shots: [
+      { src: "/images/on-wall-wolf.jpg", width: 1049, height: 1515, alt: "\"Voice of the Night\" in full, on a white wall" },
       { src: "/images/in-home-wolf-1.jpg", width: 1080, height: 1620, alt: "\"Voice of the Night\" above the white sofa" },
       { src: "/images/in-home-wolf-2.jpg", width: 1080, height: 1620, alt: "\"Voice of the Night\" beside a dreamcatcher, seen from the sofa" },
     ],
@@ -58,8 +74,10 @@ const GROUPS: Group[] = [
   {
     slugs: ["artwork-02"],
     shots: [
+      { src: "/images/on-wall-prophecy-2.jpg", width: 816, height: 963, alt: "\"The Prophecy\" in full, on a white wall" },
       { src: "/images/on-wall-prophecy.jpg", width: 987, height: 1614, alt: "\"The Prophecy\" alone on a white wall" },
       { src: "/images/in-home-prophecy-2.jpg", width: 1080, height: 1620, alt: "\"The Prophecy\" above the sofa, next to a hanging plant" },
+      { src: "/images/in-home-prophecy-3.jpg", width: 1080, height: 1620, alt: "\"The Prophecy\" above the sofa, beside a trailing plant" },
       { src: "/images/in-home-prophecy-1.jpg", width: 883, height: 1202, alt: "\"The Prophecy\" below a beaded ceiling light" },
       { src: "/images/in-home-room-1.jpg", width: 1620, height: 1080, alt: "\"The Prophecy\" in the living room, seen past a white orchid" },
     ],
@@ -67,17 +85,9 @@ const GROUPS: Group[] = [
   {
     slugs: ["artwork-07"],
     shots: [
+      { src: "/images/on-wall-horse.jpg", width: 1452, height: 1022, alt: "\"Wild Spirit\" in full, on a white wall" },
       { src: "/images/in-home-horse-1.jpg", width: 1080, height: 1620, alt: "\"Wild Spirit\" on the living-room wall above the sofa" },
       { src: "/images/in-home-horse-2.jpg", width: 910, height: 1541, alt: "\"Wild Spirit\" beside a hanging plant" },
-    ],
-  },
-  {
-    slugs: ["artwork-08"],
-    shots: [
-      { src: "/images/artist-hanging-becoming.jpg", width: 1080, height: 1620, alt: "Urška hanging \"Becoming\" on a white wall" },
-      { src: "/images/in-home-becoming-1.jpg", width: 1048, height: 1573, alt: "\"Becoming\" above the sofa" },
-      { src: "/images/in-home-becoming-2.jpg", width: 1080, height: 1620, alt: "\"Becoming\" below a beaded ceiling light and a dreamcatcher" },
-      { src: "/images/in-home-becoming-3.jpg", width: 1080, height: 1620, alt: "\"Becoming\" seen past an orchid" },
     ],
   },
 ];

@@ -90,7 +90,7 @@ export interface TimeSlot {
   time: string;
 }
 
-const SLOT_HOURS = ["10:00", "13:00", "16:00", "19:00"];
+const SLOT_HOURS = ["15:00", "16:00", "17:00", "18:00", "19:00", "20:00"];
 const SLOT_WEEKDAYS = [2, 3, 4, 5, 6]; // Tue–Sat (0 = Sunday)
 
 export function generateCandidateSlots(weeks = 3): TimeSlot[] {
