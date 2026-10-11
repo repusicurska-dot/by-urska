@@ -23,6 +23,34 @@ export default function StorySection({
 }) {
   const imageFirst = index % 2 === 0;
 
+  if (!image) {
+    return (
+      <section className="py-12 md:py-16">
+        <Container>
+          <motion.div
+            className="mx-auto max-w-2xl text-center"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            {beat.heading && (
+              <span
+                className="block text-xs tracking-widest uppercase mb-3"
+                style={{ color: accentColor }}
+              >
+                {beat.heading}
+              </span>
+            )}
+            <p className="font-heading text-2xl md:text-3xl leading-snug text-bone whitespace-pre-line">
+              {beat.text}
+            </p>
+          </motion.div>
+        </Container>
+      </section>
+    );
+  }
+
   return (
     <section className="py-16 md:py-24">
       <Container>

@@ -12,7 +12,7 @@ export default function StoryHero({ artwork }: { artwork: Artwork }) {
   return (
     <section className="grid md:grid-cols-2 md:h-screen">
       {/* the painting at its own shape: no coloured bars beside or above it, on a phone or a wide screen */}
-      <div className="relative order-1 flex items-center justify-center md:h-screen">
+      <div className="relative order-1 flex items-center justify-center px-6 pt-8 md:h-screen md:p-0">
         {artwork.heroImage ? (
           <Image
             src={artwork.heroImage}
@@ -20,7 +20,7 @@ export default function StoryHero({ artwork }: { artwork: Artwork }) {
             width={1600}
             height={2000}
             sizes="(min-width: 768px) 50vw, 100vw"
-            className="h-auto w-full md:h-full md:w-auto md:max-w-full md:object-contain"
+            className="h-auto w-full rounded-sm md:rounded-none md:h-full md:w-auto md:max-w-full md:object-contain"
             priority
           />
         ) : (

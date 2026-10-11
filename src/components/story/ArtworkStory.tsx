@@ -8,6 +8,20 @@ import PriceReveal from "./PriceReveal";
 import ArtworkViewTracker from "./ArtworkViewTracker";
 
 export default function ArtworkStory({ artwork }: { artwork: Artwork }) {
+  // every photo appears once per page: a beat without its own new photo is text only
+  const used = new Set<string>(artwork.heroImage ? [artwork.heroImage] : []);
+  const beatImages = artwork.storyBeats.map((beat) => {
+    if (!beat.image || used.has(beat.image)) return undefined;
+    used.add(beat.image);
+    return beat.image;
+  });
+  const detailImages = artwork.detailImages?.filter((img) => {
+    if (!img.src) return true;
+    if (used.has(img.src)) return false;
+    used.add(img.src);
+    return true;
+  });
+
   return (
     <article>
       <ArtworkViewTracker slug={artwork.slug} />
@@ -19,8 +33,8 @@ export default function ArtworkStory({ artwork }: { artwork: Artwork }) {
           index={index}
           accentColor={artwork.accentColor}
           artworkTitle={artwork.title}
-          image={beat.image ?? artwork.heroImage}
-          imageAlt={beat.imageAlt ?? artwork.heroImageAlt}
+          image={beatImages[index]}
+          imageAlt={beat.imageAlt}
         />
       ))}
       {artwork.artistNote && (
@@ -53,7 +67,7 @@ export default function ArtworkStory({ artwork }: { artwork: Artwork }) {
           </div>
         </section>
       )}
-      <DetailImages images={artwork.detailImages} />
+      <DetailImages images={detailImages} />
       <ArtworkSpecs artwork={artwork} />
       <div className="border-t border-bone/10">
         <PriceReveal artwork={artwork} />
