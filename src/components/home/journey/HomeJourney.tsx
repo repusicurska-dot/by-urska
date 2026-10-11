@@ -26,7 +26,8 @@ export default function HomeJourney({ artworks }: { artworks: Artwork[] }) {
       <ArtworkReveal artwork={signature} />
 
       <div id="collection" />
-      <HorizontalGallery artworks={withImages} />
+      {/* the signature painting is already shown above, so the gallery leaves it out */}
+      <HorizontalGallery artworks={withImages.filter((a) => a.slug !== signature.slug)} />
 
       <div id="poetry" />
       <WorldsPortal />

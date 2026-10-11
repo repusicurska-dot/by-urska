@@ -13,6 +13,10 @@ Zadnjič posodobljeno: 2026-10-11
 - [x] Strani slik (/artworks/*): vsaka fotografija se pokaže samo enkrat. Odsek brez svoje
       fotografije je samo besedilo, glavna slika se ne ponavlja več.
 - [x] Na telefonu prva slika na strani slike ni več od roba do roba.
+- [x] Odstranjene skoraj enake fotografije: druga fotografija ob grajski ograji pri Blossoming
+      Love in Eternal Love, druga fotografija v dnevni sobi pri Becoming.
+- [x] /art: The Prophecy ni več dvakrat (na vrhu in v galeriji), za citatom pri poeziji ni
+      več slike Somehow My Heart, ker je že v galeriji.
 
 ## 0a. Iz zapiska „Art to do!“ (2026-10-10) — narejeno
 

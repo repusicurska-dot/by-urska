@@ -236,8 +236,6 @@ export const artworks: Artwork[] = [
       {
         heading: "Meaning",
         text: BLOSSOMING_LOVE_MEANING,
-        image: "/images/blossoming-love-story-2.jpg",
-        imageAlt: "'Blossoming Love' held up against the castle gates",
       },
       { heading: "For the collector", text: BLOSSOMING_LOVE_COLLECTOR },
     ],
@@ -319,8 +317,6 @@ export const artworks: Artwork[] = [
       {
         heading: "Meaning",
         text: ETERNAL_LOVE_MEANING,
-        image: "/images/eternal-love-story-2.jpg",
-        imageAlt: "'Eternal Love' held up in front of the castle grounds",
       },
       { heading: "For the collector", text: ETERNAL_LOVE_COLLECTOR },
     ],
@@ -522,13 +518,6 @@ export const artworks: Artwork[] = [
     heroImage: "/images/becoming.jpg",
     heroImageAlt:
       "Urška hanging her original painting 'Becoming' — a woman's figure drawn in soft grey strokes on a white canvas.",
-    detailImages: [
-      {
-        src: "/images/in-home-becoming-2.jpg",
-        alt: "'Becoming' in the living room, below a beaded ceiling light",
-        label: "On the wall",
-      },
-    ],
     accentColor: "#8A8A8A",
     year: 2026,
     medium: "Acrylic on canvas",

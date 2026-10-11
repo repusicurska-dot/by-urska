@@ -1,14 +1,13 @@
 "use client";
 
 import { useMemo } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { motion, useReducedMotion, useTransform } from "framer-motion";
 import { Artwork } from "@/content/types";
 import { usePinnedScroll } from "@/lib/usePinnedScroll";
 
-/** The quote's words assemble themselves out of the dark, then give way to the piece they came from. */
+/** The quote's words assemble themselves out of the dark, then give way to the link onward. No painting behind them: every painting is already in the gallery above. */
 export default function PoetryExperience({ artwork }: { artwork: Artwork }) {
   const { t } = useLanguage();
   const reduceMotion = useReducedMotion();
@@ -16,8 +15,6 @@ export default function PoetryExperience({ artwork }: { artwork: Artwork }) {
   const words = useMemo(() => artwork.quote.split(" "), [artwork.quote]);
 
   const sentenceOpacity = useTransform(progress, [0.5, 0.6], [1, 0]);
-  const imageOpacity = useTransform(progress, [0.4, 0.68], [0, 0.45]);
-  const imageScale = useTransform(progress, [0.4, 0.85], [1.1, 1]);
   const ctaOpacity = useTransform(progress, [0.64, 0.85], [0, 1]);
   const ctaY = useTransform(progress, [0.64, 0.85], [14, 0]);
 
@@ -40,12 +37,6 @@ export default function PoetryExperience({ artwork }: { artwork: Artwork }) {
   return (
     <section ref={ref} className="relative h-[140vh] md:h-[170vh]">
       <div className="sticky top-0 h-screen w-full overflow-hidden">
-        {artwork.heroImage && (
-          <motion.div className="absolute inset-0" style={{ opacity: imageOpacity, scale: imageScale }}>
-            <Image src={artwork.heroImage} alt="" fill sizes="100vw" className="object-cover" />
-            <div className="absolute inset-0 bg-ink/40" />
-          </motion.div>
-        )}
 
         <div className="relative flex h-full flex-col items-center justify-center px-6 text-center">
           <motion.p
