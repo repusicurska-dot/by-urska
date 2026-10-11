@@ -217,6 +217,9 @@ const ACRYLIC_CARE =
  *
  * The three newest (wolf, horse, white figure) were named and priced on her behalf
  * (2026-10-05, "ti določi vse"); she confirmed the names, prices and sizes the same day.
+ *
+ * Prices changed 2026-10-11 at her request: the five large paintings 1.000 €, the two small
+ * ones and Becoming 800 €.
  */
 export const artworks: Artwork[] = [
   {
@@ -257,7 +260,7 @@ export const artworks: Artwork[] = [
     editionType: "original",
     certificateOfAuthenticity: true,
     framed: false,
-    price: 1111,
+    price: 800,
     currency: "EUR",
     priceConfirmed: true,
     vatNote,
@@ -290,7 +293,7 @@ export const artworks: Artwork[] = [
     editionType: "original",
     certificateOfAuthenticity: true,
     framed: false,
-    price: 2400,
+    price: 1000,
     currency: "EUR",
     priceConfirmed: true,
     vatNote,
@@ -338,7 +341,7 @@ export const artworks: Artwork[] = [
     editionType: "original",
     certificateOfAuthenticity: true,
     framed: false,
-    price: 1111,
+    price: 800,
     currency: "EUR",
     priceConfirmed: true,
     vatNote,
@@ -371,7 +374,7 @@ export const artworks: Artwork[] = [
     editionType: "original",
     certificateOfAuthenticity: true,
     framed: false,
-    price: 2400,
+    price: 1000,
     currency: "EUR",
     priceConfirmed: true,
     vatNote,
@@ -411,7 +414,7 @@ export const artworks: Artwork[] = [
     editionType: "original",
     certificateOfAuthenticity: true,
     framed: false,
-    price: 2400,
+    price: 1000,
     currency: "EUR",
     priceConfirmed: true,
     vatNote,
@@ -449,7 +452,7 @@ export const artworks: Artwork[] = [
     editionType: "original",
     certificateOfAuthenticity: true,
     framed: false,
-    price: 2400,
+    price: 1000,
     currency: "EUR",
     priceConfirmed: true,
     vatNote,
@@ -487,7 +490,7 @@ export const artworks: Artwork[] = [
     editionType: "original",
     certificateOfAuthenticity: true,
     framed: false,
-    price: 2200,
+    price: 1000,
     currency: "EUR",
     priceConfirmed: true,
     vatNote,
@@ -525,7 +528,7 @@ export const artworks: Artwork[] = [
     editionType: "original",
     certificateOfAuthenticity: true,
     framed: false,
-    price: 1500,
+    price: 800,
     currency: "EUR",
     priceConfirmed: true,
     vatNote,

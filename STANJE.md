@@ -10,6 +10,8 @@ Zadnjič posodobljeno: 2026-10-11
 
 ## 0b. 2026-10-11 — narejeno
 
+- [x] **Nove cene:** velike slike (Somehow My Heart, Birds of Light, The Prophecy, Voice of the
+      Night, Wild Spirit) 1.000 €; mali dve (Blossoming Love, Eternal Love) in Becoming 800 €.
 - [x] Strani slik (/artworks/*): vsaka fotografija se pokaže samo enkrat. Odsek brez svoje
       fotografije je samo besedilo, glavna slika se ne ponavlja več.
 - [x] Na telefonu prva slika na strani slike ni več od roba do roba.
