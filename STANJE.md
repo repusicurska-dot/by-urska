@@ -4,9 +4,15 @@ Edini veljaven seznam odprtih stvari za byurska.com. Urejeno po tem, kaj kaj blo
 Zgodovina že opravljenega dela je v `OWNER_ACTION_REQUIRED.md` — tam ne iščem odprtih
 nalog, tu so.
 
-Zadnjič posodobljeno: 2026-10-10
+Zadnjič posodobljeno: 2026-10-11
 
 ---
+
+## 0b. 2026-10-11 — narejeno
+
+- [x] Strani slik (/artworks/*): vsaka fotografija se pokaže samo enkrat. Odsek brez svoje
+      fotografije je samo besedilo, glavna slika se ne ponavlja več.
+- [x] Na telefonu prva slika na strani slike ni več od roba do roba.
 
 ## 0a. Iz zapiska „Art to do!“ (2026-10-10) — narejeno
 
