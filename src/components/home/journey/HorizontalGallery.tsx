@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion, useMotionValueEvent, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import { Artwork } from "@/content/types";
 import CustomCursor from "./CustomCursor";
+import ArtworkPeek from "@/components/shared/ArtworkPeek";
 import { useLanguage } from "@/i18n/LanguageProvider";
 
 // Sized by the screen's height too, so a 4:5 card stays well inside the pinned viewport (about half its height).
@@ -46,12 +47,7 @@ function GalleryCard({
       className="group shrink-0"
       style={{ width: CARD_WIDTHS[index % CARD_WIDTHS.length], perspective: "1200px" }}
     >
-      <Link
-        href={`/artworks/${artwork.slug}`}
-        aria-label={`View ${artwork.title}`}
-        onMouseEnter={() => onHover(true)}
-        onMouseLeave={onMouseLeave}
-      >
+      <div onMouseEnter={() => onHover(true)} onMouseLeave={onMouseLeave}>
         <div
           ref={cardRef}
           onMouseMove={onMouseMove}
@@ -62,15 +58,19 @@ function GalleryCard({
           }}
         >
           {artwork.heroImage && (
-            <Image
-              src={artwork.heroImage}
-              alt={artwork.heroImageAlt ?? artwork.title}
-              fill
-              sizes="45vw"
-              className="object-contain p-6 transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-            />
+            <ArtworkPeek artwork={artwork} className="h-full w-full">
+              <Image
+                src={artwork.heroImage}
+                alt={artwork.heroImageAlt ?? artwork.title}
+                fill
+                sizes="45vw"
+                className="object-contain p-6 transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+              />
+            </ArtworkPeek>
           )}
         </div>
+      </div>
+      <Link href={`/artworks/${artwork.slug}`} aria-label={`View ${artwork.title}`} className="block">
         <div className="mt-5">
           <span className="text-xs tracking-widest text-smoke">{String(index + 1).padStart(2, "0")}</span>
           <h3 className="mt-1 font-heading text-xl text-bone">{artwork.title}</h3>
@@ -175,13 +175,9 @@ function GalleryMobile({ artworks }: { artworks: Artwork[] }) {
       style={{ scrollPaddingLeft: "1.5rem", scrollPaddingRight: "1.5rem" }}
     >
       {artworks.map((artwork, i) => (
-        <Link
-          key={artwork.slug}
-          href={`/artworks/${artwork.slug}`}
-          className="w-[82%] shrink-0 snap-start"
-        >
-          <div className="relative aspect-[4/5] w-full overflow-hidden">
-            {artwork.heroImage && (
+        <div key={artwork.slug} className="w-[82%] shrink-0 snap-start">
+          {artwork.heroImage && (
+            <ArtworkPeek artwork={artwork} className="aspect-[4/5] w-full overflow-hidden">
               <Image
                 src={artwork.heroImage}
                 alt={artwork.heroImageAlt ?? artwork.title}
@@ -189,14 +185,14 @@ function GalleryMobile({ artworks }: { artworks: Artwork[] }) {
                 sizes="82vw"
                 className="object-contain p-5"
               />
-            )}
-          </div>
-          <div className="mt-4">
+            </ArtworkPeek>
+          )}
+          <Link href={`/artworks/${artwork.slug}`} className="mt-4 block">
             <span className="text-xs tracking-widest text-smoke">{String(i + 1).padStart(2, "0")}</span>
             <h3 className="mt-1 font-heading text-lg text-bone">{artwork.title}</h3>
             <p className="mt-1 text-xs text-smoke">{[artwork.year, artwork.dimensions].filter(Boolean).join(" · ")}</p>
-          </div>
-        </Link>
+          </Link>
+        </div>
       ))}
     </div>
   );

@@ -7,6 +7,7 @@ import { motion, useMotionValueEvent, useReducedMotion, useTransform } from "fra
 import { Artwork } from "@/content/types";
 import { usePinnedScroll } from "@/lib/usePinnedScroll";
 import { useLanguage } from "@/i18n/LanguageProvider";
+import ArtworkPeek from "@/components/shared/ArtworkPeek";
 
 const SPECS_THRESHOLD = 0.7;
 
@@ -40,9 +41,7 @@ export default function ArtworkReveal({ artwork }: { artwork: Artwork }) {
         <div className="mx-auto max-w-2xl px-6">
           {artwork.heroImage && (
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-md shadow-[0_40px_120px_-30px_rgba(0,0,0,0.7)]">
-              <Link href={`/artworks/${artwork.slug}`} aria-label={artwork.title} className="absolute inset-0 block">
-                <Image src={artwork.heroImage} alt={artwork.heroImageAlt ?? artwork.title} fill className="object-cover" sizes="90vw" />
-              </Link>
+              <Image src={artwork.heroImage} alt={artwork.heroImageAlt ?? artwork.title} fill className="object-cover" sizes="90vw" />
             </div>
           )}
           <ArtworkCaption artwork={artwork} meta={meta} />
@@ -65,7 +64,7 @@ export default function ArtworkReveal({ artwork }: { artwork: Artwork }) {
             className="relative aspect-[4/5] h-[72vh] max-h-[600px] w-auto max-w-[88vw] overflow-hidden shadow-[0_40px_120px_-30px_rgba(0,0,0,0.7)]"
             style={{ opacity: cardOpacity, scale: cardScale, borderRadius: radius }}
           >
-            <Link href={`/artworks/${artwork.slug}`} aria-label={artwork.title} className="absolute inset-0 block">
+            <ArtworkPeek artwork={artwork} className="h-full w-full">
               <Image
                 src={artwork.heroImage}
                 alt={artwork.heroImageAlt ?? artwork.title}
@@ -74,7 +73,7 @@ export default function ArtworkReveal({ artwork }: { artwork: Artwork }) {
                 sizes="80vw"
                 className="object-cover"
               />
-            </Link>
+            </ArtworkPeek>
           </motion.div>
         )}
 
