@@ -30,7 +30,7 @@ export default function LumoraLanding() {
           <div className="grid items-center gap-14 text-center lg:grid-cols-[1.1fr_0.9fr] lg:text-left">
             <motion.div {...rise(0)}>
               <div className="flex items-center justify-center gap-4 lg:justify-start">
-                <Image src="/images/lumora/icon.png" alt="Lumora Manifest" width={72} height={72} className="rounded-[1.25rem] shadow-md" priority />
+                <Image src="/images/lumora/icon.png" alt="Manifest by Urška" width={72} height={72} className="rounded-[1.25rem] shadow-md" priority />
                 <span className="text-[11px] uppercase tracking-[0.35em] text-gold-600">{c.eyebrow}</span>
               </div>
               <h1 className="mt-8 font-heading text-5xl leading-[1.02] text-bone md:text-7xl">{c.title}</h1>

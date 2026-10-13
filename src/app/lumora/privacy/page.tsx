@@ -4,13 +4,13 @@ import ProtectedEmail from "@/components/shared/ProtectedEmail";
 import { business } from "@/content/business";
 
 export const metadata: Metadata = {
-  title: "Lumora Manifest — Privacy Policy",
-  description: "How the Lumora Manifest app handles your data.",
+  title: "Manifest by Urška — Privacy Policy",
+  description: "How the Manifest by Urška app handles your data.",
   alternates: { canonical: "/lumora/privacy" },
 };
 
 /**
- * The privacy policy of the Lumora Manifest iPhone app, as built on 2026-10-04: everything the
+ * The privacy policy of the Manifest by Urška iPhone app, as built on 2026-10-04: everything the
  * person writes stays on the phone, purchases go through Apple, nothing is tracked. If the app
  * ever adds an ad or any server, this page has to change with it.
  */
@@ -20,7 +20,7 @@ export default function LumoraPrivacyPage() {
       <section>
         <h2>1. Who is responsible</h2>
         <p>
-          The Lumora Manifest app is published by {business.legalName}, {business.registeredAddress},
+          The Manifest by Urška app is published by {business.legalName}, {business.registeredAddress},
           Slovenia (EU), registration number {business.registrationNumber}. Contact: <ProtectedEmail />.
         </p>
       </section>
@@ -28,7 +28,7 @@ export default function LumoraPrivacyPage() {
       <section>
         <h2>2. The short version</h2>
         <p>
-          Lumora has no accounts, no server of its own, no analytics and no advertising trackers. What you
+          Manifest by Urška has no accounts, no server of its own, no analytics and no advertising trackers. What you
           write in the app stays on your iPhone. We cannot see it.
         </p>
       </section>
@@ -57,9 +57,9 @@ export default function LumoraPrivacyPage() {
       </section>
 
       <section>
-        <h2>4. Lumora Premium and payments</h2>
+        <h2>4. Manifest Premium and payments</h2>
         <p>
-          Lumora Premium is an auto-renewing subscription: 7 days free, then €1.99 per month. It is sold and
+          Manifest Premium is an auto-renewing subscription: 7 days free, then €1.99 per month. It is sold and
           billed by Apple through your Apple ID. Apple handles your payment details under Apple&apos;s own
           privacy policy; we receive no card details and no personal information from Apple, only
           confirmation that the subscription is active. You can cancel at any time in your Apple ID settings
@@ -69,7 +69,7 @@ export default function LumoraPrivacyPage() {
 
       <section>
         <h2>5. Children</h2>
-        <p>Lumora is not directed at children under 13 and does not knowingly collect their data.</p>
+        <p>Manifest by Urška is not directed at children under 13 and does not knowingly collect their data.</p>
       </section>
 
       <section>
@@ -92,12 +92,12 @@ export default function LumoraPrivacyPage() {
       <section>
         <h2>Politika zasebnosti (slovensko)</h2>
         <p>
-          Aplikacijo Lumora Manifest izdaja {business.legalName}, {business.registeredAddress}. Kontakt:{" "}
+          Aplikacijo Manifest by Urška izdaja {business.legalName}, {business.registeredAddress}. Kontakt:{" "}
           <ProtectedEmail />.
         </p>
         <ul>
           <li>
-            Lumora nima uporabniških računov, lastnega strežnika, analitike ali sledilnikov za oglase.
+            Manifest by Urška nima uporabniških računov, lastnega strežnika, analitike ali sledilnikov za oglase.
           </li>
           <li>
             Ime, področje, ure opomnikov, dnevnik, želje, shranjene afirmacije in čas poslušanja so shranjeni
@@ -109,7 +109,7 @@ export default function LumoraPrivacyPage() {
           </li>
           <li>Opomnike ustvari tvoj telefon sam; branje na glas opravljajo vgrajeni glasovi iPhona.</li>
           <li>
-            Lumora Premium: 7 dni zastonj, nato 1,99 € na mesec. Naročnino prodaja in zaračunava Apple prek
+            Manifest Premium: 7 dni zastonj, nato 1,99 € na mesec. Naročnino prodaja in zaračunava Apple prek
             tvojega Apple ID-ja; mi ne prejmemo podatkov o kartici ali osebnih podatkov. Prekličeš jo
             kadarkoli v nastavitvah Apple ID-ja (Nastavitve → tvoje ime → Naročnine), vsaj 24 ur pred
             naslednjo obnovitvijo.
