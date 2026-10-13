@@ -40,7 +40,9 @@ export default function ArtworkReveal({ artwork }: { artwork: Artwork }) {
         <div className="mx-auto max-w-2xl px-6">
           {artwork.heroImage && (
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-md shadow-[0_40px_120px_-30px_rgba(0,0,0,0.7)]">
-              <Image src={artwork.heroImage} alt={artwork.heroImageAlt ?? artwork.title} fill className="object-cover" sizes="90vw" />
+              <Link href={`/artworks/${artwork.slug}`} aria-label={artwork.title} className="absolute inset-0 block">
+                <Image src={artwork.heroImage} alt={artwork.heroImageAlt ?? artwork.title} fill className="object-cover" sizes="90vw" />
+              </Link>
             </div>
           )}
           <ArtworkCaption artwork={artwork} meta={meta} />
@@ -63,14 +65,16 @@ export default function ArtworkReveal({ artwork }: { artwork: Artwork }) {
             className="relative aspect-[4/5] h-[72vh] max-h-[600px] w-auto max-w-[88vw] overflow-hidden shadow-[0_40px_120px_-30px_rgba(0,0,0,0.7)]"
             style={{ opacity: cardOpacity, scale: cardScale, borderRadius: radius }}
           >
-            <Image
-              src={artwork.heroImage}
-              alt={artwork.heroImageAlt ?? artwork.title}
-              fill
-              priority
-              sizes="80vw"
-              className="object-cover"
-            />
+            <Link href={`/artworks/${artwork.slug}`} aria-label={artwork.title} className="absolute inset-0 block">
+              <Image
+                src={artwork.heroImage}
+                alt={artwork.heroImageAlt ?? artwork.title}
+                fill
+                priority
+                sizes="80vw"
+                className="object-cover"
+              />
+            </Link>
           </motion.div>
         )}
 

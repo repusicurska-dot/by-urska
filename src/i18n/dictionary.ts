@@ -297,7 +297,7 @@ const en: Dictionary = {
     eyebrow: "The collection",
     title: "Every original, in one place",
     intro:
-      "Each painting here exists once. Acrylic on canvas, painted by hand in Slovenia, sent across the EU, and further on request — tap any piece to see it full size, or open its story.",
+      "Each painting here exists once. Acrylic on canvas, painted by hand in Slovenia, sent across the EU, and further on request — tap any piece to open its story, or see it full size.",
     originals: "originals",
     oneOfEach: "One of each",
     shippedWorldwide: "Shipped across the EU · worldwide on request",
@@ -588,7 +588,7 @@ const sl: Dictionary = {
     eyebrow: "Zbirka",
     title: "Vsi originali na enem mestu",
     intro:
-      "Vsaka slika obstaja samo enkrat. Akril na platnu, naslikan ročno v Sloveniji, poslan po EU, drugam na povpraševanje — tapni katerokoli sliko za pogled v polni velikosti ali odpri njeno zgodbo.",
+      "Vsaka slika obstaja samo enkrat. Akril na platnu, naslikan ročno v Sloveniji, poslan po EU, drugam na povpraševanje — tapni katerokoli sliko in odpre se njena zgodba; v polni velikosti jo vidiš z gumbom na sliki.",
     originals: "originalov",
     oneOfEach: "Vsaka samo enkrat",
     shippedWorldwide: "Dostava po EU · drugam na povpraševanje",
@@ -879,7 +879,7 @@ const hr: Dictionary = {
     eyebrow: "Zbirka",
     title: "Svi originali na jednom mjestu",
     intro:
-      "Svaka slika postoji samo jednom. Akril na platnu, oslikan ručno u Sloveniji, s dostavom po EU, drugdje na upit — dodirni bilo koje djelo za prikaz u punoj veličini ili otvori njegovu priču.",
+      "Svaka slika postoji samo jednom. Akril na platnu, oslikan ručno u Sloveniji, s dostavom po EU, drugdje na upit — dodirni bilo koje djelo i otvorit će se njegova priča; u punoj veličini vidiš ga gumbom na slici.",
     originals: "originala",
     oneOfEach: "Svaka samo jednom",
     shippedWorldwide: "Dostava po EU · drugdje na upit",
@@ -1170,7 +1170,7 @@ const de: Dictionary = {
     eyebrow: "Die Sammlung",
     title: "Alle Originale an einem Ort",
     intro:
-      "Jedes Bild gibt es nur einmal. Acryl auf Leinwand, in Slowenien von Hand gemalt, in die EU versandt, weltweit auf Anfrage — tippe auf ein Werk für die volle Größe oder öffne seine Geschichte.",
+      "Jedes Bild gibt es nur einmal. Acryl auf Leinwand, in Slowenien von Hand gemalt, in die EU versandt, weltweit auf Anfrage — tippe auf ein Werk, um seine Geschichte zu öffnen, oder sieh es dir in voller Größe an.",
     originals: "Originale",
     oneOfEach: "Jedes nur einmal",
     shippedWorldwide: "Versand in der EU · weltweit auf Anfrage",
@@ -1461,7 +1461,7 @@ const it: Dictionary = {
     eyebrow: "La collezione",
     title: "Tutti gli originali in un solo luogo",
     intro:
-      "Ogni dipinto esiste una volta sola. Acrilico su tela, dipinto a mano in Slovenia spedito nell'UE e altrove su richiesta — tocca un'opera per vederla a grandezza intera o apri la sua storia.",
+      "Ogni dipinto esiste una volta sola. Acrilico su tela, dipinto a mano in Slovenia spedito nell'UE e altrove su richiesta — tocca un'opera per aprire la sua storia, o guardala a grandezza intera.",
     originals: "originali",
     oneOfEach: "Ognuno unico",
     shippedWorldwide: "Spedizione nell'UE · nel mondo su richiesta",

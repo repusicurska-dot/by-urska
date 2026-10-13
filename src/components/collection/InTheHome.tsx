@@ -117,9 +117,10 @@ export default function InTheHome() {
                   so all photos in the row end up exactly the same height. Stacks on phones. */}
               <div className={`mt-6 flex flex-col gap-6 sm:flex-row ${group.shots.length < 3 ? "lg:max-w-4xl" : ""}`}>
                 {group.shots.map((shot) => (
-                  <div
+                  <Link
                     key={shot.src}
-                    className="art-card group overflow-hidden rounded-2xl"
+                    href={`/artworks/${pieces[0]?.slug ?? group.slugs[0]}`}
+                    className="art-card group block overflow-hidden rounded-2xl"
                     style={{ flex: `${shot.width / shot.height} 1 0%` }}
                   >
                     <Image
@@ -130,7 +131,7 @@ export default function InTheHome() {
                       sizes="(min-width: 640px) 50vw, 100vw"
                       className="h-auto w-full transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
                     />
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

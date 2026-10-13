@@ -4,9 +4,20 @@ Edini veljaven seznam odprtih stvari za byurska.com. Urejeno po tem, kaj kaj blo
 Zgodovina že opravljenega dela je v `OWNER_ACTION_REQUIRED.md` — tam ne iščem odprtih
 nalog, tu so.
 
-Zadnjič posodobljeno: 2026-10-11
+Zadnjič posodobljeno: 2026-10-13
 
 ---
+
+## 0c. Iz zapiska „Art to do!“ (2026-10-13)
+
+- [x] Klik na sliko odpre stran slike (zbirka, velika slika na vrhu /art, fotografije na steni).
+      Polna velikost je zdaj majhen gumb na sliki.
+- [x] Volk in konj: prva fotografija obrezana na samo platno (brez stene).
+- [x] Lumora Manifest: vision board (zavihek Želje). Najprej modra, roza, dve mali z vitezom,
+      bela figura, nato črne — volk prvi. Ali svoja fotografija. Pride z naslednjo verzijo v App Store.
+- [ ] **Becoming (bela figura)**: ni fotografije od spredaj brez Urške — potrebna za obrez.
+- [ ] **Mape „art“, „art objava“, „surovo“ in video `lv_0_20260831233627.mp4`** niso v Dropboxu
+      ne v Google Drive. Ko so naložene: nove fotografije na stran, video na začetek /art.
 
 ## 0b. 2026-10-11 — narejeno
 
