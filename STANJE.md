@@ -16,8 +16,9 @@ Zadnjič posodobljeno: 2026-10-13
 - [ ] **Becoming (bela figura)**: ni fotografije od spredaj brez Urške — potrebna za obrez.
 - [ ] **Mape „art“, „art objava“, „surovo“ in video `lv_0_20260831233627.mp4`** niso v Dropboxu
       ne v Google Drive. Ko so naložene: nove fotografije na stran, video na začetek /art.
-- [x] **Manifest by Urška (zdaj še Lumora Manifest) — vision board** v zavihku Želje: najprej modra, roza,
-      dve mali z vitezom, bela figura, nato črne — volk prvi; ali svoja fotografija. V App Store z naslednjo verzijo.
+- [x] **Aplikacija se zdaj imenuje Manifest by Urška** (v aplikaciji in na byurska.com/lumora). Vision board v zavihku
+      Želje: svoje fotografije z opisom. V App Store z naslednjo verzijo; ime v App Store Connect
+      spremeni ročno, ko oddaš novo verzijo.
 
 ## 0b. 2026-10-11 — narejeno
 
