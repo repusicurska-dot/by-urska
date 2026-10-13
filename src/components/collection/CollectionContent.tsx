@@ -6,6 +6,7 @@ import Image from "next/image";
 import Container from "@/components/shared/Container";
 import PlaceholderArt from "@/components/shared/PlaceholderArt";
 import ArtworkLightbox from "@/components/shared/ArtworkLightbox";
+import ArtworkPeek from "@/components/shared/ArtworkPeek";
 import { Artwork } from "@/content/types";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import EarlyBirdNote from "@/components/shared/EarlyBirdNote";
@@ -47,12 +48,11 @@ export default function CollectionContent({ artworks }: { artworks: Artwork[] })
             const status = { label: t.collection[artwork.availability], dot: AVAILABILITY_DOT[artwork.availability] };
             return (
               <article key={artwork.slug} className="art-card group flex flex-col rounded-2xl p-3 md:p-4">
-                {/* The picture itself opens the painting's page; full size is the small button in its corner. */}
-                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl">
-                <Link
-                  href={`/artworks/${artwork.slug}`}
-                  className="absolute inset-0 block"
-                  aria-label={`${artwork.title} — ${t.collection.readStory}`}
+                {/* Hover shows "View more"; a click lays the details over the picture, with the page and full size one click further. */}
+                <ArtworkPeek
+                  artwork={artwork}
+                  onFullSize={() => setOpenIndex(i)}
+                  className="aspect-[4/5] w-full overflow-hidden rounded-xl"
                 >
                   {artwork.heroImage ? (
                     <Image
@@ -75,15 +75,7 @@ export default function CollectionContent({ artworks }: { artworks: Artwork[] })
                     className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
                     style={{ background: `radial-gradient(75% 55% at 50% 100%, ${artwork.accentColor}33, transparent 70%)` }}
                   />
-                </Link>
-                <button
-                  type="button"
-                  onClick={() => setOpenIndex(i)}
-                  className="absolute bottom-3 right-3 cursor-zoom-in rounded-full bg-ink/70 px-3 py-1 text-[10px] tracking-widest uppercase text-bone backdrop-blur-sm transition-opacity duration-500 focus-visible:opacity-100 md:opacity-0 md:group-hover:opacity-100"
-                >
-                  {t.collection.viewFullSize}
-                </button>
-                </div>
+                </ArtworkPeek>
 
                 <div className="flex flex-1 flex-col px-1 pt-5 pb-1">
                   <Link href={`/artworks/${artwork.slug}`} className="block">

@@ -66,6 +66,7 @@ export interface Dictionary {
     shippedWorldwide: string;
     viewFullSize: string;
     readStory: string;
+    viewMore: string;
     available: string;
     reserved: string;
     sold: string;
@@ -297,12 +298,13 @@ const en: Dictionary = {
     eyebrow: "The collection",
     title: "Every original, in one place",
     intro:
-      "Each painting here exists once. Acrylic on canvas, painted by hand in Slovenia, sent across the EU, and further on request — tap any piece to open its story, or see it full size.",
+      "Each painting here exists once. Acrylic on canvas, painted by hand in Slovenia, sent across the EU, and further on request — tap any piece to learn more about it.",
     originals: "originals",
     oneOfEach: "One of each",
     shippedWorldwide: "Shipped across the EU · worldwide on request",
     viewFullSize: "View full size",
     readStory: "Read its story",
+    viewMore: "View more",
     available: "Available",
     reserved: "Reserved",
     sold: "Sold",
@@ -588,12 +590,13 @@ const sl: Dictionary = {
     eyebrow: "Zbirka",
     title: "Vsi originali na enem mestu",
     intro:
-      "Vsaka slika obstaja samo enkrat. Akril na platnu, naslikan ročno v Sloveniji, poslan po EU, drugam na povpraševanje — tapni katerokoli sliko in odpre se njena zgodba; v polni velikosti jo vidiš z gumbom na sliki.",
+      "Vsaka slika obstaja samo enkrat. Akril na platnu, naslikan ročno v Sloveniji, poslan po EU, drugam na povpraševanje — tapni katerokoli sliko in izveš več o njej.",
     originals: "originalov",
     oneOfEach: "Vsaka samo enkrat",
     shippedWorldwide: "Dostava po EU · drugam na povpraševanje",
     viewFullSize: "Poglej v polni velikosti",
     readStory: "Preberi zgodbo",
+    viewMore: "Več o sliki",
     available: "Na voljo",
     reserved: "Rezervirano",
     sold: "Prodano",
@@ -879,12 +882,13 @@ const hr: Dictionary = {
     eyebrow: "Zbirka",
     title: "Svi originali na jednom mjestu",
     intro:
-      "Svaka slika postoji samo jednom. Akril na platnu, oslikan ručno u Sloveniji, s dostavom po EU, drugdje na upit — dodirni bilo koje djelo i otvorit će se njegova priča; u punoj veličini vidiš ga gumbom na slici.",
+      "Svaka slika postoji samo jednom. Akril na platnu, oslikan ručno u Sloveniji, s dostavom po EU, drugdje na upit — dodirni bilo koje djelo i saznaj više o njemu.",
     originals: "originala",
     oneOfEach: "Svaka samo jednom",
     shippedWorldwide: "Dostava po EU · drugdje na upit",
     viewFullSize: "Prikaži u punoj veličini",
     readStory: "Pročitaj priču",
+    viewMore: "Više o slici",
     available: "Dostupno",
     reserved: "Rezervirano",
     sold: "Prodano",
@@ -1170,12 +1174,13 @@ const de: Dictionary = {
     eyebrow: "Die Sammlung",
     title: "Alle Originale an einem Ort",
     intro:
-      "Jedes Bild gibt es nur einmal. Acryl auf Leinwand, in Slowenien von Hand gemalt, in die EU versandt, weltweit auf Anfrage — tippe auf ein Werk, um seine Geschichte zu öffnen, oder sieh es dir in voller Größe an.",
+      "Jedes Bild gibt es nur einmal. Acryl auf Leinwand, in Slowenien von Hand gemalt, in die EU versandt, weltweit auf Anfrage — tippe auf ein Werk, um mehr darüber zu erfahren.",
     originals: "Originale",
     oneOfEach: "Jedes nur einmal",
     shippedWorldwide: "Versand in der EU · weltweit auf Anfrage",
     viewFullSize: "In voller Größe ansehen",
     readStory: "Geschichte lesen",
+    viewMore: "Mehr ansehen",
     available: "Verfügbar",
     reserved: "Reserviert",
     sold: "Verkauft",
@@ -1461,12 +1466,13 @@ const it: Dictionary = {
     eyebrow: "La collezione",
     title: "Tutti gli originali in un solo luogo",
     intro:
-      "Ogni dipinto esiste una volta sola. Acrilico su tela, dipinto a mano in Slovenia spedito nell'UE e altrove su richiesta — tocca un'opera per aprire la sua storia, o guardala a grandezza intera.",
+      "Ogni dipinto esiste una volta sola. Acrilico su tela, dipinto a mano in Slovenia spedito nell'UE e altrove su richiesta — tocca un'opera per scoprirne di più.",
     originals: "originali",
     oneOfEach: "Ognuno unico",
     shippedWorldwide: "Spedizione nell'UE · nel mondo su richiesta",
     viewFullSize: "Guarda a grandezza intera",
     readStory: "Leggi la storia",
+    viewMore: "Scopri di più",
     available: "Disponibile",
     reserved: "Riservato",
     sold: "Venduto",
