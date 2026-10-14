@@ -14,8 +14,11 @@ Zadnjič posodobljeno: 2026-10-13
       Stran slike se odpre šele s klikom na „Preberi zgodbo“. Zbirka in galerija na /art.
 - [x] Volk in konj: prva fotografija obrezana na samo platno (brez stene).
 - [ ] **Becoming (bela figura)**: ni fotografije od spredaj brez Urške — potrebna za obrez.
-- [ ] **Mape „art“, „art objava“, „surovo“ in video `lv_0_20260831233627.mp4`** niso v Dropboxu
-      ne v Google Drive. Ko so naložene: nove fotografije na stran, video na začetek /art.
+- [x] **Video `lv_0_20260831233627.mp4`** (iz Dropboxa) je na začetku /art — predvaja se sam,
+      brez zvoka; zvok se vklopi z gumbom (2026-10-14).
+- [ ] **Mape „art“ (4. 10. 2026) in „surovo“** so v aplikaciji Byurska Studio, do katere nimam
+      dostopa. Ko so fotografije v Dropboxu ali tukaj: prvi fotki vsake nove slike odstrani
+      ozadje (kot primer v „surovo“), vse fotke na stran.
 - [x] **Aplikacija se zdaj imenuje Manifest by Urška** (v aplikaciji in na byurska.com/lumora). Vision board v zavihku
       Želje: svoje fotografije z opisom. V App Store z naslednjo verzijo; ime v App Store Connect
       spremeni ročno, ko oddaš novo verzijo.

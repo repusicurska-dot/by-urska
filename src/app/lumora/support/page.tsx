@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import LumoraPage from "@/components/legal/LumoraPage";
-import ProtectedEmail from "@/components/shared/ProtectedEmail";
 import { business } from "@/content/business";
 
 export const metadata: Metadata = {
@@ -15,7 +14,7 @@ export default function LumoraSupportPage() {
       <section>
         <h2>Contact</h2>
         <p>
-          Questions, problems or ideas about Manifest by Urška? Write to <ProtectedEmail /> and Urška will
+          Questions, problems or ideas about Manifest by Urška? Write to <a href="mailto:support@remako.si" className="underline">support@remako.si</a> and Urška will
           answer within a few working days.
         </p>
         <p>
@@ -61,7 +60,7 @@ export default function LumoraSupportPage() {
       <section>
         <h2>Podpora (slovensko)</h2>
         <p>
-          Vprašanja, težave ali ideje glede aplikacije Manifest by Urška? Piši na <ProtectedEmail /> — Urška
+          Vprašanja, težave ali ideje glede aplikacije Manifest by Urška? Piši na <a href="mailto:support@remako.si" className="underline">support@remako.si</a> — Urška
           odgovori v nekaj delovnih dneh.
         </p>
         <ul>
