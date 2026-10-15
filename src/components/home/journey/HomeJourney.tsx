@@ -1,4 +1,5 @@
 import { Artwork } from "@/content/types";
+import ArtIntroVideo from "./ArtIntroVideo";
 import SilenceIntro from "./SilenceIntro";
 import ArtworkReveal from "./ArtworkReveal";
 import HorizontalGallery from "./HorizontalGallery";
@@ -20,6 +21,7 @@ export default function HomeJourney({ artworks }: { artworks: Artwork[] }) {
   return (
     <>
       <div id="arrival" />
+      <ArtIntroVideo />
       <SilenceIntro />
 
       <div id="painting" />
