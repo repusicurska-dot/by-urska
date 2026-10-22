@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Container from "@/components/shared/Container";
 import { fadeInUp } from "@/lib/motion";
+import SpiritualityVideos from "./SpiritualityVideos";
 import TarotReading from "./TarotReading";
 import LiveReadingBooking from "./LiveReadingBooking";
 import InstantReading from "./InstantReading";
@@ -312,6 +313,8 @@ export default function SpiritualityContent() {
           </div>
         </Container>
       </section>
+
+      <SpiritualityVideos />
 
       <IntentionCompass lang={lang} />
 
