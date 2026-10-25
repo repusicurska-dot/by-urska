@@ -12,7 +12,7 @@ import OwnerAlerts from "@/components/shared/OwnerAlerts";
 import StructuredData from "@/components/seo/StructuredData";
 import { CartProvider } from "@/lib/cart/CartContext";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
-import { organizationJsonLd } from "@/lib/structuredData";
+import { organizationJsonLd, websiteJsonLd } from "@/lib/structuredData";
 import { getSiteUrl } from "@/lib/siteUrl";
 
 const cormorant = Cormorant_Garamond({
@@ -47,7 +47,11 @@ export const metadata: Metadata = {
     title: "by Urška",
     description: "Original paintings by Urška — a storytelling gallery of mood, memory, and light.",
     type: "website",
+    siteName: "by Urška",
+    images: [{ url: "/images/on-wall-heart.jpg", alt: "An original painting by Urška on a wall" }],
   },
+  twitter: { card: "summary_large_image" },
+  robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
 };
 
 export const viewport: Viewport = {
@@ -63,6 +67,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col text-bone">
         <StructuredData data={organizationJsonLd()} />
+        <StructuredData data={websiteJsonLd()} />
         <SkyBackdrop />
         <LanguageProvider>
         {/* Inside the provider: the poetry splash quotes Urška in the visitor's language. */}
