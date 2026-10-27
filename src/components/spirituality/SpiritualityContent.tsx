@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import SpiritualityIntroVideo from "./SpiritualityIntroVideo";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Container from "@/components/shared/Container";
@@ -288,6 +289,8 @@ export default function SpiritualityContent() {
     // without it the fixed aurora painted over every non-positioned section and washed
     // the text out.
     <div className="spirit-light relative isolate" lang={lang}>
+      <SpiritualityIntroVideo />
+
       <section className="relative min-h-[60vh] flex items-center justify-center px-6 py-24 text-center lg:text-left">
         <Container className="max-w-2xl lg:max-w-6xl">
           <div className="lg:grid lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16">
