@@ -8,6 +8,13 @@ Zadnjič posodobljeno: 2026-10-13
 
 ---
 
+## 0d. 2026-10-27
+
+- [x] Nov video `lv_0_20261018195032.mp4` (Dropbox) je na /art v galeriji tik za volkom (Voice of the Night),
+      predvaja se sam, brez zvoka; zvok z gumbom.
+
+---
+
 ## 0c. Iz zapiska „Art to do!“ (2026-10-13)
 
 - [x] Miška na sliki pokaže „View more“, klik pokaže podatke slike kar na sliki (cena, mere, citat).
