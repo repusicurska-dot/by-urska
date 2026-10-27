@@ -6,10 +6,20 @@ import Link from "next/link";
 import { motion, useMotionValueEvent, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import { Artwork } from "@/content/types";
 import CustomCursor from "./CustomCursor";
+import GalleryVideoCard from "./GalleryVideoCard";
 import ArtworkPeek from "@/components/shared/ArtworkPeek";
 import { useLanguage } from "@/i18n/LanguageProvider";
 
 // Sized by the screen's height too, so a 4:5 card stays well inside the pinned viewport (about half its height).
+// Presentation films that sit right after a painting in the gallery (by slug).
+const PAINTING_VIDEOS: Record<string, { src: string; poster: string; label: string }> = {
+  "artwork-06": {
+    src: "/images/wolf-video.mp4",
+    poster: "/images/wolf-video-poster.jpg",
+    label: "Voice of the Night — film",
+  },
+};
+
 const CARD_WIDTHS = ["min(22vw, 38vh)", "min(19vw, 34vh)", "min(24vw, 40vh)", "min(20vw, 35vh)", "min(21vw, 37vh)"];
 
 function GalleryCard({
@@ -145,9 +155,15 @@ export default function HorizontalGallery({ artworks }: { artworks: Artwork[] })
             <span className="text-xs tracking-[0.3em] uppercase text-smoke">{t.collection.eyebrow}</span>
           </div>
           <motion.div ref={trackRef} className="flex gap-12 px-6 md:px-16" style={{ x }}>
-            {artworks.map((artwork, i) => (
-              <GalleryCard key={artwork.slug} artwork={artwork} index={i} onHover={setCursorActive} />
-            ))}
+            {artworks.map((artwork, i) => {
+              const film = PAINTING_VIDEOS[artwork.slug];
+              return (
+                <div key={artwork.slug} className="flex shrink-0 gap-12">
+                  <GalleryCard artwork={artwork} index={i} onHover={setCursorActive} />
+                  {film && <GalleryVideoCard {...film} style={{ width: "min(14vw, 24vh)" }} className="shrink-0" />}
+                </div>
+              );
+            })}
           </motion.div>
           <div className="pointer-events-none absolute bottom-10 right-10 text-xs tracking-widest text-smoke">
             {String(activeIndex + 1).padStart(2, "0")} / {String(count).padStart(2, "0")}
@@ -174,7 +190,9 @@ function GalleryMobile({ artworks }: { artworks: Artwork[] }) {
       className="flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       style={{ scrollPaddingLeft: "1.5rem", scrollPaddingRight: "1.5rem" }}
     >
-      {artworks.map((artwork, i) => (
+      {artworks.flatMap((artwork, i) => {
+        const film = PAINTING_VIDEOS[artwork.slug];
+        const card = (
         <div key={artwork.slug} className="w-[82%] shrink-0 snap-start">
           {artwork.heroImage && (
             <ArtworkPeek artwork={artwork} className="aspect-[4/5] w-full overflow-hidden">
@@ -193,7 +211,11 @@ function GalleryMobile({ artworks }: { artworks: Artwork[] }) {
             <p className="mt-1 text-xs text-smoke">{[artwork.year, artwork.dimensions].filter(Boolean).join(" · ")}</p>
           </Link>
         </div>
-      ))}
+        );
+        return film
+          ? [card, <GalleryVideoCard key={`${artwork.slug}-film`} {...film} className="w-[60%] shrink-0 snap-start" />]
+          : [card];
+      })}
     </div>
   );
 }
