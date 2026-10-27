@@ -11,8 +11,9 @@ import ScrollProgress from "./ScrollProgress";
 
 export default function HomeJourney({ artworks }: { artworks: Artwork[] }) {
   const withImages = artworks.filter((a) => a.heroImage);
-  const signature =
-    withImages.find((a) => a.slug === "artwork-02") ?? withImages[0] ?? artworks[0];
+  // the opening painting is the first in the shown order; the dragon (The Prophecy) sits
+  // second-to-last in the gallery (Urška, 2026-10-27)
+  const signature = withImages[0] ?? artworks[0];
   const poetryPiece =
     withImages.find((a) => a.slug === "artwork-05") ??
     withImages.find((a) => a.slug !== signature.slug) ??
