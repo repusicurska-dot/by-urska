@@ -14,6 +14,7 @@ import { CartProvider } from "@/lib/cart/CartContext";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/structuredData";
 import { getSiteUrl } from "@/lib/siteUrl";
+import { VisitCounter } from "@/components/VisitCounter";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -82,6 +83,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Footer />
           <CookieBanner />
           <InstallAppPrompt />
+          <VisitCounter />
         </CartProvider>
         </LanguageProvider>
       </body>
