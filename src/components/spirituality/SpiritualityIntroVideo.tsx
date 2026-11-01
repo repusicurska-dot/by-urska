@@ -19,9 +19,10 @@ export default function SpiritualityIntroVideo() {
   return (
     <section className="relative flex justify-center px-4 pt-6">
       <div className="relative aspect-[4/3] w-full max-w-3xl overflow-hidden rounded-2xl shadow-2xl">
+        {/* the film has a black rounded frame burned in; the scale crops it off */}
         <video
           ref={videoRef}
-          className="h-full w-full object-cover"
+          className="h-full w-full scale-[1.09] object-cover"
           src="/images/spirituality-intro.mp4"
           poster="/images/spirituality-intro-poster.jpg"
           autoPlay
