@@ -26,7 +26,6 @@ export default function ArtworkReveal({ artwork }: { artwork: Artwork }) {
     else if (v < SPECS_THRESHOLD - 0.05 && showSpecs) setShowSpecs(false);
   });
 
-  const cardOpacity = useTransform(progress, [0, 0.18], [0, 1]);
   const cardScale = useTransform(progress, [0, 0.28, 0.7], [0.86, 1, 0.66]);
   const radius = useTransform(progress, [0.5, 0.75], [4, 14]);
   const glowOpacity = useTransform(progress, [0, 0.3, 0.75], [0.15, 0.5, 0.5]);
@@ -51,7 +50,7 @@ export default function ArtworkReveal({ artwork }: { artwork: Artwork }) {
   }
 
   return (
-    <section ref={ref} className="relative h-[130vh] md:h-[165vh]">
+    <section ref={ref} className="relative h-[120vh] md:h-[140vh]">
       <div className="sticky top-0 flex h-screen w-full items-center justify-center overflow-hidden">
         <motion.div
           aria-hidden="true"
@@ -62,7 +61,7 @@ export default function ArtworkReveal({ artwork }: { artwork: Artwork }) {
         {artwork.heroImage && (
           <motion.div
             className="relative aspect-[4/5] h-[72vh] max-h-[600px] w-auto max-w-[88vw] overflow-hidden shadow-[0_40px_120px_-30px_rgba(0,0,0,0.7)]"
-            style={{ opacity: cardOpacity, scale: cardScale, borderRadius: radius }}
+            style={{ scale: cardScale, borderRadius: radius }}
           >
             <ArtworkPeek artwork={artwork} className="h-full w-full">
               <Image

@@ -25,8 +25,8 @@ export default function WorldsPortal() {
   const orbScale = useTransform(progress, [0, 0.42], [0.15, 3.6]);
   const orbOpacity = useTransform(progress, [0, 0.1, 0.42], [0, 0.85, 1]);
   const washOpacity = useTransform(progress, [0.26, 0.55], [0, 1]);
-  const linksOpacity = useTransform(progress, [0.46, 0.7], [0, 1]);
-  const linksY = useTransform(progress, [0.46, 0.7], [18, 0]);
+  const linksOpacity = useTransform(progress, [0.12, 0.4], [0, 1]);
+  const linksY = useTransform(progress, [0.12, 0.4], [18, 0]);
 
   if (reduceMotion) {
     return (
