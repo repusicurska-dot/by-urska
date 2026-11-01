@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import SpiritualityIntroVideo from "./SpiritualityIntroVideo";
+import SpiritualityVideos from "./SpiritualityVideos";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Container from "@/components/shared/Container";
@@ -315,6 +316,8 @@ export default function SpiritualityContent() {
           </div>
         </Container>
       </section>
+
+      <SpiritualityVideos />
 
       <IntentionCompass lang={lang} />
 
