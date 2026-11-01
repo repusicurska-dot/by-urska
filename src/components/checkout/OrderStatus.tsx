@@ -23,7 +23,7 @@ export default function OrderStatus({
   if (variant === "not-found") {
     return (
       <section className="py-32 text-center">
-        <Container>
+        <Container className="reading-panel rounded-3xl px-6 py-10 md:px-10 md:py-12 max-w-lg">
           <h1 className="font-heading text-4xl text-bone">{o.notFoundTitle}</h1>
           <p className="mt-4 text-bone/60">{o.notFoundBody}</p>
           <Link href="/" className={linkClass}>
@@ -37,7 +37,7 @@ export default function OrderStatus({
   if (variant === "received") {
     return (
       <section className="py-24 md:py-32 text-center">
-        <Container className="max-w-lg">
+        <Container className="reading-panel rounded-3xl px-6 py-10 md:px-10 md:py-12 max-w-lg">
           <span className="block text-xs tracking-widest uppercase text-gold-400">{o.confirmed}</span>
           <h1 className="font-heading text-4xl text-bone mt-4">{o.thankYou}</h1>
           <p className="mt-6 text-bone/70 leading-relaxed">{o.receivedBody}</p>
@@ -52,7 +52,7 @@ export default function OrderStatus({
   const paid = variant === "paid";
   return (
     <section className="min-h-[70vh] flex items-center justify-center px-6 py-24 text-center">
-      <Container className="max-w-xl">
+      <Container className="reading-panel rounded-3xl px-6 py-10 md:px-10 md:py-12 max-w-xl">
         <span className="block text-xs tracking-[0.3em] uppercase text-smoke">
           {paid ? o.confirmed : o.almostThere}
         </span>

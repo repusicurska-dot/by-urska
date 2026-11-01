@@ -21,7 +21,7 @@ export default function LegalPageShell({
   const { t, locale } = useLanguage();
   return (
     <section className="py-24 md:py-32">
-      <Container className="max-w-2xl">
+      <Container className="reading-panel rounded-3xl px-6 py-10 md:px-10 md:py-12 max-w-2xl">
         <span className="block text-xs tracking-widest uppercase text-gold-400">{t.legal.eyebrow}</span>
         <h1 className="font-heading text-4xl md:text-5xl text-bone mt-4">{title}</h1>
         {updated && (

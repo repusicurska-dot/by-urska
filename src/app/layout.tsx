@@ -4,6 +4,7 @@ import "./globals.css";
 import SiteHeader from "@/components/shared/SiteHeader";
 import IntroSplash from "@/components/shared/IntroSplash";
 import SkyBackdrop from "@/components/shared/SkyBackdrop";
+import LiquidGlass from "@/components/shared/LiquidGlass";
 import Footer from "@/components/shared/Footer";
 import PlaceholderBanner from "@/components/shared/PlaceholderBanner";
 import CookieBanner from "@/components/shared/cookies/CookieBanner";
@@ -70,6 +71,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <StructuredData data={organizationJsonLd()} />
         <StructuredData data={websiteJsonLd()} />
         <SkyBackdrop />
+        <LiquidGlass />
         <LanguageProvider>
         {/* Inside the provider: the poetry splash quotes Urška in the visitor's language. */}
         <IntroSplash />

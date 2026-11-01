@@ -198,7 +198,7 @@ export default function StarCalendarLogin({ expired, next }: { expired: boolean;
 
   return (
     <div className="spirit-light relative isolate min-h-[70vh]" lang={lang}>
-      <Container className="max-w-md px-6 py-24 text-center">
+      <Container className="reading-panel my-12 max-w-md rounded-3xl px-6 py-12 text-center md:my-20 md:px-10">
         <p className="text-xs uppercase tracking-[0.3em] text-smoke">
           {poetry
             ? `🕊️ ${t.poetry}`

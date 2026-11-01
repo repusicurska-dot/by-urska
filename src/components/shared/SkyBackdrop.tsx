@@ -1,24 +1,27 @@
 import Image from "next/image";
+import { preload } from "react-dom";
 
 /**
  * The site's sky: soft clouds with the light breaking through, fixed behind every page.
- * Since 2026-10-04 it is Urška's golden sky (sky-golden-2560.webp, enlarged with lanczos3
- * from her image); the old 512×512 painting showed blurry once stretched to the screen.
- * The veils over it are kept thin so the sky comes through (Urška, 2026-10-04).
+ * It is Urška's sky (sky-golden-2560.webp) recoloured to pearl, lilac and blush, so the clouds
+ * stay real but stop competing with the paintings. It holds still: every glass panel on the page
+ * re-renders whatever moves behind it. The veils keep the text readable over the cloud banks.
  */
 export default function SkyBackdrop() {
+  // `.sky-curtain` paints this file on the very first frame, before the page is there.
+  preload("/images/sky-pearl-2560.webp", { as: "image" });
+
   return (
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      <div className="ambient-motion sky-drift absolute inset-[-6%]">
+      <div className="absolute inset-0">
         <Image
-          src="/images/sky-golden-2560.webp"
+          src="/images/sky-pearl-2560.webp"
           alt=""
           fill
           priority
           sizes="100vw"
           className="object-cover"
           quality={92}
-          style={{ filter: "saturate(1.12)" }}
         />
       </div>
 
@@ -38,7 +41,7 @@ export default function SkyBackdrop() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(75% 60% at 50% 18%, rgba(255,252,245,0) 0%, rgba(253,248,238,0.12) 45%, rgba(250,245,236,0.22) 100%)",
+            "radial-gradient(75% 60% at 50% 18%, rgba(255,252,245,0) 0%, rgba(253,248,238,0.2) 45%, rgba(250,245,236,0.3) 100%)",
         }}
       />
       <div

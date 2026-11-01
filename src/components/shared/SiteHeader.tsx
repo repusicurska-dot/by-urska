@@ -29,7 +29,6 @@ export default function SiteHeader() {
   }));
   const [menuOpen, setMenuOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const lastY = useRef(0);
   const reduceMotion = useReducedMotion();
 
@@ -54,7 +53,6 @@ export default function SiteHeader() {
       } else if (!goingDown) {
         setHidden(false);
       }
-      setScrolled(y > 40);
       lastY.current = y;
       ticking = false;
     }
@@ -85,11 +83,7 @@ export default function SiteHeader() {
 
   return (
     <motion.header
-      className={`sticky top-0 z-50 border-b transition-colors duration-500 ${
-        scrolled
-          ? "bg-ink/90 backdrop-blur-md border-white/[0.14]"
-          : "bg-transparent border-transparent"
-      }`}
+      className="sticky top-0 z-50 px-4 pt-3"
       animate={{ y: hidden ? "-100%" : "0%" }}
       transition={{ duration: reduceMotion ? 0 : 0.35, ease: "easeInOut" }}
     >
@@ -100,7 +94,8 @@ export default function SiteHeader() {
         {t.nav.skipToContent}
       </a>
 
-      <Container className="grid grid-cols-[1fr_auto_1fr] items-center py-5">
+      <div className="liquid-glass mx-auto max-w-[1240px] rounded-full">
+        <Container className="grid grid-cols-[1fr_auto_1fr] items-center py-3">
         <Link href="/" className="text-bone justify-self-start" aria-label={t.nav.home}>
           <Logo wordmark label={WORLD_NAME[place]} iconClassName="h-8 w-8" wordmarkClassName="hidden sm:inline" />
         </Link>
@@ -148,14 +143,11 @@ export default function SiteHeader() {
             <Menu size={22} strokeWidth={1.5} />
           </button>
         </div>
-      </Container>
+        </Container>
+      </div>
 
       {place === "art" && (
-        <div
-          className={`border-t py-1.5 text-center text-[11px] tracking-widest uppercase text-smoke transition-colors duration-500 ${
-            scrolled ? "border-white/[0.14]" : "border-transparent"
-          }`}
-        >
+        <div className="py-1.5 text-center text-[11px] tracking-widest uppercase text-smoke">
           {t.nav.tagline}
         </div>
       )}
@@ -165,7 +157,7 @@ export default function SiteHeader() {
             role="dialog"
             aria-modal="true"
             aria-label="Menu"
-            className="fixed inset-0 z-[100] md:hidden"
+            className="fixed inset-0 z-[100] bg-ink/70 backdrop-blur-2xl md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}

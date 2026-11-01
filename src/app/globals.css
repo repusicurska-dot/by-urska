@@ -36,15 +36,15 @@ html {
 
 body {
   /* The base of the sky (SkyBackdrop draws the clouds and rays on top of this). */
-  background-color: #eef1f6;
+  background-color: #efe4e2;
   background-image:
-    linear-gradient(180deg, #e7edf6 0%, #f4f0e8 38%, #f9f2e4 62%, #efe9e2 100%);
+    linear-gradient(180deg, #e8e0e3 0%, #f7ebe4 38%, #efe2e0 66%, #e8dddf 100%);
   background-attachment: fixed;
   color: var(--color-bone);
   font-family: var(--font-body);
 }
 
-/* Slow drift for the clouds; stilled for anyone who asked for less motion. */
+/* Slow ambient animation; stilled for anyone who asked for less motion. */
 @media (prefers-reduced-motion: reduce) {
   .ambient-motion { animation: none !important; }
 }
@@ -159,31 +159,45 @@ body:has(.spirit-light) {
   animation: install-demo-tap 2.6s ease-in-out infinite;
 }
 
-/* Gallery frame for an artwork card — a white mount with a hairline that warms on hover. */
+/* The curtains that open a page (first visit and page changes) are the same sky, so the logo
+   dissolves into the page without a change of colour. The soft light behind it keeps the logo
+   clear of the clouds. */
+.sky-curtain {
+  background-color: #efe4e2;
+  background-image:
+    radial-gradient(50% 55% at 50% 50%, rgba(255, 251, 247, 0.62) 0%, rgba(255, 251, 247, 0.22) 100%),
+    url("/images/sky-pearl-2560.webp");
+  background-position: center;
+  background-size: cover;
+}
+
+/* Liquid glass, for every card and panel on the site (LiquidGlass.tsx finds them and adds the
+   refraction at the rim where the browser can draw it). The light sits on the rim: a bright
+   top-left edge, a softer bottom-right one, and almost no tint, so the sky shows through. */
+.liquid-glass {
+  --glass-shadow: 0 20px 46px -18px rgba(70, 55, 90, 0.34);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.14) 45%, rgba(255, 255, 255, 0.22));
+  border-color: transparent;
+  box-shadow:
+    inset 1.5px 1.5px 1px rgba(255, 255, 255, 0.95),
+    inset -1px -1px 1px rgba(255, 255, 255, 0.5),
+    inset 0 0 20px rgba(255, 255, 255, 0.25),
+    var(--glass-shadow);
+  -webkit-backdrop-filter: blur(14px) saturate(1.5) brightness(1.04);
+  backdrop-filter: blur(14px) saturate(1.5) brightness(1.04);
+}
+/* Anyone who asked for less transparency gets a solid pane. */
+@media (prefers-reduced-transparency: reduce) {
+  .liquid-glass {
+    background: color-mix(in srgb, var(--color-paper) 92%, transparent);
+  }
+}
+
+/* An artwork card lifts on hover; the painting stays sharp and opaque inside the glass. */
 .art-card {
-  background: color-mix(in srgb, var(--color-paper) 88%, transparent);
-  border: 1px solid rgba(43, 36, 49, 0.08);
-  box-shadow: 0 26px 50px -34px rgba(74, 58, 88, 0.55);
-  transition: transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 .art-card:hover {
+  --glass-shadow: 0 36px 60px -30px rgba(74, 58, 88, 0.5), 0 0 34px -14px color-mix(in srgb, var(--color-accent-warm) 55%, transparent);
   transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--color-accent-warm) 55%, transparent);
-  box-shadow: 0 36px 60px -34px rgba(74, 58, 88, 0.6), 0 0 34px -14px color-mix(in srgb, var(--color-accent-warm) 55%, transparent);
-}
-
-/* The sky breathes: a very slow drift, so the background is never quite static. */
-@keyframes sky-drift {
-  0%, 100% { transform: scale(1.04) translate3d(0, 0, 0); }
-  50% { transform: scale(1.09) translate3d(-1.2%, 1%, 0); }
-}
-.sky-drift {
-  animation: sky-drift 120s ease-in-out infinite;
-}
-
-/* Long-form text sits on a soft pane of light rather than straight on the clouds. */
-.reading-panel {
-  /* Barely there: a breath of light under long text, with no frame around it. */
-  background: color-mix(in srgb, var(--color-paper) 55%, transparent);
-  backdrop-filter: blur(4px);
 }

@@ -24,7 +24,7 @@ const legalLinks = [
 export default function Footer() {
   const { t, locale } = useLanguage();
   return (
-    <footer className="border-t border-white/[0.14] py-14">
+    <footer className="reading-panel mx-4 mb-4 rounded-3xl py-14">
       <Container>
         <div className="flex flex-col md:flex-row justify-between gap-10">
           <div>

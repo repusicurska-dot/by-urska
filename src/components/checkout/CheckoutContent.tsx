@@ -83,7 +83,7 @@ export default function CheckoutContent() {
   if (items.length === 0) {
     return (
       <section className="py-24 md:py-32 text-center">
-        <Container>
+        <Container className="reading-panel rounded-3xl px-6 py-10 md:px-10 md:py-12 max-w-lg">
           <p className="text-bone/60">{t.cart.empty}</p>
           <Link
             href="/collection"
@@ -99,7 +99,7 @@ export default function CheckoutContent() {
   if (state.status === "checkout-not-live") {
     return (
       <section className="py-24 md:py-32 text-center">
-        <Container className="max-w-lg">
+        <Container className="reading-panel rounded-3xl px-6 py-10 md:px-10 md:py-12 max-w-lg">
           <h1 className="font-heading text-3xl text-bone mb-4">{c.almostThere}</h1>
           <p className="text-bone/70 leading-relaxed">{state.message}</p>
           <Link
@@ -115,7 +115,7 @@ export default function CheckoutContent() {
 
   return (
     <section className="py-24 md:py-32">
-      <Container className="max-w-2xl">
+      <Container className="reading-panel rounded-3xl px-6 py-10 md:px-10 md:py-12 max-w-2xl">
         <span className="block text-xs tracking-widest uppercase text-gold-400">{c.title}</span>
         <h1 className="font-heading text-4xl md:text-5xl text-bone mt-4 mb-12">
           {c.completeOrder}

@@ -38,12 +38,12 @@ export default function ArtworkStory({ artwork }: { artwork: Artwork }) {
         />
       ))}
       {artwork.artistNote && (
-        <section className="py-12 md:py-16 bg-midnight">
-          <div className="mx-auto max-w-2xl px-6 text-center">
-            <span className="block text-xs tracking-widest uppercase text-gold-400 mb-4">
+        <section className="px-4 py-12 md:py-16">
+          <div className="reading-panel mx-auto max-w-2xl rounded-3xl px-6 py-10 text-center md:px-10 md:py-12">
+            <span className="block text-xs tracking-widest uppercase text-gold-600 mb-4">
               Artist&rsquo;s note
             </span>
-            <div className="space-y-5 font-heading italic text-xl md:text-2xl text-ivory/90 leading-relaxed">
+            <div className="space-y-5 font-heading italic text-xl md:text-2xl text-bone/90 leading-relaxed">
               {artwork.artistNote.split("\n\n").map((paragraph, i) => (
                 <p key={i}>
                   {paragraph.split("\n").map((line, j) => {
@@ -51,7 +51,7 @@ export default function ArtworkStory({ artwork }: { artwork: Artwork }) {
                     const text = bold ? line.slice(2, -2) : line;
                     return (
                       <span key={j} className="block">
-                        {bold ? <strong className="font-semibold not-italic text-ivory">{text}</strong> : text}
+                        {bold ? <strong className="font-semibold not-italic text-bone">{text}</strong> : text}
                       </span>
                     );
                   })}
@@ -60,7 +60,7 @@ export default function ArtworkStory({ artwork }: { artwork: Artwork }) {
             </div>
             <Link
               href="/spirituality"
-              className="inline-block mt-8 text-xs tracking-widest uppercase text-ivory/60 hover:text-gold-400 transition-colors border-b border-ivory/20 pb-1"
+              className="inline-block mt-8 text-xs tracking-widest uppercase text-smoke hover:text-gold-600 transition-colors border-b border-bone/20 pb-1"
             >
               More on the soul behind the work →
             </Link>

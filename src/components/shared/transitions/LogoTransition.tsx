@@ -5,15 +5,14 @@ import { usePathname } from "next/navigation";
 import ArrivalLogo, { ARRIVAL_DRAW_SECONDS, arrivalVariantFor } from "../ArrivalLogo";
 
 /**
- * Arriving at a page from inside the site: the logo first, on the site's cream, with the page's
+ * Arriving at a page from inside the site: the logo first, on the site's sky, with the page's
  * own line underneath when it has one — then the curtain lifts.
  */
 export default function LogoTransition({ epigraph }: { epigraph?: string }) {
   const variant = arrivalVariantFor(usePathname());
   return (
     <motion.div
-      className="fixed inset-0 z-[250] pointer-events-none flex flex-col items-center justify-center gap-6 px-10 text-center"
-      style={{ background: "var(--color-ink)" }}
+      className="sky-curtain fixed inset-0 z-[250] pointer-events-none flex flex-col items-center justify-center gap-6 px-10 text-center"
       aria-hidden="true"
       initial={{ opacity: 1 }}
       animate={{ opacity: 0 }}

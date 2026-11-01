@@ -36,7 +36,7 @@ export default async function BookingPage({
 
   return (
     <section className="min-h-[70vh] px-6 py-24">
-      <Container className="max-w-xl">
+      <Container className="reading-panel rounded-3xl px-6 py-10 md:px-10 md:py-12 max-w-xl">
         <span className="block text-xs tracking-[0.3em] uppercase text-smoke">Rezervacija branja</span>
 
         {result && RESULTS[result] && (

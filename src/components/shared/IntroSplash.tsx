@@ -10,8 +10,8 @@ import { endIntro } from "@/lib/introSplash";
 const HOLD_MS = ARRIVAL_DRAW_SECONDS * 1000 + 350;
 
 /**
- * The monogram alone on a dark screen for the first moment of every visit, then it
- * dissolves into the page. Lives in the root layout, so it plays once per page load
+ * The monogram alone on the sky for the first moment of every visit, then it dissolves
+ * into the page. Lives in the root layout, so it plays once per page load
  * and not again on client-side navigation. While it runs, `PageTransition` skips its
  * own veil (see `lib/introSplash.ts`) so the two never stack.
  */
@@ -37,8 +37,7 @@ export default function IntroSplash() {
         <motion.div
           key="intro-splash"
           aria-hidden="true"
-          className="fixed inset-0 z-[250] flex flex-col items-center justify-center"
-          style={{ background: "var(--color-ink)" }}
+          className="sky-curtain fixed inset-0 z-[250] flex flex-col items-center justify-center"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: reduceMotion ? 0 : 0.7, ease: "easeInOut" }}
