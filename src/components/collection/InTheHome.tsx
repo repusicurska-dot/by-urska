@@ -12,7 +12,7 @@ import { getArtworkBySlug } from "@/lib/content";
  *
  * Grouped by painting, in the same order as the collection (Urška, 2026-10-10): the blue
  * piece, the pink one, the two small canvases together, the white figure, then the black
- * paintings last, the wolf first. Only two or three clearly different views per painting —
+ * paintings last, the wolf first and the dragon at the end. Only two or three clearly different views per painting —
  * she found the many near-identical sofa shots repetitive (2026-10-10).
  *
  * Each group is one row whose photos share a height, so every frame keeps the proportions it
@@ -59,17 +59,17 @@ const GROUPS: Group[] = [
     ],
   },
   {
-    slugs: ["artwork-02"],
-    shots: [
-      { src: "/images/on-wall-prophecy-2.jpg", width: 816, height: 963, alt: "\"The Prophecy\" in full, on a white wall" },
-      { src: "/images/in-home-prophecy-1.jpg", width: 883, height: 1202, alt: "\"The Prophecy\" below a beaded ceiling light" },
-    ],
-  },
-  {
     slugs: ["artwork-07"],
     shots: [
       { src: "/images/on-wall-horse.jpg", width: 1452, height: 1022, alt: "\"Wild Spirit\" in full, on a white wall" },
       { src: "/images/in-home-horse-1.jpg", width: 1080, height: 1620, alt: "\"Wild Spirit\" on the living-room wall above the sofa" },
+    ],
+  },
+  {
+    slugs: ["artwork-02"],
+    shots: [
+      { src: "/images/on-wall-prophecy-2.jpg", width: 816, height: 963, alt: "\"The Prophecy\" in full, on a white wall" },
+      { src: "/images/in-home-prophecy-1.jpg", width: 883, height: 1202, alt: "\"The Prophecy\" below a beaded ceiling light" },
     ],
   },
 ];

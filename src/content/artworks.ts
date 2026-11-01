@@ -207,7 +207,8 @@ const ACRYLIC_CARE =
 
 /**
  * Shown in `order` (Urška, 2026-10-10): the blue piece first, then the pink one, then the two
- * small canvases, then the white figure, and the black paintings last — the wolf first among them.
+ * small canvases, then the white figure, and the black paintings last — the wolf first among them
+ * and the dragon at the very end (2026-11-01).
  *
  * The first five use Urška's real titles and poems
  * (sourced from her Word docs — see note above the poem constants). Their
@@ -272,7 +273,7 @@ export const artworks: Artwork[] = [
   },
   {
     slug: "artwork-02",
-    order: 7,
+    order: 8,
     layout: "split",
     title: "The Prophecy",
     quote: "When darkness consumes the land, the final knight shall rise.",
@@ -464,7 +465,7 @@ export const artworks: Artwork[] = [
   },
   {
     slug: "artwork-07",
-    order: 8,
+    order: 7,
     layout: "cinematic-macro",
     title: "Wild Spirit",
     quote: "There are places you can only reach by flowing.",
